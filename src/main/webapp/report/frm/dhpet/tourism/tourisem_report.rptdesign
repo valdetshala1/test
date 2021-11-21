@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="p_user" id="377">
+            <text-property name="promptText">UserID</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_qrcode_content_url" id="2832">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="2947">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/kfis</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="2948">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">habitat_location</property>
+                    <text-property name="displayName">habitat_location</text-property>
+                    <text-property name="heading">habitat_location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tourism_period</property>
+                    <text-property name="displayName">tourism_period</text-property>
+                    <text-property name="heading">tourism_period</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tourist_number</property>
+                    <text-property name="displayName">tourist_number</text-property>
+                    <text-property name="heading">tourist_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">payment</property>
+                    <text-property name="displayName">payment</text-property>
+                    <text-property name="heading">payment</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">habitat_location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">tourism_period</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">tourist_number</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">payment</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">habitat_location</property>
+                    <property name="nativeName">habitat_location</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">tourism_period</property>
+                    <property name="nativeName">tourism_period</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">tourist_number</property>
+                    <property name="nativeName">tourist_number</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">payment</property>
+                    <property name="nativeName">payment</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[Select l.habitat_location,' [ '||start_date||' : '||end_date ||' ] ' as tourism_period,tourist_number ,payment
+from tdhpet_tourist_register tr left join  
+tdhpet_location as l on l.id=tr.location_id left join
+tdhpet_tourist_purpose as tp on tr.purpose_id=tp.id ]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>habitat_location</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>habitat_location</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>habitat_location</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tourism_period</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tourism_period</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tourism_period</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tourist_number</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>tourist_number</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tourist_number</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>payment</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>payment</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>payment</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="2954">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="2955">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="2956">
+                            <property name="levels">
+                                <tabular-level name="habitat_location" id="2957">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">habitat_location</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group1" id="2958">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="2959">
+                            <property name="levels">
+                                <tabular-level name="tourism_period" id="2960">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">tourism_period</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group2" id="2961">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="2962">
+                            <property name="levels">
+                                <tabular-level name="tourist_number" id="2963">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">tourist_number</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="2964">
+                    <property name="measures">
+                        <tabular-measure name="payment" id="2965">
+                            <expression name="measureExpression" type="javascript">dataSetRow["payment"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="2863">
+            <property name="height">2.2in</property>
+            <column id="2864">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2865">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2866">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="2867">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.65in</property>
+                <cell id="2868"/>
+                <cell id="2869">
+                    <image id="1895">
+                        <property name="height">0.65625in</property>
+                        <property name="width">0.6770833333333334in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/rks_logo_trans.png</expression>
+                    </image>
+                </cell>
+                <cell id="2870">
+                    <image id="1906">
+                        <property name="overflow">auto</property>
+                        <property name="height">0.562in</property>
+                        <property name="width">0.5625in</property>
+                        <property name="source">url</property>
+                        <expression name="uri" type="javascript">params["p_qrcode_content_url"].value</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="2871">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="2872">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="1897">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">REPUBLIKA E KOSOVËS&#13;
+REPUBLIKA KOSOVA-REPUBLIC OF KOSOVO&#13;
+QEVERIA –VLADA-GOVERNMENT </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2875">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="2876">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="1903">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">MINISTRIA BUJQËSISË, PYLLTARISË DHE ZHVILLIMIT RURAL &#13;
+MINISTARSTVO POLJOPRIVREDE, SUMARSTVA I RURALNOG RAZVOJA&#13;
+MINISTRY OF AGRICULTURE, FORESTRY AND RURAL DEVELOPMENT </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2879">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.65in</property>
+                <cell id="2880"/>
+                <cell id="2881">
+                    <image id="2946">
+                        <property name="height">0.6736842105263158in</property>
+                        <property name="width">1.2526315789473683in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/apk.png</expression>
+                    </image>
+                </cell>
+                <cell id="2882"/>
+            </row>
+        </grid>
+        <grid id="2949">
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <property name="height">0.5in</property>
+            <column id="2950"/>
+            <row id="2951">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.5in</property>
+                <cell id="2952">
+                    <label id="2953">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Raporti për vizitat në zonat turistike</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="2966">
+            <property name="cube">Data Cube</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="2983">
+                    <property name="measure">payment</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="2984">
+                            <property name="aggregationOnRow">Group2/tourist_number</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="2985">
+                                    <property name="resultSetColumn">payment_Group2/tourist_number</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="2992">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="2993">
+                                    <property name="resultSetColumn">payment</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="2986">
+                            <property name="content">
+                                <label id="2987">
+                                    <text-property name="text">Pagesat</text-property>
+                                </label>
+                            </property>
+                            <property name="fontWeight">bold</property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="2968">
+                    <property name="grandTotal">
+                        <extended-item extensionName="CrosstabCell" id="2991">
+                            <property name="content">
+                                <label id="2994">
+                                    <text-property name="text">Totali</text-property>
+                                </label>
+                            </property>
+                            <property name="fontWeight">bold</property>
+                            <property name="backgroundColor">#9A9A9A</property>
+                            <property name="textAlign">left</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingLeft">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="2969">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="2970">
+                                    <property name="level">Group/habitat_location</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="2971">
+                                            <property name="content">
+                                                <data name="habitat_location" id="2972">
+                                                    <property name="resultSetColumn">habitat_location</property>
+                                                </data>
+                                            </property>
+                                            <property name="backgroundColor">#D8D8D8</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="2973">
+                            <property name="dimension">Group1</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="2974">
+                                    <property name="level">Group1/tourism_period</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="2975">
+                                            <property name="content">
+                                                <data name="tourism_period" id="2977">
+                                                    <property name="resultSetColumn">tourism_period</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">right</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingRight">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="2978">
+                            <property name="dimension">Group2</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="2979">
+                                    <property name="level">Group2/tourist_number</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="2980">
+                                            <property name="content">
+                                                <data name="tourist_number" id="2982">
+                                                    <property name="resultSetColumn">tourist_number</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">right</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingRight">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="grandTotalLocation">after</property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="2967">
+                    <property name="content">
+                        <label id="2988">
+                            <text-property name="text">Lokaliteti&#13;
+</text-property>
+                        </label>
+                    </property>
+                    <property name="fontWeight">bold</property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="2976">
+                    <property name="content">
+                        <label id="2989">
+                            <text-property name="text">Periudha</text-property>
+                        </label>
+                    </property>
+                    <property name="fontWeight">bold</property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">right</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="2981">
+                    <property name="content">
+                        <label id="2990">
+                            <text-property name="text">Numri i turistave</text-property>
+                        </label>
+                    </property>
+                    <property name="fontWeight">bold</property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">right</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+            </property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">habitat_location</property>
+                    <expression name="expression">dimension["Group"]["habitat_location"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">tourism_period</property>
+                    <expression name="expression">dimension["Group1"]["tourism_period"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">tourist_number</property>
+                    <expression name="expression">dimension["Group2"]["tourist_number"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">payment_Group2/tourist_number</property>
+                    <expression name="expression">measure["payment"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group2/tourist_number</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">payment</property>
+                    <expression name="expression">measure["payment"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <grid id="2932">
+            <property name="marginTop">50pt</property>
+            <property name="textAlign">right</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="pageBreakBefore">auto</property>
+            <property name="pageBreakInside">avoid</property>
+            <method name="onRender"><![CDATA[if (BirtComp.lessThan(pageNumber, totalPage))]]></method>
+            <column id="2933"/>
+            <row id="2934">
+                <property name="overflow">auto</property>
+                <cell id="2935">
+                    <label id="2936">
+                        <property name="textAlign">right</property>
+                        <text-property name="text">  Gjeneruar nga :</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2937">
+                <property name="overflow">auto</property>
+                <cell id="2938">
+                    <data id="2939">
+                        <property name="marginTop">10pt</property>
+                        <property name="paddingRight">3pt</property>
+                        <property name="overflow">auto</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">p_user</property>
+                                <expression name="expression" type="javascript">params["p_user"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">p_user</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="2940">
+                <property name="overflow">auto</property>
+                <cell id="2941">
+                    <label id="2942">
+                        <property name="marginTop">20pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">_____________________</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2943">
+                <property name="overflow">auto</property>
+                <cell id="2944">
+                    <text id="2945">
+                        <property name="marginTop">10pt</property>
+                        <property name="paddingLeft">3pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<VALUE-OF format="dd/MM/yyyy">new Date()</VALUE-OF>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

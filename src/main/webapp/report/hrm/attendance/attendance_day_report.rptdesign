@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">7</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="p_punch_in_user_time" id="9">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_oper_level_val" id="10">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_user" id="377">
+            <text-property name="promptText">User</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_qrcode_content_url" id="2832">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_gl_server_profile" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.168.0.30:5432/kfis?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_gl_server_profile</property>
+            <property name="OdaConnProfileStorePath">target/classes/profiles/kfis_gl_server_profile</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_demo_server_profile" id="373">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.168.0.30:5432/kfis_demo?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_demo_server_profile</property>
+            <property name="OdaConnProfileStorePath">target/classes/profiles/kfis_demo_profile</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_localhost_profile" id="431">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/kfis?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="2853">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.168.0.2:5432/kfis</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="8">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">first_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">first_name</text-property>
+                    <text-property name="heading">first_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">last_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">last_name</text-property>
+                    <text-property name="heading">last_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">punch_in_utc_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">punch_in_utc_time</text-property>
+                    <text-property name="heading">punch_in_utc_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">punch_in_note</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">punch_in_note</text-property>
+                    <text-property name="heading">punch_in_note</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">punch_in_user_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">punch_in_user_time</text-property>
+                    <text-property name="heading">punch_in_user_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">punch_out_utc_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">punch_out_utc_time</text-property>
+                    <text-property name="heading">punch_out_utc_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">punch_out_note</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">punch_out_note</text-property>
+                    <text-property name="heading">punch_out_note</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">punch_out_user_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">punch_out_user_time</text-property>
+                    <text-property name="heading">punch_out_user_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">status</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">status</text-property>
+                    <text-property name="heading">status</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">orga_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">orga_name</text-property>
+                    <text-property name="heading">orga_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">oper_level_val</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">oper_level_val</text-property>
+                    <text-property name="heading">oper_level_val</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">orga_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">orga_type</text-property>
+                    <text-property name="heading">orga_type</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_punch_in_user_time</property>
+                    <property name="paramName">p_punch_in_user_time</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">91</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue" type="javascript">params["p_punch_in_user_time"].value</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">first_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">last_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">punch_in_utc_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">punch_in_note</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">punch_in_user_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">punch_out_utc_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">punch_out_note</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">punch_out_user_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">status</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">orga_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">oper_level_val</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">orga_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">kfis_localhost_profile</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">first_name</property>
+                    <property name="nativeName">first_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">last_name</property>
+                    <property name="nativeName">last_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">punch_in_utc_time</property>
+                    <property name="nativeName">punch_in_utc_time</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">punch_in_note</property>
+                    <property name="nativeName">punch_in_note</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">punch_in_user_time</property>
+                    <property name="nativeName">punch_in_user_time</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">punch_out_utc_time</property>
+                    <property name="nativeName">punch_out_utc_time</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">punch_out_note</property>
+                    <property name="nativeName">punch_out_note</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">punch_out_user_time</property>
+                    <property name="nativeName">punch_out_user_time</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">status</property>
+                    <property name="nativeName">status</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">orga_name</property>
+                    <property name="nativeName">orga_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">oper_level_val</property>
+                    <property name="nativeName">oper_level_val</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">orga_type</property>
+                    <property name="nativeName">orga_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select p.first_name,p.last_name,a.punch_in_utc_time,a.punch_in_note,a.punch_in_user_time,a.punch_out_utc_time
+,a.punch_out_note,a.punch_out_user_time,a.status,o.orga_name,o.oper_level_val,o.orga_type
+ from thrm_attendance_record as a left join thrm_employee as e  on a.employee_id=e.id left join tperson as p on p.id=e.id 
+left join torganisation as o on o.id=e.organisation_id where a.punch_in_user_time::date=?::date]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>first_name</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>first_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>first_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>last_name</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>last_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>last_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>punch_in_utc_time</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>punch_in_utc_time</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>punch_in_utc_time</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>punch_in_note</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>punch_in_note</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>punch_in_note</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>punch_in_user_time</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>punch_in_user_time</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>punch_in_user_time</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>punch_out_utc_time</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>punch_out_utc_time</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>punch_out_utc_time</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>punch_out_note</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>punch_out_note</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>punch_out_note</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>punch_out_user_time</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>punch_out_user_time</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>punch_out_user_time</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>status</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>status</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>status</design:label>
+            <design:formattingHints>
+              <design:displaySize>2</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>orga_name</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>orga_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>orga_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>oper_level_val</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>oper_level_val</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>oper_level_val</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>orga_type</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>orga_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>orga_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="textAlign">center</property>
+            <property name="headerHeight">0.5in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="2888">
+            <property name="overflow">auto</property>
+            <property name="height">2.2in</property>
+            <column id="2889">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2890">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2891">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="2892">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.65in</property>
+                <cell id="2893"/>
+                <cell id="2894">
+                    <image id="2895">
+                        <property name="height">0.65625in</property>
+                        <property name="width">0.6770833333333334in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/rks_logo_trans.png</expression>
+                    </image>
+                </cell>
+                <cell id="2896">
+                    <image id="1906">
+                        <property name="overflow">auto</property>
+                        <property name="height">0.562in</property>
+                        <property name="width">0.5625in</property>
+                        <property name="source">url</property>
+                        <expression name="uri" type="javascript">params["p_qrcode_content_url"].value</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="2897">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="2898">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="2899">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">block</property>
+                        <text-property name="text">REPUBLIKA E KOSOVËS&#13;
+REPUBLIKA KOSOVA-REPUBLIC OF KOSOVO&#13;
+QEVERIA –VLADA-GOVERNMENT </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2900">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="2901">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="2902">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">block</property>
+                        <text-property name="text">MINISTRIA BUJQËSISË, PYLLTARISË DHE ZHVILLIMIT RURAL &#13;
+MINISTARSTVO POLJOPRIVREDE, SUMARSTVA I RURALNOG RAZVOJA&#13;
+MINISTRY OF AGRICULTURE, FORESTRY AND RURAL DEVELOPMENT </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2903">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.65in</property>
+                <cell id="2904"/>
+                <cell id="2905">
+                    <image id="2946">
+                        <property name="height">0.6736842105263158in</property>
+                        <property name="width">1.2526315789473683in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/apk.png</expression>
+                    </image>
+                </cell>
+                <cell id="2947"/>
+            </row>
+        </grid>
+        <grid id="2849">
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <property name="height">0.5in</property>
+            <column id="2850">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="2851">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.5in</property>
+                <cell id="2852">
+                    <property name="overflow">auto</property>
+                    <label id="375">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Raporti ditor për prezencën në punë</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <table id="2854">
+            <property name="overflow">auto</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">first_name</property>
+                    <text-property name="displayName">first_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["first_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">last_name</property>
+                    <text-property name="displayName">last_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["last_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">punch_in_user_time</property>
+                    <text-property name="displayName">punch_in_user_time</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["punch_in_user_time"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">punch_out_user_time</property>
+                    <text-property name="displayName">punch_out_user_time</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["punch_out_user_time"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <column id="2873">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2874">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2875">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2876">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2877">
+                <property name="overflow">auto</property>
+            </column>
+            <header>
+                <row id="2855">
+                    <property name="verticalAlign">middle</property>
+                    <property name="overflow">auto</property>
+                    <cell id="2856">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="paddingLeft">3pt</property>
+                        <property name="textAlign">left</property>
+                        <label id="2878">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Emri dhe mbiemri</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2857">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="2882">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Ardhja në punë</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2858">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="2883">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Nënshkrimi</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2859">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="2884">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Dalja-shkuarja  nga puna </text-property>
+                        </label>
+                    </cell>
+                    <cell id="2860">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="2885">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Nënshkrimi</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="2861">
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="overflow">auto</property>
+                    <cell id="2862">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="paddingLeft">3pt</property>
+                        <property name="textAlign">left</property>
+                        <data id="2879">
+                            <property name="display">inline</property>
+                            <property name="resultSetColumn">first_name</property>
+                        </data>
+                        <label id="2880">
+                            <property name="display">inline</property>
+                            <text-property name="text"> </text-property>
+                        </label>
+                        <data id="2881">
+                            <property name="display">inline</property>
+                            <property name="resultSetColumn">last_name</property>
+                        </data>
+                    </cell>
+                    <cell id="2863">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2886">
+                            <property name="resultSetColumn">punch_in_user_time</property>
+                        </data>
+                    </cell>
+                    <cell id="2864">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                    </cell>
+                    <cell id="2865">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2887">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Unformatted</property>
+                                <property name="locale">sq_XK</property>
+                            </structure>
+                            <property name="resultSetColumn">punch_out_user_time</property>
+                        </data>
+                    </cell>
+                    <cell id="2866">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <grid id="675">
+            <property name="marginTop">50pt</property>
+            <property name="textAlign">right</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="pageBreakBefore">auto</property>
+            <property name="pageBreakInside">avoid</property>
+            <property name="overflow">auto</property>
+            <method name="onRender"><![CDATA[if (BirtComp.lessThan(pageNumber, totalPage))]]></method>
+            <column id="624">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="552">
+                <property name="overflow">auto</property>
+                <cell id="625">
+                    <label id="553">
+                        <property name="textAlign">right</property>
+                        <text-property name="text">  Gjeneruar nga :</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="676">
+                <property name="overflow">auto</property>
+                <cell id="677">
+                    <data id="678">
+                        <property name="marginTop">10pt</property>
+                        <property name="marginRight">5pt</property>
+                        <property name="paddingRight">3pt</property>
+                        <property name="overflow">auto</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">p_user</property>
+                                <expression name="expression" type="javascript">params["p_user"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">p_user</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="679">
+                <property name="overflow">auto</property>
+                <cell id="680">
+                    <label id="681">
+                        <property name="marginTop">20pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">_____________________</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="682">
+                <property name="overflow">auto</property>
+                <cell id="683">
+                    <text id="684">
+                        <property name="marginTop">10pt</property>
+                        <property name="paddingLeft">3pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<VALUE-OF format="dd/MM/yyyy">new Date()</VALUE-OF>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

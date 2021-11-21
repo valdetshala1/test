@@ -1,0 +1,146 @@
+.ui-autocomplete-loading { background: white url('js/custom/ui-anim_basic_16x16.gif') right center no-repeat; }
+
+.ui-autocomplete {
+	width: auto;
+	max-height: 200px;
+	overflow-y: auto; /* prevent horizontal scrollbar */
+	overflow-x: hidden;
+}
+	/* IE 6 doesn't support max-height   * we use height instead, but this forces the menu to always be this tall   */
+* html .ui-autocomplete {
+	height: 200px;
+}
+
+ul.ui-autocomplete li.ui-autocomplete-category {
+	padding: 2px;
+
+ }
+ul.ui-autocomplete li.ui-menu-item {
+    padding-left:0px;
+}
+
+.ui-combobox {
+	position: relative;
+	display: inline-block;
+}
+.ui-combobox-toggle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-left: -1px;
+	padding: 0;
+	/* support: IE7 */
+	*height: 1.9em;
+	*top: 0.1em;
+}
+.ui-combobox-input {
+	margin: 0;
+	padding: 0.1em;
+}
+
+.ui-button { margin-left: -1px; }     
+.ui-button-icon-only .ui-button-text { padding: 0.30em; }      
+.ui-autocomplete-input { margin: 0; padding: 0.30em 0 0.30em 0.30em; }
+.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+
+.my-textfield {
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    outline: none;
+    cursor: text;
+} 
+	
+#sortable1,#sortable2,#sortable3 {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	margin-right: 1px;
+	background: #eee;
+	padding: 1px;
+	width: 143px;
+}
+
+#sortable1 li,#sortable2 li,#sortable3 li {
+	margin: 1px;
+	padding: 1px;
+	font-size: 1em;
+	width: 120px;
+}
+
+
+.selectStyle {
+   overflow: auto;
+   border: 1px silver solid;
+   height: 200px;
+   width: 250px;
+   overflow-x: scroll;
+   
+}
+
+.selectStyle select {
+   border: none;
+   overflow: auto;
+   height: 500px;
+   width: 500px;
+}
+
+.selectStyle select option{
+   border-bottom:0.1px solid gray;
+   padding: 2px;
+
+}
+
+.column {
+	width: 170px;
+	float: left;
+	padding-bottom: 100px;
+}
+
+.portlet {
+	margin: 0 1em 1em 0;
+}
+
+.portlet-header {
+	margin: 0.3em;
+	padding-bottom: 4px;
+	padding-left: 0.2em;
+}
+
+.portlet-header .ui-icon {
+	float: right;
+}
+
+.portlet-content {
+	padding: 0.4em;
+}
+
+.ui-sortable-placeholder {
+	border: 1px dotted black;
+	visibility: visible !important;
+	height: 50px !important;
+}
+
+.ui-sortable-placeholder * {
+	visibility: hidden;
+}
+.colLang
+{
+    float: left;
+    width: 16.66%;
+}
+.col-skill
+{
+    float: left;
+    width: 14.28%;
+}
+.coledit
+{
+    float: right;
+    width: 16.66%;
+}
+.rowlang{
+    height: auto;
+    overflow: auto;
+}

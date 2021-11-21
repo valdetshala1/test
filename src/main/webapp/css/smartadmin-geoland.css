@@ -1,0 +1,437 @@
+
+ #header {
+  height: 60px;
+  display: block;
+    BORDER-BOTTOM: 1PX;
+    /*background-color: #f78c40;*/
+     background-color: #f3f3f3;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #5a8354), color-stop(1, #8fb489));
+    background: -ms-linear-gradient(bottom, #5a8354, #8fb489);
+   background: -moz-linear-gradient(center bottom, #5a8354 0, #8fb489 100%);
+    background: -o-linear-gradient(#8fb489, #5a8354);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8fb489', endColorstr='#5a8354', GradientType=0);
+    border-color: #5a8354;
+    color: #e8efe7; */
+    /*
+    background-image: -moz-linear-gradient(top, #71a06a, #d67632);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#71a06a), to(#d67632));
+    background-image: -webkit-linear-gradient(top, #71a06a, #d67632);
+    background-image: -o-linear-gradient(top, #71a06a, #d67632);
+    background-image: linear-gradient(to bottom, #71a06a, #d67632);
+    */
+    -webkit-box-shadow: 1px 2px 4px #134431;
+       -moz-box-shadow: 1px 2px 4px #134431;
+            box-shadow: 1px 2px 4px #134431;
+}
+
+#header > div {
+  height: 60px;
+}
+
+.login-info {
+	height: 49px;
+}
+
+.login-info > span {
+  height: 28px;
+  padding: 10px 10px;
+}
+
+#logo-group {
+    width: 40%!important;
+    overflow:hidden;
+    /*border: 1px solid red;*/
+}
+	
+#logo {
+  float: left;
+  position: relative;
+  width: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
+  
+}
+
+#logo img {
+  width: 45px;
+  padding-left: 3px;
+  padding-top: 0px;
+  vertical-align: middle;
+}
+
+#logo-group #title {
+	width:70%;
+	float: left;
+	margin: 0px; 
+	float: left; 
+	
+	margin-left: 30px; 
+	margin-top: 1px; 
+	position: relative;
+}
+
+#logo-group1 {
+    width: 50%!important;
+}
+
+#logo1 {
+  float: left;
+  position: relative;
+  width: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
+  
+}
+
+#logo1 img {
+  width: 45px;
+  padding-left: 3px;
+  padding-top: 8px;
+  vertical-align: middle;
+}
+
+#logo-group1 #title1 {
+	float: left;
+	margin: 0px; 
+	float: left; 
+	vertical-align: middle;
+	padding-top: 8px;
+	margin-left: 30px; 
+	margin-top: 0px; 
+	position: relative;
+}
+
+#logo span{
+	font-weight: normal;
+	vertical-align: top;
+	padding-left: 10px;
+}
+
+#logo-group #activity{
+	float: right;
+}
+
+#ribbon {
+    min-height: 40px;
+    background: rgb(64, 64, 64);
+    padding: 0 13px;
+    position: relative;
+    
+}
+
+.page-footer{
+    background: url(../img/trees_footer.png);
+}
+
+aside {
+background: rgb(64, 64, 64);
+}
+
+.minifyme {
+      background: #26a69a;
+    color: #e8efe7;
+}
+aside .minifyme:hover {
+    background: #26a69a;
+    color: #e8efe7;
+
+}
+
+
+.select2-container {
+    margin: 0;
+    margin-left: 18px;
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+}
+
+/* JQGRID styles*/
+
+
+#grid_container_id table { border-collapse: separate;}
+
+.ui-grid{ width:100% !important; }
+
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-div>span { margin: 0 5px; font-size: 12px; }
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-div>span.fntawsm { margin: 0 5px; font-size: 12px; padding-left:2px;padding-right:2px;}
+
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-div>span { margin: 0 5px; font-size: 12px; }
+.ui-jqgrid-titlebar-close>span { margin: 0 3px; font-size: 16px; }
+.ui-jqgrid .ui-jqgrid-titlebar-close { text-decoration: none; }
+.ui-jqgrid .ui-pg-table .ui-pg-button>span { margin: 0 4px; font-size: 12px; }
+.ui-jqgrid .ui-icon-asc { height: auto; margin-top: 0; }
+.ui-jqgrid .ui-icon-asc, .ui-jqgrid .ui-icon-desc { height: auto; margin-top: 0; margin-left: 5px;}
+.ui-jqgrid .s-ico>.ui-state-disabled, .s-ico>.ui-state-disabled { padding: 0; }
+.ui-jqdialog .ui-jqdialog-titlebar-close { text-decoration: none; right: 0.2em !important}
+.ui-jqdialog .ui-jqdialog-titlebar-close>span { margin-top: 3px; margin-left: 5px;}
+.ui-jqdialog .EditTable .fm-button-icon-right { padding-left: 0em; padding-right: 0.5em; float:right;}
+.ui-jqdialog .EditTable .fm-button-icon-left { padding-left: 0em; float:left; }
+.ui-jqdialog .EditButton>.fm-button { display: block; width: auto; }
+.ui-jqdialog .EditButton>.fm-button>span { float: left; margin-left: 0.5em; margin-right: 0;}
+.ui-jqgrid .ui-jqdialog .fm-button>span { margin-left: 0.5em; margin-right: 0; }
+.ui-jqdialog>.ui-resizable-se { bottom: -3px; right: -3px}
+        
+.ui-jqgrid .ui-jqgrid-htable th div {
+    height:'100%';
+    overflow:hidden;
+    padding-right:4px;
+    padding-top:2px;
+    position:relative;
+    vertical-align:text-top;
+    white-space:normal !important;
+}
+
+.ui-jqgrid *,
+.ui-jqgrid *:before,
+.ui-jqgrid *:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.ui-jqgrid .ui-search-table .ui-search-input>input, .ui-jqgrid .ui-search-table .ui-search-input>select {
+     display: block;
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+.alert-new {
+    border-color: #0046B7;
+    color: #C5E1F9;
+    background: #CEDFFF	;
+}
+.alert {
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: #0046B7;
+    border-width: 0;
+    border-left-width: 5px;
+    padding: 10px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.dialog-header{
+    background: #5a8354;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #5a8354), color-stop(1, #8fb489));
+    background: -ms-linear-gradient(bottom, #5a8354, #8fb489);
+    background: -moz-linear-gradient(center bottom, #5a8354 0, #8fb489 100%);
+    background: -o-linear-gradient(#8fb489, #5a8354);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8fb489', endColorstr='#5a8354', GradientType=0);
+    border-color: #5a8354;
+    color: #e8efe7; 	
+}
+
+#dialog-header{
+    background: #5a8354;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #5a8354), color-stop(1, #8fb489));
+    background: -ms-linear-gradient(bottom, #5a8354, #8fb489);
+    background: -moz-linear-gradient(center bottom, #5a8354 0, #8fb489 100%);
+    background: -o-linear-gradient(#8fb489, #5a8354);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8fb489', endColorstr='#5a8354', GradientType=0);
+    border-color: #5a8354;
+    color: #e8efe7; 	
+}
+.status-label-rej{
+	background-color: #C5667B;	
+}
+.status-label-new {
+    background-color: #83ABCF;
+}
+.status-label-apr {
+    background-color: #90B990;
+}
+.tab-color{
+	color:black !important;
+}
+.smart-form input.input-xs-g {
+    height: 26px;
+    padding: 1px 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.smart-form legend {
+    padding-top: 5px;
+}
+.select2-container .select2-choice {
+    display: block;
+    height: 26px;
+    padding: 0px 0px 0px 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    line-height: 32px;
+    color: #444;
+    text-decoration: none;
+    background-clip: padding-box;
+    -moz-user-select: none;
+    background-color: #FFF;
+}
+.jarviswidget-color-green .nav-tabs li:not(.active) a, .jarviswidget-color-green>header>.jarviswidget-ctrls a {
+    color: black !important;
+}
+.bootstrapWizard li.active .step, .bootstrapWizard li.active.complete .step_0 {
+    background: #0091d9;
+    color: #fff;
+    font-weight: 700;
+    padding: 7px 13px;
+    font-size: 15px;
+    border-radius: 50%;
+    border: 3px solid #55606E;
+}
+.bootstrapWizard li {
+    display: block;
+    float: left;
+    width: 16.66%;
+    text-align: center;
+    padding-left: 0;
+}
+.radio-element{
+	width: 20px;
+	height: 20px;
+	
+}
+
+
+@media (max-width: 1000px) {
+	.import-type{
+		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 500px) {
+	.import-type{
+		margin-bottom: 80px;
+	}
+}
+
+.full-grid{
+	width:100% !important;
+}
+.act-popup-footer{
+	padding-right: 14px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+.act-popup-page{
+	padding-right: 2px;
+}
+.dhpet-label{
+	width:126px;
+}
+.div-border-top{
+	border-top: inherit!important;
+	border-top:2px solid  !important;
+    border-top-color:#CCC!important ;
+}
+.legend-gl{
+	padding-top: 1px!important;
+    padding-bottom: 1px!important;
+    width: 400px!important;
+    margin-bottom: 5px!important;
+    font-size: 14px!important;
+}
+.form-content-gl{
+	opacity: 1!important;
+	padding-top: 5px!important;
+	border-bottom-width: 5px!important;
+	width: 100%!important;
+}
+.article-grid-gl{
+	 /**height: 160px!important;*/
+	 margin-bottom:-25px;
+}
+.col-md-12-gl {
+    width: 94%!important;
+}
+.input-gl {
+	height: 27px!important;
+    padding-top: 3px!important;
+    padding-bottom: 3px!important;
+}
+.input-dropdown-gl {
+    border-top-width: 1px!important;
+    border-bottom-width: 1px!important;
+    border-right-width: 1px!important;
+    border-left-width: 1px!important;
+
+}
+.footer-gl{
+    margin-right: 0px;
+    padding-right: 14px;
+    width: 100%;
+}
+.barcode-gl{
+	width: 110px;
+    height: 110px;
+    top: 0px!important;
+    left:30px!important;
+}
+.widget-toolbar-gl{
+    display: inline-block;
+    float: center;
+    width: auto;
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    border-left: 1px solid rgba(0, 0, 0, .09);
+    cursor: pointer;
+    padding: 0 8px;
+    text-align: center;
+}
+.btn, a:link, button {
+    -webkit-tap-highlight-color: rgb(38, 166, 154) !important;
+}
+
+nav ul ul li>a:hover {
+    background-color: hsl(174, 63%, 40%) !important;
+    color: #fff !important;
+}
+
+
+.btn.btn-ribbon {
+	    background-image: linear-gradient(to bottom,rgb(38, 166, 154) , rgb(38, 166, 154) ) !important;
+}
+
+.nav ul li{
+	 background-color: hsl(174, 63%, 40%) !important;
+	 color: #fff !important;
+}
+
+nav ul li.active>a {
+	 background-color: hsl(174, 63%, 40%) !important;
+    color: #fff !important;
+}
+.page-footer {
+       background: rgb(64, 64, 64);
+}
+.jarviswidget-color-blueLight>header {
+    background: #404040 !important;
+    color: #2b363c !important;
+}
+.jarviswidget>header>h2 {
+    color: #cfcfcf !important;
+}
+
+.jarviswidget-color-blueLight>header {
+    background: #404040 !important;
+    color: #25a69a !important;
+}
+
+#map_trac {
+		clear: both;
+		position: relative;
+		width: 100%;
+		height: 700px;
+		border: 1px solid black;
+	}
+

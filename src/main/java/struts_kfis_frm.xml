@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <package name="kfis-frm" namespace="/" extends="kfis-default">
+    	<result-types> 
+			<result-type name="reportStream" default="false" class="com.geoland.kfis.web.action.print.DynamicStreamResult"/>
+		</result-types>
+
+		
+		<!-- START Annual Plan -->
+		<action name="Annualplan.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.AnnualPlanAction">
+		    <result name="board">module/frm/annualplan/annualplan_board.jsp</result>
+			<result name="page">module/frm/annualplan/annualplan_page.jsp</result>
+			<result name="form">module/frm/annualplan/annualplan_form.jsp</result>
+			<result name="grid">module/frm/annualplan/annualplan_grid.jsp</result>
+			<result name="statusPopup">module/frm/annualplan/annualplan_status_popup.jsp</result>
+			<result name="submitPopup">module/frm/annualplan/annualplan_submit_popup.jsp</result>
+			<result name="pvtReqPage">module/frm/annualplan/annualplan_pvt_req_page.jsp</result>
+			<result name="report_generator">module/frm/annualplan/report_generator.jsp</result>
+		</action>		
+		
+		<action name="AnnualplanSave" class="com.geoland.kfis.web.action.frm.annualplan.AnnualPlanSaveAction">
+			<result name="input">module/frm/annualplan/annualplan_form.jsp</result>
+			<result name="success">module/frm/annualplan/annualplan_form.jsp</result>
+		</action>
+		
+		<action name="AnnualplanStatusSave" class="com.geoland.kfis.web.action.frm.annualplan.AnnualPlanStatusAction">
+			<result name="input">module/frm/annualplan/annualplan_status_popup.jsp</result>
+			<result name="success">module/frm/annualplan/annualplan_status_popup.jsp</result>
+		</action>
+		
+		<action name="AnnualplanSubmit" class="com.geoland.kfis.web.action.frm.annualplan.AnnualPlanSubmitAction">
+			<result name="input">module/frm/annualplan/annualplan_submit_popup.jsp</result>
+			<result name="success">module/frm/annualplan/annualplan_submit_popup.jsp</result>
+		</action>
+		
+		<!-- END Annual Plan -->
+		<action name="Harvest.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.harvest.HarvestAction">
+			<result name="stand_plan_page">module/frm/annualplan/harvest/stand_plan_page.jsp</result>
+			<result name="form">module/frm/annualplan/harvest/stand_plan_form.jsp</result>
+			<result name="page">module/frm/annualplan/harvest/harvest_page.jsp</result>
+			<result name="grid">module/frm/annualplan/harvest/harvest_grid.jsp</result>
+		</action>
+				
+		<action name="HarvestSave" class="com.geoland.kfis.web.action.frm.annualplan.harvest.HarvestSaveAction">
+			<result name="input">module/frm/annualplan/harvest/stand_plan_form.jsp</result>
+			<result name="success">module/frm/annualplan/harvest/stand_plan_form.jsp</result>
+		</action>		
+
+		<action name="HarvestStatus" class="com.geoland.kfis.web.action.frm.annualplan.harvest.HarvestStatusAction"></action>
+				
+				
+				
+		<action name="HarvImplTrans.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.harvest.transport.HarvTransportAction">
+			<result name="popup">module/frm/annualplan/harvest/harv_trans_popup_form.jsp</result>
+			<result name="form">module/frm/annualplan/harvest/harv_trans_popup_form.jsp</result>
+		</action>
+				
+		<action name="HarvImplTransSave" class="com.geoland.kfis.web.action.frm.annualplan.harvest.transport.HarvTransportSaveAction">
+			<result name="input">module/frm/annualplan/harvest/harv_trans_popup_form.jsp</result>
+			<result name="success">module/frm/annualplan/harvest/harv_trans_popup_form.jsp</result>
+		</action>		
+		
+		<!-- START Compartment -->
+		<action name="Compartment.*" method="{1}" class="com.geoland.kfis.web.action.frm.compartment.CompartmentAction">
+			<result name="page">module/frm/compartment/compartment_page.jsp</result>
+			<result name="form">module/frm/compartment/compartment_form.jsp</result>
+			<result name="grid">module/frm/compartment/compartment_grid.jsp</result>
+			<result name="profile">module/frm/compartment/altitude_profile.jsp</result>
+			<result name="layersgrid">module/frm/compartment/layersgis_treegrid.jsp</result>
+			<result name="layersform">module/frm/compartment/layer_gis_form.jsp</result>
+			
+		</action>		
+		<action name="CompartmentSave" class="com.geoland.kfis.web.action.frm.compartment.CompartmentSaveAction">
+			<result name="input">module/frm/compartment/compartment_form.jsp</result>
+			<result name="success">module/frm/compartment/compartment_form.jsp</result>
+		</action>
+		<!-- END Compartment -->
+		
+		<action name="LayerGisSave" class="com.geoland.kfis.web.action.frm.layergis.LayerGisSaveAction">
+			<result name="input">module/frm/compartment/layer_gis_form.jsp</result>
+			<result name="success">module/frm/compartment/layer_gis_form.jsp</result>
+		</action>
+		
+		<!-- START Stand -->
+		<action name="Stand.*" method="{1}" class="com.geoland.kfis.web.action.frm.stand.StandAction">
+			<result name="page">module/frm/stand/stand_page.jsp</result>
+			<result name="form">module/frm/stand/stand_form.jsp</result>
+			<result name="plan_page">module/frm/annualplan/harvest/stand_plan_page.jsp</result>
+			<result name="plan_form">module/frm/annualplan/harvest/stand_plan_form.jsp</result>
+			<result name="grid">module/frm/stand/stand_grid.jsp</result>
+			<result name="report">module/frm/stand/search/stand_report.jsp</result>
+			<result name="search">module/frm/stand/search/stand_search_grid.jsp</result>
+			<result name="geomDetail">module/frm/stand/stand_geom_detail.jsp</result>
+		</action>
+				
+		<action name="StandSave" class="com.geoland.kfis.web.action.frm.stand.StandSaveAction">
+			<result name="input">module/frm/stand/stand_form.jsp</result>
+			<result name="success">module/frm/stand/stand_form.jsp</result>
+		</action>
+		
+		<action name="StandUnionSave" class="com.geoland.kfis.web.action.frm.stand.StandUnionSaveAction">
+			<result name="input">module/frm/compartment/compartment_map.jsp</result>
+			<result name="success">module/frm/compartment/compartment_map.jsp</result>
+		</action>
+		
+		<action name="StandTreatment.*" method="{1}" class="com.geoland.kfis.web.action.frm.stand.treatment.TreatmentAction">
+			<result name="grid">module/frm/stand/treatment/treatment_grid.jsp</result>
+			<result name="page">module/frm/stand/treatment/treatment_page.jsp</result>
+		</action>
+		<action name="StandBiodiversity.*" method="{1}" class="com.geoland.kfis.web.action.frm.stand.biodiversity.BiodiversityAction">
+			<result name="grid">module/frm/stand/biodiversity/biodiversity_grid.jsp</result>
+			<result name="page">module/frm/stand/biodiversity/biodiversity_page.jsp</result>
+		</action>
+		<action name="StandGrowth" class="com.geoland.kfis.web.action.frm.stand.growth.StandGrowthSaveAction"></action>
+		<!-- END Stand -->
+		
+		<!-- START FRMActivityDocGenerator-->
+		<action name="FRMActivityDoc" class="com.geoland.kfis.web.action.frm.annualplan.docgenerator.ActivityStatusDocGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END FRMDocGenerator-->
+		<!-- START TransportDocGenerator-->
+		<action name="TransportDoc" class="com.geoland.kfis.web.action.frm.annualplan.harvest.transport.TransportDocGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END FRMDocGenerator-->
+		
+		<!-- START PrivateReqDocGenerator-->
+		<action name="PrivateReqDocGenerator" class="com.geoland.kfis.web.action.frm.annualplan.privaterequest.docgenerator.PrivateReqDocGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END PrivateReqDocGenerator-->
+		
+		<!-- START InspectionDocGenerator-->
+		<action name="InspectionDoc" class="com.geoland.kfis.web.action.frm.inspectionoffice.docgenerator.InspectionDocGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END InspectionDocGenerator-->
+		
+		<!-- START Planting -->
+		<action name="Planting.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.planting.PlantingAction">
+			<result name="page">module/frm/annualplan/planting/planting_page.jsp</result>
+			<result name="form">module/frm/annualplan/planting/stand_planting_form.jsp</result>
+			<result name="plan_page">module/frm/annualplan/planting/stand_planting_page.jsp</result>
+			<result name="grid">module/frm/annualplan/planting/planting_grid.jsp</result>
+		</action>		
+		<action name="PlantingSave" class="com.geoland.kfis.web.action.frm.annualplan.planting.PlantingSaveAction">
+			<result name="input">module/frm/annualplan/planting/stand_planting_form.jsp</result>
+			<result name="success">module/frm/annualplan/planting/stand_planting_form.jsp</result>
+		</action>
+		
+		<action name="PlantingStatus" class="com.geoland.kfis.web.action.frm.annualplan.planting.PlantingStatusAction">
+			<result name="input">module/frm/annualplan/planting/planting_grid.jsp</result>
+			<result name="success">module/frm/annualplan/planting/planting_grid.jsp</result>
+		</action>
+		<!-- END Planting -->
+		
+		<!-- START Silviculture -->
+		<action name="Silviculture.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.siviculture.SilvicultureAction">
+			<result name="page">module/frm/annualplan/silviculture/silviculture_page.jsp</result>
+			<result name="form">module/frm/annualplan/silviculture/stand_silviculture_form.jsp</result>
+			<result name="plan_page">module/frm/annualplan/silviculture/stand_silviculture_page.jsp</result>
+			<result name="grid">module/frm/annualplan/silviculture/silviculture_grid.jsp</result>
+			<result name="slv_activity_popup">module/frm/annualplan/silviculture/silviculture_activity_popup.jsp</result>
+			
+		</action>		
+		<action name="SilvicultureSave" class="com.geoland.kfis.web.action.frm.annualplan.siviculture.SilvicultureSaveAction">
+			<result name="input">module/frm/annualplan/silviculture/stand_silviculture_page.jsp</result>
+			<result name="success">module/frm/annualplan/silviculture/stand_silviculture_page.jsp</result>
+		</action>
+		
+		<action name="SilvicultureStatus" class="com.geoland.kfis.web.action.frm.annualplan.siviculture.SilvicultureStatusAction"></action>
+		<!-- END Silviculture -->
+		
+		<!-- START Infrastructure -->
+		<action name="Infrastructure.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.infrastructure.RoadActivityAction">
+			<result name="page">module/frm/annualplan/infrastructure/infrastructure_page.jsp</result>
+			<result name="form">module/frm/annualplan/infrastructure/infrastructure_form.jsp</result>
+			<result name="grid">module/frm/annualplan/infrastructure/infrastructure_grid.jsp</result>
+		</action>		
+		<action name="InfrastructureSave" class="com.geoland.kfis.web.action.frm.annualplan.infrastructure.RoadActivitySaveAction">
+			<result name="input">module/frm/annualplan/infrastructure/infrastructure_form.jsp</result>
+			<result name="success">module/frm/annualplan/infrastructure/infrastructure_form.jsp</result>
+		</action>
+		<action name="InfrastructureStatus" class="com.geoland.kfis.web.action.frm.annualplan.infrastructure.RoadActivitySatatusAction"></action>
+		<!-- END Infrastructure -->
+		
+		<!-- START Annual Felling -->
+		<action name="Felling.*" method="{1}" class="com.geoland.kfis.web.action.frm.felling.FellingAction">
+			<result name="page">module/frm/felling/felling_page.jsp</result>
+			<result name="tab">module/frm/felling/felling_tab.jsp</result>
+			<result name="impl_form">module/frm/felling/implementation/felling_impl_form.jsp</result>
+			<result name="impl_grid">module/frm/felling/implementation/felling_impl_grid.jsp</result>
+			<result name="plan_form">module/frm/felling/plan/felling_plan_form.jsp</result>
+			<result name="plan_grid">module/frm/felling/plan/felling_plan_grid.jsp</result>
+			<result name="report">module/frm/felling/felling_report.jsp</result>
+		</action>
+
+		<action name="FellingImplSave" class="com.geoland.kfis.web.action.frm.felling.FellingSaveAction">
+			<result name="input">module/frm/felling/implementation/felling_impl_form.jsp</result>
+			<result name="success">module/frm/felling/implementation/felling_impl_form.jsp</result>
+		</action>
+			
+		<action name="FellingPlanSave" class="com.geoland.kfis.web.action.frm.felling.FellingSaveAction">
+			<result name="input">module/frm/felling/plan/felling_plan_form.jsp</result>
+			<result name="success">module/frm/felling/plan/felling_plan_form.jsp</result>
+		</action>		
+		<!-- END Annual Felling -->	
+		
+	<!-- START Annual Protection -->
+		<action name="Protection.*" method="{1}" class="com.geoland.kfis.web.action.frm.protection.ProtectionAction">
+			<result name="page">module/frm/protection/protection_page.jsp</result>
+			<result name="plan_form">module/frm/protection/plan/protection_plan_form.jsp</result>
+			<result name="plan_grid">module/frm/protection/plan/protection_plan_grid.jsp</result>
+			<result name="protection_tab">module/frm/protection/protection_tab.jsp</result>
+			<result name="impl_grid">module/frm/protection/protection_impl/protection_impl_grid.jsp</result>
+			<result name="impl_form">module/frm/protection/implementation/protection_impl_form.jsp</result>
+			<result name="report">module/frm/protection/protection_report.jsp</result>
+		</action>
+
+		<action name="ProtectionSave" class="com.geoland.kfis.web.action.frm.protection.ProtectionSaveAction">
+			<result name="input">module/frm/protection/plan/protection_plan_form.jsp</result>
+			<result name="success">module/frm/protection/plan/protection_plan_form.jsp</result>
+		</action>		
+		
+		<action name="ProtectionImplSave" class="com.geoland.kfis.web.action.frm.protection.ProtectionSaveAction">
+			<result name="input">module/frm/protection/implementation/protection_impl_form.jsp</result>
+			<result name="success">module/frm/protection/implementation/protection_impl_form.jsp</result>
+		</action>
+		<!-- END Annual Protection -->		
+		
+		<!-- START Annual Afforestation -->
+		<action name="Afforestation.*" method="{1}" class="com.geoland.kfis.web.action.frm.afforestation.AfforestationAction">
+			<result name="page">module/frm/afforestation/afforestation_page.jsp</result>
+			<result name="plan_form">module/frm/afforestation/plan/afforestation_plan_form.jsp</result>
+			<result name="plan_grid">module/frm/afforestation/plan/afforestation_plan_grid.jsp</result>
+			<result name="tab">module/frm/afforestation/afforestation_tab.jsp</result>
+			<result name="impl_form">module/frm/afforestation/implementation/afforestation_impl_form.jsp</result>
+			<result name="impl_grid">module/frm/afforestation/implementation/afforestation_impl_grid.jsp</result>
+		</action>
+
+		<action name="AfforestationSave" class="com.geoland.kfis.web.action.frm.afforestation.AfforestationSaveAction">
+			<result name="input">module/frm/afforestation/plan/afforestation_plan_form.jsp</result>
+			<result name="success">module/frm/afforestation/plan/afforestation_plan_form.jsp</result>
+		</action>	
+		
+		<action name="AfforestationImplSave" class="com.geoland.kfis.web.action.frm.afforestation.AfforestationSaveAction">
+			<result name="input">module/frm/afforestation/implementation/afforestation_impl_form.jsp</result>
+			<result name="success">module/frm/afforestation/implementation/afforestation_impl_form.jsp</result>
+		</action>	
+		<!-- END Annual Afforestation -->
+		
+		<!-- START Annual Management Unit -->
+		<action name="MgmtUnit.*" method="{1}" class="com.geoland.kfis.web.action.frm.mgmtunit.MgmtUnitAction">
+			<result name="page">module/frm/mgmtunit/mgmtunit_page.jsp</result>
+			<result name="plan_form">module/frm/mgmtunit/plan/mgmtunit_plan_form.jsp</result>
+			<result name="plan_grid">module/frm/mgmtunit/plan/mgmtunit_plan_grid.jsp</result>
+			<result name="impl_form">module/frm/mgmtunit/implementation/mgmtunit_impl_form.jsp</result>
+			<result name="impl_grid">module/frm/mgmtunit/implementation/mgmtunit_impl_grid.jsp</result>
+			<result name="tab">module/frm/mgmtunit/mgmtunit_tab.jsp</result>
+		</action>
+
+		<action name="MgmtUnitSave" class="com.geoland.kfis.web.action.frm.mgmtunit.MgmtUnitSaveAction">
+			<result name="input">module/frm/mgmtunit/plan/mgmtunit_plan_form.jsp</result>
+			<result name="success">module/frm/mgmtunit/plan/mgmtunit_plan_form.jsp</result>
+		</action>	
+		
+		<action name="MgmtUnitImplSave" class="com.geoland.kfis.web.action.frm.mgmtunit.MgmtUnitSaveAction">
+			<result name="input">module/frm/mgmtunit/implementation/mgmtunit_impl_form.jsp</result>
+			<result name="success">module/frm/mgmtunit/implementation/mgmtunit_impl_form.jsp</result>
+		</action>	
+		<!-- END Annual Management Unit -->
+		
+		<!-- START Annual Production by Wood Type -->
+		<action name="Production.*" method="{1}" class="com.geoland.kfis.web.action.frm.production.ProductionAction">
+			<result name="page">module/frm/prodwoodtype/production_page.jsp</result>
+			<result name="plan_form">module/frm/prodwoodtype/plan/production_plan_form.jsp</result>
+			<result name="plan_grid">module/frm/prodwoodtype/plan/production_plan_grid.jsp</result>
+			<result name="impl_form">module/frm/prodwoodtype/implementation/production_impl_form.jsp</result>
+			<result name="impl_grid">module/frm/prodwoodtype/implementation/production_impl_grid.jsp</result>
+			<result name="tab">module/frm/prodwoodtype/production_tab.jsp</result>
+		</action>
+
+		<action name="ProductionSave" class="com.geoland.kfis.web.action.frm.production.ProductionSaveAction">
+			<result name="input">module/frm/prodwoodtype/plan/production_plan_form.jsp</result>
+			<result name="success">module/frm/prodwoodtype/plan/production_plan_form.jsp</result>
+		</action>	
+		<action name="ProductionImplSave" class="com.geoland.kfis.web.action.frm.production.ProductionSaveAction">
+			<result name="input">module/frm/prodwoodtype/implementation/production_impl_form.jsp</result>
+			<result name="success">module/frm/prodwoodtype/implementation/production_impl_form.jsp</result>
+		</action>	
+		<!-- END Annual Production by Wood Type -->
+		
+		<!-- START Annual Felling degree by destination  -->
+		<action name="AnnuDegFelDest.*" method="{1}" class="com.geoland.kfis.web.action.frm.annudegfeldest.AnnuDegFelDestAction">
+			<result name="page">module/frm/annudegfeldest/annudegfeldest_page.jsp</result>
+			<result name="plan_form">module/frm/annudegfeldest/plan/annudegfeldest_plan_form.jsp</result>
+			<result name="plan_grid">module/frm/annudegfeldest/plan/annudegfeldest_plan_grid.jsp</result>
+			<result name="impl_form">module/frm/annudegfeldest/implementation/annudegfeldest_impl_form.jsp</result>
+			<result name="impl_grid">module/frm/annudegfeldest/implementation/annudegfeldest_impl_grid.jsp</result>
+			<result name="tab">module/frm/annudegfeldest/annudegfeldest_tab.jsp</result>
+		</action>
+
+		<action name="AnnuDegFelDestPlanSave" class="com.geoland.kfis.web.action.frm.annudegfeldest.AnnuDegFelDestSaveAction">
+			<result name="input">module/frm/annudegfeldest/plan/annudegfeldest_plan_form.jsp</result>
+			<result name="success">module/frm/annudegfeldest/plan/annudegfeldest_plan_form.jsp</result>
+		</action>	
+		
+		<action name="AnnuDegFelDestImplSave" class="com.geoland.kfis.web.action.frm.annudegfeldest.AnnuDegFelDestSaveAction">
+			<result name="input">module/frm/annudegfeldest/implementation/annudegfeldest_impl_form.jsp</result>
+			<result name="success">module/frm/annudegfeldest/implementation/annudegfeldest_impl_form.jsp</result>
+		</action>	
+		<!-- END Annual Felling degree by destination -->
+		
+		<!-- START Application for private forest  -->
+		<action name="AppPrivate.*" method="{1}" class="com.geoland.kfis.web.action.frm.appprivate.AppPrivateAction">
+			<result name="page">module/frm/appprivate/appprivate_page.jsp</result>
+			<result name="form_plan">module/frm/appprivate/plan/appprivate_plan_form.jsp</result>
+			<result name="grid_plan">module/frm/appprivate/plan/appprivate_plan_grid.jsp</result>
+			<result name="form_impl">module/frm/appprivate/implementation/appprivate_impl_form.jsp</result>
+			<result name="grid_impl">module/frm/appprivate/implementation/appprivate_impl_grid.jsp</result>
+			<result name="tab">module/frm/appprivate/appprivate_tab.jsp</result>
+			<result name="form_application">module/frm/appprivate/application/appprivate_application_form.jsp</result>
+			<result name="grid_application">module/frm/appprivate/application/appprivate_application_grid.jsp</result>
+			<result name="page_application">module/frm/appprivate/application/appprivate_application_page.jsp</result>
+			<result name="report">module/frm/appprivate/appprivate_report.jsp</result>
+		</action>
+
+		<action name="AppPrivateSave" class="com.geoland.kfis.web.action.frm.appprivate.AppPrivateSaveAction">
+			<result name="input">module/frm/appprivate/plan/appprivate_plan_form.jsp</result>
+			<result name="success">module/frm/appprivate/plan/appprivate_plan_form.jsp</result>
+		</action>	
+		<action name="AppPrivateImplSave" class="com.geoland.kfis.web.action.frm.appprivate.AppPrivateSaveAction">
+			<result name="input">module/frm/appprivate/implementation/appprivate_impl_form.jsp</result>
+			<result name="success">module/frm/appprivate/implementation/appprivate_impl_form.jsp</result>
+		</action>	
+		<action name="AppPrivateApplicationSave" class="com.geoland.kfis.web.action.frm.appprivate.AppPrivateSaveAction">
+			<result name="input">module/frm/appprivate/application/appprivate_application_form.jsp</result>
+			<result name="success">module/frm/appprivate/application/appprivate_application_form.jsp</result>
+		</action>
+		<!-- END Application for private forest -->
+		
+		<!-- START Application Status for private forest  -->
+		<action name="AppPrivateStatus.*" method="{1}" class="com.geoland.kfis.web.action.frm.appprivate.status.AppPrivateStatusAction">
+			<result name="form">module/frm/appprivate/status/appprivate_status_form.jsp</result>
+			<result name="grid">module/frm/appprivate/status/appprivate_status_grid.jsp</result>
+		</action>
+
+		<action name="AppPrivateStatusSave" class="com.geoland.kfis.web.action.frm.appprivate.status.AppPrivateStatusSaveAction">
+			<result name="input">module/frm/appprivate/status/appprivate_status_form.jsp</result>
+			<result name="success">module/frm/appprivate/status/appprivate_status_form.jsp</result>
+		</action>	
+		<!-- END Application Status for private forest -->
+		
+		<!-- START Forest Fire -->
+		<action name="ReportForestFire.*" method="{1}" class="com.geoland.kfis.web.action.frm.report.forestfires.ForestFireAction">
+			<result name="page">module/frm/report/forestfire/forestfire_page.jsp</result>
+			<result name="form">module/frm/report/forestfire/forestfire_form.jsp</result>
+			<result name="grid">module/frm/report/forestfire/forestfire_grid.jsp</result>
+		</action>
+		
+		<action name="ReportForestFireSave" class="com.geoland.kfis.web.action.frm.report.forestfires.ForestFireSaveAction">
+			<result name="input">module/frm/report/forestfire/forestfire_form.jsp</result>
+			<result name="success">module/frm/report/forestfire/forestfire_form.jsp</result>
+		</action>		
+		<!-- END Forest Fire -->
+		
+		<!-- START Confiscation  -->
+		<action name="Confiscation.*" method="{1}" class="com.geoland.kfis.web.action.frm.report.confiscation.ConfiscationAction">
+			<result name="page">module/frm/report/confiscation/confiscation_page.jsp</result>
+			<result name="form">module/frm/report/confiscation/confiscation_form.jsp</result>
+			<result name="grid">module/frm/report/confiscation/confiscation_page.jsp</result>
+		</action>
+
+		<action name="ConfiscationSave" class="com.geoland.kfis.web.action.frm.report.confiscation.ConfiscationSaveAction">
+			<result name="input">module/frm/report/confiscation/confiscation_form.jsp</result>
+			<result name="success">module/frm/report/confiscation/confiscation_form.jsp</result>
+		</action>		
+		<!-- END Confiscation  -->
+		
+		<!-- START Thinning  -->
+		<action name="Thinning.*" method="{1}" class="com.geoland.kfis.web.action.frm.report.thinning.ThinningAction">
+			<result name="page">module/frm/report/thinning/thinning_page.jsp</result>
+			<result name="form">module/frm/report/thinning/thinning_form.jsp</result>
+			<result name="grid">module/frm/report/thinning/thinning_grid.jsp</result>
+		</action>
+
+		<action name="ThinningSave" class="com.geoland.kfis.web.action.frm.report.thinning.ThinningSaveAction">
+			<result name="input">module/frm/report/thinning/thinning_form.jsp</result>
+			<result name="success">module/frm/report/thinning/thinning_form.jsp</result>
+		</action>		
+		<!-- END Thinning  -->
+		
+		<!-- START Damage  -->
+		<action name="Damage.*" method="{1}" class="com.geoland.kfis.web.action.frm.report.damage.DamageAction">
+			<result name="page">module/frm/report/damage/damage_page.jsp</result>
+			<result name="form">module/frm/report/damage/damage_form.jsp</result>
+			<result name="grid">module/frm/report/damage/damage_grid.jsp</result>
+		</action>
+
+		<action name="DamageSave" class="com.geoland.kfis.web.action.frm.report.damage.DamageSaveAction">
+			<result name="input">module/frm/report/damage/damage_form.jsp</result>
+			<result name="success">module/frm/report/damage/damage_form.jsp</result>
+		</action>		
+		<!-- END Damage  -->
+		
+		<!-- START WoodProduction  -->
+		<action name="WoodProduction.*" method="{1}" class="com.geoland.kfis.web.action.frm.report.woodproduction.WoodProductionAction">
+			<result name="page">module/frm/report/woodproduction/woodproduction_page.jsp</result>
+			<result name="form">module/frm/report/woodproduction/woodproduction_form.jsp</result>
+			<result name="grid">module/frm/report/woodproduction/woodproduction_grid.jsp</result>
+		</action>
+
+		<action name="WoodProductionSave" class="com.geoland.kfis.web.action.frm.report.woodproduction.WoodProductionSaveAction">
+			<result name="input">module/frm/report/woodproduction/woodproduction_form.jsp</result>
+			<result name="success">module/frm/report/woodproduction/woodproduction_form.jsp</result>
+		</action>		
+		<!-- END WoodProduction  -->
+		
+		<!-- START AnimalCapacity  -->
+		<action name="AnimalCapacity.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.animalcapacity.AnimalCapacityAction">
+			<result name="page">module/frm/dhpet/animalcapacity/animalcapacity_page.jsp</result>
+			<result name="form">module/frm/dhpet/animalcapacity/animalcapacity_form.jsp</result>
+			<result name="grid">module/frm/dhpet/animalcapacity/animalcapacity_grid.jsp</result>
+		</action>
+
+		<action name="AnimalCapacitySave" class="com.geoland.kfis.web.action.frm.dhpet.animalcapacity.AnimalCapacitySaveAction">
+			<result name="input">module/frm/dhpet/animalcapacity/animalcapacity_form.jsp</result>
+			<result name="success">module/frm/dhpet/animalcapacity/animalcapacity_form.jsp</result>
+		</action>		
+		<!-- END AnimalCapacity  -->
+		<!-- START DhpetAnnualPlan  -->
+		<action name="DhpetAnnualPlan.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.dhpetannualplan.DhpetAnnualPlanAction">
+			<result name="page">module/frm/dhpet/dhpetannualplan/dhpetannualplan_page.jsp</result>
+			<result name="form">module/frm/dhpet/dhpetannualplan/dhpetannualplan_form.jsp</result>
+			<result name="grid">module/frm/dhpet/dhpetannualplan/dhpetannualplan_grid.jsp</result>
+			<result name="activities">module/frm/dhpet/activities_page.jsp</result>
+			<result name="activitiesTab">module/frm/dhpet/activities_board_tabs.jsp</result>
+
+		</action>
+
+		<action name="DhpetAnnualPlanSave" class="com.geoland.kfis.web.action.frm.dhpet.dhpetannualplan.DhpetAnnualPlanSaveAction">
+			<result name="input">module/frm/dhpet/dhpetannualplan/dhpetannualplan_form.jsp</result>
+			<result name="success">module/frm/dhpet/dhpetannualplan/dhpetannualplan_form.jsp</result>
+		</action>		
+		<!-- END DhpetAnnualPlan  -->
+		<!-- START DhpetAnnualPlanDoc-->
+		<action name="DhpetAnnualPlanDoc" class="com.geoland.kfis.web.action.frm.dhpet.dhpetannualplan.DocGeneratorAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END DhpetAnnualPlanDoc-->
+		<!-- START Location  -->
+		<action name="Location.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.location.LocationAction">
+			<result name="page">module/frm/dhpet/location/location_page.jsp</result>
+			<result name="form">module/frm/dhpet/location/location_form.jsp</result>
+			<result name="grid">module/frm/dhpet/location/location_grid.jsp</result>
+			<result name="board">module/frm/dhpet/location/location_board.jsp</result>
+			<result name="map_page">module/frm/dhpet/map/map_page.jsp</result>
+			<result name="report_generator">module/frm/dhpet/location/report_generator.jsp</result>
+		</action>
+
+		<action name="LocationSave" class="com.geoland.kfis.web.action.frm.dhpet.location.LocationSaveAction">
+			<result name="input">module/frm/dhpet/location/location_form.jsp</result>
+			<result name="success">module/frm/dhpet/location/location_form.jsp</result>
+		</action>		
+		<!-- END Location  -->
+		
+		<!-- START Animal Location  -->
+		<action name="AnimalLocation.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.location.animal.AnimalLocationAction">
+			<result name="page">module/frm/dhpet/location/animal/animal_page.jsp</result>
+			<result name="form">module/frm/dhpet/location/animal/animal_form.jsp</result>
+			<result name="grid">module/frm/dhpet/location/animal/animal_grid.jsp</result>
+		</action>
+
+		<action name="AnimalLocationSave" class="com.geoland.kfis.web.action.frm.dhpet.location.animal.AnimalLocationSaveAction">
+			<result name="input">module/frm/dhpet/location/animal/animal_form.jsp</result>
+			<result name="success">module/frm/dhpet/location/animal/animal_form.jsp</result>
+		</action>		
+		<!-- END Animal Location  -->
+		
+		<!-- START HuntGroundEval  -->
+		<action name="HuntGroundEval.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.huntgroundeval.HuntGroundEvalAction">
+			<result name="page">module/frm/dhpet/huntgroundeval/huntgroundeval_page.jsp</result>
+			<result name="form">module/frm/dhpet/huntgroundeval/huntgroundeval_form.jsp</result>
+			<result name="grid">module/frm/dhpet/huntgroundeval/huntgroundeval_grid.jsp</result>
+		</action>
+
+		<action name="HuntGroundEvalSave" class="com.geoland.kfis.web.action.frm.dhpet.huntgroundeval.HuntGroundEvalSaveAction">
+			<result name="input">module/frm/dhpet/huntgroundeval/huntgroundeval_form.jsp</result>
+			<result name="success">module/frm/dhpet/huntgroundeval/huntgroundeval_form.jsp</result>
+		</action>		
+		<!-- END HuntGroundEval  -->
+		<!-- START AnimalRequest  -->
+		<action name="AnimalRequest.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.wildanimal.animalrequest.AnimalRequestAction">
+			<result name="page">module/frm/dhpet/wildanimal/animalrequest/animalrequest_page.jsp</result>
+			<result name="form">module/frm/dhpet/wildanimal/animalrequest/animalrequest_form.jsp</result>
+			<result name="grid">module/frm/dhpet/wildanimal/animalrequest/animalrequest_grid.jsp</result>
+		</action>
+		<action name="AnimalRequestSave" class="com.geoland.kfis.web.action.frm.dhpet.wildanimal.animalrequest.AnimalRequestSaveAction">
+			<result name="input">module/frm/dhpet/wildanimal/animalrequest/animalrequest_form.jsp</result>
+			<result name="success">module/frm/dhpet/wildanimal/animalrequest/animalrequest_form.jsp</result>
+		</action>		
+		<!-- END AnimalRequest  -->
+		<!-- START WildAnimal  -->
+		<action name="WildAnimal.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.wildanimal.WildAnimalAction">
+			<result name="page">module/frm/dhpet/wildanimal/wildanimal_page.jsp</result>
+			<result name="form">module/frm/dhpet/wildanimal/wildanimal_form.jsp</result>
+			<result name="grid">module/frm/dhpet/wildanimal/wildanimal_grid.jsp</result>
+			<result name="board">module/frm/dhpet/wildanimal/wildanimal_board.jsp</result>
+			<result name="popupReport">module/frm/dhpet/wildanimal/wildanimal_report_generator.jsp</result>
+
+			
+		</action>
+
+		<action name="WildAnimalSave" class="com.geoland.kfis.web.action.frm.dhpet.wildanimal.WildAnimalSaveAction">
+			<result name="input">module/frm/dhpet/wildanimal/wildanimal_form.jsp</result>
+			<result name="success">module/frm/dhpet/wildanimal/wildanimal_form.jsp</result>
+		</action>		
+		<!-- END WildAnimal  -->
+		<!-- START HunetdAnimal  -->
+		<action name="HuntedAnimal.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.huntedanimals.HuntedAnimalAction">
+			<result name="page">module/frm/dhpet/huntedanimals/huntedanimal_page.jsp</result>
+			<result name="form">module/frm/dhpet/huntedanimals/huntedanimal_form.jsp</result>
+			<result name="grid">module/frm/dhpet/huntedanimals/huntedanimal_grid.jsp</result>
+		</action>
+
+		<action name="HuntedAnimalSave" class="com.geoland.kfis.web.action.frm.dhpet.huntedanimals.HuntedAnimalSaveAction">
+			<result name="input">module/frm/dhpet/huntedanimals/huntedanimal_form.jsp</result>
+			<result name="success">module/frm/dhpet/huntedanimals/huntedanimal_form.jsp</result>
+		</action>		
+		<!-- END HunetdAnimal  -->
+		
+		<!-- START tourist_zone_geoms  -->
+		<action name="TouristZoneGeoms.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.touristzonegeoms.TouristZoneGeomsAction">
+			<result name="page">module/frm/dhpet/touristzonegeoms/tourist_zone_geoms_page.jsp</result>
+			<result name="form">module/frm/dhpet/touristzonegeoms/tourist_zone_geoms_form.jsp</result>
+			<result name="grid">module/frm/dhpet/touristzonegeoms/tourist_zone_geoms_grid.jsp</result>
+		</action>
+
+		<action name="TouristZoneGeomsSave" class="com.geoland.kfis.web.action.frm.dhpet.touristzonegeoms.TouristZoneGeomsSaveAction">
+			<result name="input">module/frm/dhpet/touristzonegeoms/tourist_zone_geoms_form.jsp</result>
+			<result name="success">module/frm/dhpet/touristzonegeoms/tourist_zone_geoms_form.jsp</result>
+		</action>		
+		<!-- END tourist_zone_geoms  -->
+		
+		<!-- START SeedActivity  -->
+		<action name="SeedActivity.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.seedling.SeedActivityAction">
+			<result name="page">module/frm/annualplan/seedling/seedactivity_page.jsp</result>
+			<result name="form">module/frm/annualplan/seedling/seedactivity_form.jsp</result>
+			<result name="grid">module/frm/annualplan/seedling/seedactivity_grid.jsp</result>
+			<result name="plan_page">module/frm/annualplan/seedling/seedactivity_plan_page.jsp</result>
+		</action>
+
+		<action name="SeedActivitySave" class="com.geoland.kfis.web.action.frm.annualplan.seedling.SeedActivitySaveAction">
+			<result name="input">module/frm/annualplan/seedling/seedactivity_form.jsp</result>
+			<result name="success">module/frm/annualplan/seedling/seedactivity_form.jsp</result>
+		</action>	
+		
+		<action name="SeedActivityStatus" class="com.geoland.kfis.web.action.frm.annualplan.seedling.SeedActivityStatusAction">
+			<result name="input">module/frm/annualplan/seedling/seedactivity_grid.jsp</result>
+			<result name="success">module/frm/annualplan/seedling/seedactivity_grid.jsp</result>
+		</action>
+			
+		<!-- END SeedActivity  -->
+		
+		<!-- START Protection  -->
+		<action name="Protection.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.protection.ProtectionActivityAction">
+			<result name="page">module/frm/annualplan/protection/protection_page.jsp</result>
+			<result name="form">module/frm/annualplan/protection/protection_form.jsp</result>
+			<result name="grid">module/frm/annualplan/protection/protection_grid.jsp</result>
+		</action>
+		<action name="ProtectionSave" class="com.geoland.kfis.web.action.frm.annualplan.protection.ProtectionActivitySaveAction">
+			<result name="input">module/frm/annualplan/protection/protection_form.jsp</result>
+			<result name="success">module/frm/annualplan/protection/protection_form.jsp</result>
+		</action>		
+		
+		<action name="ProtectionStatus" class="com.geoland.kfis.web.action.frm.annualplan.protection.ProtectionActivityStatusAction"></action>
+		<!-- END Protection  -->
+		
+		<!-- Start PrintAction -->
+		<action name="FrmPrint.*" method="{1}" class="com.geoland.kfis.web.action.frm.print.PrintAction">
+			<result name="success" type="reportStream"></result>
+		</action>
+		<!-- End PrintAction -->
+		
+		<!-- START PrivateRequest -->
+		
+		<action name="PrivateRequest.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.privaterequest.PrivateRequestAction">
+			<result name="form">module/frm/annualplan/private/private_request_form.jsp</result>
+			<result name="page">module/frm/annualplan/private/private_request_page.jsp</result>
+			<result name="grid">module/frm/annualplan/private/private_request_grid.jsp</result>
+			<result name="control">module/frm/annualplan/private/private_request_control.jsp</result>
+			<result name="paymentPopup">module/frm/annualplan/private/private_request_payment.jsp</result>
+			<result name="submitPopup">module/frm/annualplan/private/private_request_submit_popup.jsp</result>
+			<result name="transportPopup">module/frm/annualplan/private/private_request_transport.jsp</result>
+			<result name="parcelDetailPopup">module/frm/annualplan/private/detail/private_request_detail_page.jsp</result>
+		</action>
+		<action name="PrivateRequestSave" class="com.geoland.kfis.web.action.frm.annualplan.privaterequest.PrivateRequestSaveAction">
+			<result name="input">module/frm/annualplan/private/private_request_form.jsp</result>
+			<result name="success">module/frm/annualplan/private/private_request_form.jsp</result>
+		</action>
+		<action name="PrivateRequestControlSave" class="com.geoland.kfis.web.action.frm.annualplan.privaterequest.PrivateRequestControlAction">
+			<result name="input">module/frm/annualplan/private/private_request_control.jsp</result>
+			<result name="success">module/frm/annualplan/private/private_request_control.jsp</result>
+		</action>
+		<action name="PrivateRequestPaymentSave" class="com.geoland.kfis.web.action.frm.annualplan.privaterequest.PrivateRequestPaymentAction">
+			<result name="input">module/frm/annualplan/private/private_request_payment.jsp</result>
+			<result name="success">module/frm/annualplan/private/private_request_payment.jsp</result>
+		</action>
+		<action name="PrivateRequestTransportSave" class="com.geoland.kfis.web.action.frm.annualplan.privaterequest.PrivateRequestTransportAction">
+			<result name="input">module/frm/annualplan/private/private_request_transport.jsp</result>
+			<result name="success">module/frm/annualplan/private/private_request_transport.jsp</result>
+		</action>
+		
+		
+		
+		<action name="PrivateRequestStatus" class="com.geoland.kfis.web.action.frm.annualplan.privaterequest.PrivateRequestStatusAction">
+			<result name="input">module/frm/annualplan/private/private_request_submit_popup.jsp</result>
+			<result name="success">module/frm/annualplan/private/private_request_submit_popup.jsp</result>
+		</action>
+		<action name="PrivateReqDoc" class="com.geoland.kfis.web.action.frm.annualplan.privaterequest.PrivateRequestDocGenerator"></action>
+		<!-- END PrivateRequest -->
+				
+		<!-- START PrivateRequestImpl -->
+		<action name="PrivateRequestImpl.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.privaterequestimpl.PrivateRequestImplAction">
+			<result name="form">module/frm/annualplan/privateimpl/private_request_impl_form.jsp</result>
+			<result name="page">module/frm/annualplan/privateimpl/private_request_impl_page.jsp</result>
+			<result name="grid">module/frm/annualplan/privateimpl/private_request_impl_grid.jsp</result>
+			<result name="marking">module/frm/annualplan/privateimpl/private_request_marking_form.jsp</result>
+		</action>
+		<action name="PrivateRequestImplSave" class="com.geoland.kfis.web.action.frm.annualplan.privaterequestimpl.PrivateRequestImplSaveAction">
+			<result name="input">module/frm/annualplan/privateimpl/private_request_marking_form.jsp</result>
+			<result name="success">module/frm/annualplan/privateimpl/private_request_marking_form.jsp</result>
+		</action>
+		<!-- END PrivateRequest -->
+		
+		
+		<!-- START Private Activity-->
+		<action name="PrivateActivity.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.privateplan.PrivateAction">
+			<result name="page">module/frm/annualplan/privateplan/private_page.jsp</result>
+			<result name="form">module/frm/annualplan/privateplan/private_form.jsp</result>
+			<result name="grid">module/frm/annualplan/privateplan/private_grid.jsp</result>
+			<result name="docGrid">module/frm/annualplan/privateplan/private_doc_grid.jsp</result>
+		</action>
+		<action name="PrivateActivitySave" class="com.geoland.kfis.web.action.frm.annualplan.privateplan.PrivateSaveAction">
+			<result name="input">module/frm/annualplan/privateplan/private_form.jsp</result>
+			<result name="success">module/frm/annualplan/privateplan/private_form.jsp</result>
+		</action>	
+		
+		<action name="PrivateStatus" class="com.geoland.kfis.web.action.frm.annualplan.privateplan.PrivateStatusAction">
+			<result name="input">module/frm/annualplan/privateplan/private_form.jsp</result>
+			<result name="success">module/frm/annualplan/privateplan/private_form.jsp</result>
+		</action>
+		<!-- END Private Activity-->	
+		
+		<!-- START TreeSpecies-->
+		<action name="TreeSpecies.*" method="{1}" class="com.geoland.kfis.web.action.frm.treespecies.TreeSpeciesAction">
+			<result name="form">module/frm/treespecies/treespecies_form.jsp</result>
+			<result name="grid">module/frm/treespecies/treespecies_grid.jsp</result>
+			<result name="page">module/frm/treespecies/treespecies_page.jsp</result>
+		</action>
+		<action name="TreeSpeciesSave" class="com.geoland.kfis.web.action.frm.treespecies.TreeSpeciesSaveAction">
+			<result name="input">module/frm/treespecies/treespecies_form.jsp</result>
+			<result name="success">module/frm/treespecies/treespecies_form.jsp</result>
+		</action>
+		<!-- END TreeSpecies-->	
+		<!-- START SeedInventory-->
+		<action name="SeedInventory.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.seedling.inventory.SeedInventoryAction">
+			<result name="form">module/frm/annualplan/seedling/inventory/seed_inventory_form.jsp</result>
+			<result name="grid">module/frm/annualplan/seedling/inventory/seed_inventory_grid.jsp</result>
+			<result name="page">module/frm/annualplan/seedling/inventory/seed_inventory_page.jsp</result>
+			<result name="report_generator">module/frm/annualplan/seedling/inventory/report_generator.jsp</result>
+		</action>
+		<action name="SeedInventorySave" class="com.geoland.kfis.web.action.frm.annualplan.seedling.inventory.SeedInventorySaveAction">
+			<result name="input">module/frm/annualplan/seedling/inventory/seed_inventory_form.jsp</result>
+			<result name="success">module/frm/annualplan/seedling/inventory/seed_inventory_form.jsp</result>
+		</action>
+		<!-- END SeedInventory-->	
+		
+		<!-- START Inspection-->
+		<action name="Inspection.*" method="{1}" class="com.geoland.kfis.web.action.frm.inspectionoffice.inspection.InspectionAction">
+			<result name="form">module/frm/inspectionoffice/inspection/inspection_form.jsp</result>
+			<result name="grid">module/frm/inspectionoffice/inspection/inspection_grid.jsp</result>
+			<result name="page">module/frm/inspectionoffice/inspection/inspection_page.jsp</result>
+			<result name="docGrid">module/frm/inspectionoffice/inspection/inspection_doc_grid.jsp</result>
+			<result name="report_generator">module/frm/inspectionoffice/report_generator.jsp</result>
+		</action>
+		<action name="InspectionSave" class="com.geoland.kfis.web.action.frm.inspectionoffice.inspection.InspectionSaveAction">
+			<result name="input">module/frm/inspectionoffice/inspection/inspection_form.jsp</result>
+			<result name="success">module/frm/inspectionoffice/inspection/inspection_form.jsp</result>
+		</action>
+		<!-- END Inspection-->	
+		<!-- START ActionType-->
+		<action name="ActionType.*" method="{1}" class="com.geoland.kfis.web.action.frm.inspectionoffice.actiontype.ActionTypeAction">
+			<result name="form">module/frm/inspectionoffice/actiontype/actiontype_form.jsp</result>
+			<result name="grid">module/frm/inspectionoffice/actiontype/actiontype_grid.jsp</result>
+			<result name="page">module/frm/inspectionoffice/actiontype/actiontype_page.jsp</result>
+		</action>
+		<action name="ActionTypeSave" class="com.geoland.kfis.web.action.frm.inspectionoffice.actiontype.ActionTypeSaveAction">
+			<result name="input">module/frm/inspectionoffice/actiontype/actiontype_form.jsp</result>
+			<result name="success">module/frm/inspectionoffice/actiontype/actiontype_form.jsp</result>
+		</action>
+		<!-- END ActionType-->	
+		
+		<!-- START Fire Report-->
+		<action name="FireReport.*" method="{1}" class="com.geoland.kfis.web.action.frm.fire.FireReportAction">
+			<result name="form">module/frm/fire/fire_form.jsp</result>
+			<result name="grid">module/frm/fire/fire_grid.jsp</result>
+			<result name="details_grid">module/frm/fire/fire_details_grid.jsp</result>
+			<result name="page">module/frm/fire/fire_page.jsp</result>
+			<result name="fireMapAction">module/frm/fire/fire_map_page.jsp</result>
+			<result name="report_generator">module/frm/fire/report_generator.jsp</result>
+		</action>
+		<action name="FireReportSave" class="com.geoland.kfis.web.action.frm.fire.FireReportSaveAction">
+			<result name="input">module/frm/fire/fire_form.jsp</result>
+			<result name="success">module/frm/fire/fire_form.jsp</result>
+		</action>
+		<!-- END Fire Report-->
+		<!-- START Fire Report Doc -->
+		<action name="FireReportDoc" class="com.geoland.kfis.web.action.frm.fire.FireReportDocGeneratorAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END Fire Report Doc -->
+		
+		<!-- START ManagementUnit -->
+		<action name="ManagementUnit.*" method="{1}" class="com.geoland.kfis.web.action.frm.managementUnit.ManagementUnitAction">
+			<result name="form">module/frm/managementunit/management_unit_form.jsp</result>
+			<result name="mup_form">module/frm/managementunit/m_unit_period_form.jsp</result>
+			<result name="grid">module/frm/managementunit/management_unit_grid.jsp</result>
+			<result name="page">module/frm/managementunit/management_unit_page.jsp</result>
+		</action>
+		<action name="ManagementUnitSave" class="com.geoland.kfis.web.action.frm.managementUnit.ManagementUnitSaveAction">
+			<result name="input">module/frm/managementunit/management_unit_form.jsp</result>
+			<result name="success">module/frm/managementunit/management_unit_form.jsp</result>
+		</action>
+		
+		<action name="MUnitPeriodSave" class="com.geoland.kfis.web.action.frm.managementUnit.MUnitPeriodSaveAction">
+			<result name="input">module/frm/managementunit/m_unit_period_form.jsp</result>
+			<result name="success">module/frm/managementunit/m_unit_period_form.jsp</result>
+		</action>
+		<!-- END ManagementUnit -->
+		
+		<!-- START ForestAreaLease -->
+		<action name="Request.*" method="{1}" class="com.geoland.kfis.web.action.fal.request.RequestAction">
+			<result name="form">module/fal/request/request_form.jsp</result>
+			<result name="grid">module/fal/request/request_list.jsp</result>
+			<result name="page">module/fal/map/map_page.jsp</result>
+			<result name="appRejPopup">module/fal/request/approve_reject_popup.jsp</result>
+			<result name="statusReport">module/fal/request/report_generator_form.jsp</result>
+		</action>
+		
+		<action name="RequestSave" class="com.geoland.kfis.web.action.fal.request.RequestSaveAction">
+			<result name="input">module/fal/request/request_form.jsp</result>
+			<result name="success">module/fal/request/request_form.jsp</result>
+		</action>
+		
+		<action name="ApproveRejectSave" class="com.geoland.kfis.web.action.fal.request.ApproveRejectSaveAvtion">
+			<result name="input">module/fal/request/request_form.jsp</result>
+			<result name="success">module/fal/request/request_form.jsp</result>
+		</action>
+		
+		<action name="RequestDocGenerator" class="com.geoland.kfis.web.action.fal.request.docgenerator.RequestDocGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		
+		<action name="RequestType.*" method="{1}" class="com.geoland.kfis.web.action.fal.requesttype.RequestTypeAction">
+			<result name="form">module/fal/requesttype/request_type_form.jsp</result>
+			<result name="grid">module/fal/requesttype/request_type_grid.jsp</result>
+			<result name="page">module/fal/requesttype/request_type_page.jsp</result>
+		</action>
+		
+		<action name="RequestTypeSave" class="com.geoland.kfis.web.action.fal.requesttype.RequestTypeSaveAction">
+			<result name="input">module/fal/requesttype/request_type_form.jsp</result>
+			<result name="success">module/fal/requesttype/request_type_form.jsp</result>
+		</action>
+		<!-- END ForestAreaLease -->
+		
+		<!-- START BirtReportGen-->
+		<action name="BirtReportGen" class="com.geoland.kfis.web.birt.BirtReportGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END BirtReportGen-->
+		
+		<!-- START DhpetPlanPeriod -->
+		<action name="DhpetPlanPeriod.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.periodplan.PeriodPlanAction">
+			<result name="form">module/frm/dhpet/periodplan/planperiod_form.jsp</result>
+			<result name="grid">module/frm/dhpet/periodplan/planperiod_grid.jsp</result>
+			<result name="page">module/frm/dhpet/periodplan/planperiod_page.jsp</result>
+		</action>
+		<action name="DhpetPlanPeriodSave" class="com.geoland.kfis.web.action.frm.dhpet.periodplan.PeriodPlanSaveAction">
+			<result name="input">module/frm/dhpet/periodplan/planperiod_form.jsp</result>
+			<result name="success">module/frm/dhpet/periodplan/planperiod_form.jsp</result>
+		</action>
+		<!-- END DhpetPlanPeriod-->
+		<!-- START DhpetPlanPeriodDoc-->
+		<action name="DhpetPlanPeriodDoc" class="com.geoland.kfis.web.action.frm.dhpet.periodplan.DocGeneratorAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END DhpetPlanPeriodDoc-->
+		
+		<!-- START DhpetAnimalLocationDetail -->
+		<action name="DhpetAnimalLocationDetail.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.location.animal.details.AnimalLocationDetailAction">
+			<result name="form">module/frm/dhpet/location/animal/detail/detail_form.jsp</result>
+			<result name="grid">module/frm/dhpet/location/animal/detail/detail_grid.jsp</result>
+			<result name="page">module/frm/dhpet/location/animal/detail/detail_page.jsp</result>
+		</action>
+		<action name="DhpetAnimalLocationDetailSave" class="com.geoland.kfis.web.action.frm.dhpet.location.animal.details.AnimalLocationDetailSaveAction">
+			<result name="input">module/frm/dhpet/location/animal/detail/detail_form.jsp</result>
+			<result name="success">module/frm/dhpet/location/animal/detail/detail_form.jsp</result>
+		</action>
+		<!-- END DhpetAnimalLocationDetail-->
+		
+		<!-- START DhpetHuntedAnimalDetail -->
+		<action name="DhpetHuntedAnimalDetail.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.huntedanimals.details.HuntedAnimalDetailAction">
+			<result name="form">module/frm/dhpet/huntedanimals/detail/detail_form.jsp</result>
+			<result name="grid">module/frm/dhpet/huntedanimals/detail/detail_grid.jsp</result>
+			<result name="page">module/frm/dhpet/huntedanimals/detail/detail_page.jsp</result>
+		</action>
+		<action name="DhpetHuntedAnimalDetailSave" class="com.geoland.kfis.web.action.frm.dhpet.huntedanimals.details.HuntedAnimalDetailSaveAction">
+			<result name="input">module/frm/dhpet/huntedanimals/detail/detail_form.jsp</result>
+			<result name="success">module/frm/dhpet/huntedanimals/detail/detail_form.jsp</result>
+		</action>
+		<!-- END DhpetHuntedAnimalDetail-->
+		
+		<!-- START QRCodeGenerator-->
+		<action name="QRCode" class="com.geoland.kfis.web.action.frm.annualplan.QRCodeGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END QRCodeGenerator-->
+		
+		<!-- START TouristPurpose-->
+		<action name="TouristPurpose.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.tourism.purpose.TouristPurposeAction">
+			<result name="form">module/frm/dhpet/tourism/purpose/purpose_form.jsp</result>
+			<result name="grid">module/frm/dhpet/tourism/purpose/purpose_grid.jsp</result>
+			<result name="page">module/frm/dhpet/tourism/purpose/purpose_page.jsp</result>
+		</action>
+		
+		<action name="TouristPurposeSave" class="com.geoland.kfis.web.action.frm.dhpet.tourism.purpose.TouristPurposeSaveAction">
+			<result name="input">module/frm/dhpet/tourism/purpose/purpose_form.jsp</result>
+			<result name="success">module/frm/dhpet/tourism/purpose/purpose_form.jsp</result>
+		</action>
+		<!-- END TouristPurpose -->
+		
+		<!-- START TouristRegister-->
+		<action name="TouristRegister.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.tourism.register.TouristRegisterAction">
+			<result name="form">module/frm/dhpet/tourism/register/register_form.jsp</result>
+			<result name="grid">module/frm/dhpet/tourism/register/register_grid.jsp</result>
+			<result name="page">module/frm/dhpet/tourism/register/register_page.jsp</result>
+		</action>
+		
+		<action name="TouristRegisterSave" class="com.geoland.kfis.web.action.frm.dhpet.tourism.register.TouristRegisterSaveAction">
+			<result name="input">module/frm/dhpet/tourism/register/register_form.jsp</result>
+			<result name="success">module/frm/dhpet/tourism/register/register_form.jsp</result>
+		</action>
+		<!-- END TouristRegister -->
+		
+	   <!-- START ActivityDomain -->
+		<action name="ActivityDomain.*" method="{1}" class="com.geoland.kfis.web.action.frm.annualplan.activitydomain.ActivityDomainAction">
+			<result name="form">module/frm/annualplan/activitydomain/activitydomain_form.jsp</result>
+			<result name="grid">module/frm/annualplan/activitydomain/activitydomain_grid.jsp</result>
+			<result name="page">module/frm/annualplan/activitydomain/activitydomain_page.jsp</result>
+		</action>
+		
+		<action name="ActivityDomainSave" class="com.geoland.kfis.web.action.frm.annualplan.activitydomain.ActivityDomainSaveAction">
+			<result name="input">module/frm/annualplan/activitydomain/activitydomain_form.jsp</result>
+			<result name="success">module/frm/annualplan/activitydomain/activitydomain_form.jsp</result>
+		</action>
+		<!-- END ActivityDomain -->
+	   <!-- START Confiscation -->
+		<action name="Confiscation.*" method="{1}" class="com.geoland.kfis.web.action.frm.confiscation.ConfiscationAction">
+			<result name="form">module/frm/confiscation/confiscation_form.jsp</result>
+			<result name="grid">module/frm/confiscation/confiscation_grid.jsp</result>
+			<result name="page">module/frm/confiscation/confiscation_page.jsp</result>
+			<result name="reportGenerator">module/frm/confiscation/report_generator.jsp</result>
+		</action>
+		
+		<action name="ConfiscationSave" class="com.geoland.kfis.web.action.frm.confiscation.ConfiscationSaveAction">
+			<result name="input">module/frm/confiscation/confiscation_form.jsp</result>
+			<result name="success">module/frm/confiscation/confiscation_form.jsp</result>
+		</action>
+		<!-- END Confiscation -->
+		
+	<!--START mapsearch -->
+		<action name="SearchMapAction.*" method="{1}" class="com.geoland.kfis.web.action.frm.searchmap.SearchMapAction">
+			<result name="form">module/frm/mapsearch/map_search_form.jsp</result>
+			<result name="search_map">module/frm/mapsearch/search_map.jsp</result>
+			<result name="page">module/frm/mapsearch/map_search_page.jsp</result>
+			<result name="parcel_detail">module/frm/mapsearch/parcel_forest_owner_detail.jsp</result>
+			
+		</action>
+	<!-- END mapsearch -->
+		
+    </package>
+</struts>

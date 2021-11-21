@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.0.v20120611 Build &lt;4.2.0.v20120612-1721></property>
+    <simple-property-list name="includeResource">
+        <value>src/main/java/globalMessages_al</value>
+        <value>src/main/java/globalMessages_en</value>
+        <value>src/main/java/globalMessages_sr</value>
+    </simple-property-list>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="p_plan_period_id" id="10">
+            <text-property name="promptText">Plan Period Id</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_user" id="402">
+            <text-property name="promptText">UserID</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="s_year" id="434">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="e_year" id="435">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_demo_server_profile" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.168.0.30:5432/kfis_demo?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_demo_server_profile</property>
+            <property name="OdaConnProfileStorePath">target/classes/profiles/kfis_demo_profile</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_gl_server_profile" id="8">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.168.0.30:5433/kfis?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="OdaConnProfileName">kfis_gl_server_profile</property>
+            <property name="OdaConnProfileStorePath">target/classes/profiles/kfis_gl_server_profile</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_localhost_profile" id="431">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/kfis?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_localhost_profile</property>
+            <property name="OdaConnProfileStorePath">target/classes/profiles/kfis_localhost_profile</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_gis_profile" id="432">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/kfis_gis?autoReconnect=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis_gis</property>
+            <property name="OdaConnProfileName">kfis_gis_profile</property>
+            <property name="OdaConnProfileStorePath">src/main/resources/profiles/kfis_gis_localhost_profile</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="433">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">period</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">period</text-property>
+                    <text-property name="heading">period</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sub_ind_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">sub_ind_id</text-property>
+                    <text-property name="heading">sub_ind_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">year</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">year</text-property>
+                    <text-property name="heading">year</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">target</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">target</text-property>
+                    <text-property name="heading">target</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">actual</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">actual</text-property>
+                    <text-property name="heading">actual</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">eval_year_perf</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">eval_year_perf</text-property>
+                    <text-property name="heading">eval_year_perf</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sub_project_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">sub_project_id</text-property>
+                    <text-property name="heading">sub_project_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">plan_period_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">plan_period_id</text-property>
+                    <text-property name="heading">plan_period_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">start_year</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">start_year</text-property>
+                    <text-property name="heading">start_year</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">end_year</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">end_year</text-property>
+                    <text-property name="heading">end_year</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">results</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">results</text-property>
+                    <text-property name="heading">results</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pip_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">pip_code</text-property>
+                    <text-property name="heading">pip_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">review_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">review_time</text-property>
+                    <text-property name="heading">review_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cost</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cost</text-property>
+                    <text-property name="heading">cost</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">fully_financed</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">fully_financed</text-property>
+                    <text-property name="heading">fully_financed</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">in_negotiations_finance</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">in_negotiations_finance</text-property>
+                    <text-property name="heading">in_negotiations_finance</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">note</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">note</text-property>
+                    <text-property name="heading">note</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">created_by</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">created_by</text-property>
+                    <text-property name="heading">created_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">created_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">created_date</text-property>
+                    <text-property name="heading">created_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PIP code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PIP code</text-property>
+                    <text-property name="heading">PIP code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Pillar</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Pillar</text-property>
+                    <text-property name="heading">Pillar</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Strategy code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Strategy code</text-property>
+                    <text-property name="heading">Strategy code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Project Name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Project Name</text-property>
+                    <text-property name="heading">Project Name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Sub Project Name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Sub Project Name</text-property>
+                    <text-property name="heading">Sub Project Name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Indicator Name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Indicator Name</text-property>
+                    <text-property name="heading">Indicator Name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sub indicator name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">sub indicator name</text-property>
+                    <text-property name="heading">sub indicator name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">njesia</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">njesia</text-property>
+                    <text-property name="heading">njesia</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sub_indic_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">sub_indic_id</text-property>
+                    <text-property name="heading">sub_indic_id</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">s_year</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_4</property>
+                    <property name="paramName">e_year</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_5</property>
+                    <property name="paramName">p_plan_period_id</property>
+                    <property name="dataType">string</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_4_1</property>
+                    <property name="paramName">s_year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_5_1</property>
+                    <property name="paramName">e_year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_6</property>
+                    <property name="paramName">p_plan_period_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData"/>
+            <property name="dataSource">kfis_localhost_profile</property>
+            <xml-property name="queryText"><![CDATA[SELECT *
+ FROM generate_series(?::integer,?::integer) as period left join
+(
+select * from (select m.id as sub_ind_id, m.year, t.target, ev.actual,extract(year from ev.eval_date) eval_year_perf from (
+select m.*, generate_series as year from (
+ select s.id from tmer_sub_indicator s left join (select * from tmer_indicator where type='P') as ind on s.indicator_id=ind.id  left join 
+tmer_strategy as st on ind.strategy_id=st.id where st.plan_period_id=?::integer) m
+, generate_series(?::integer,?::integer)) m
+left join tmer_indicator_target t on m.id=t.sub_indicator_id and t.year=m.year
+left join tmer_evaluation_perf ev on m.id= ev.sub_indicator_id and extract(year from ev.eval_date)=m.year ) as per_targ_year
+left join (
+select 
+distinct(s.*),s.pip_code as "PIP code",
+td.domtext_en as "Pillar",
+sp.code as "Strategy code",
+p.name_en as "Project Name",
+sp.name_en as "Sub Project Name",
+ind.name_en as "Indicator Name",
+sind.name_en as "sub indicator name",
+u.uomsymbol as "njesia",
+sind.id as sub_indic_id
+from tmer_strategy s 
+left join tmer_sub_project sp on s.sub_project_id=sp.id
+left join tmer_plan_period pp on s.plan_period_id=pp.id
+left join tmer_project p on sp.project_id=p.id
+left join tmer_resp_institutions ri on ri.strategy_id=s.id
+left join (select * from tmer_indicator where type='P') ind on ind.strategy_id=s.id
+left join tmer_sub_indicator sind on ind.id=sind.indicator_id
+left join tuom u on sind.uom_id=u.id
+left join (select * from ttextdomain tt where tt.domname='MERPILLAR') td on td.domkey=p.pillar 
+where s.plan_period_id=?::integer 
+order by s.id
+)as strat_data on strat_data.sub_indic_id=per_targ_year.sub_ind_id
+
+
+) as  all_data
+
+on period=all_data.year
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="436">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="445">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="446">
+                            <property name="levels">
+                                <tabular-level name="period" id="447">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">period</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group2" id="451">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="452">
+                            <property name="levels">
+                                <tabular-level name="Pillar" id="453">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Pillar</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group3" id="455">
+                    <property name="defaultHierarchy">NewTabularHierarchy3</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy3" id="456">
+                            <property name="levels">
+                                <tabular-level name="Strategy code" id="457">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Strategy code</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group4" id="458">
+                    <property name="defaultHierarchy">NewTabularHierarchy4</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy4" id="459">
+                            <property name="levels">
+                                <tabular-level name="Project Name" id="460">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Project Name</property>
+                                </tabular-level>
+                                <tabular-level name="Sub Project Name" id="462">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Sub Project Name</property>
+                                </tabular-level>
+                                <tabular-level name="Indicator Name" id="559">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Indicator Name</property>
+                                </tabular-level>
+                                <tabular-level name="sub indicator name" id="465">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">sub indicator name</property>
+                                </tabular-level>
+                                <tabular-level name="njesia" id="466">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">njesia</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field1" id="547">
+                    <property name="measures">
+                        <tabular-measure name="actual" id="548">
+                            <expression name="measureExpression" type="javascript">dataSetRow["actual"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field" id="597">
+                    <property name="measures">
+                        <tabular-measure name="target" id="598">
+                            <property name="function">min</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["target"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="NewSimpleMasterPage" id="367">
+            <property name="orientation">landscape</property>
+            <property name="headerHeight">0.5in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="375">
+            <property name="height">2.6770833333333335in</property>
+            <column id="376"/>
+            <row id="377">
+                <property name="height">0.6770833333333334in</property>
+                <cell id="378">
+                    <property name="textAlign">center</property>
+                    <image id="379">
+                        <property name="height">0.5833333333333334in</property>
+                        <property name="width">0.5833333333333334in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/rks_logo_trans.png</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="380">
+                <property name="height">0.5729166666666666in</property>
+                <cell id="381">
+                    <property name="textAlign">center</property>
+                    <label id="382">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">REPUBLIKA E KOSOVËS&#13;
+REPUBLIKA KOSOVA-REPUBLIC OF KOSOVO&#13;
+QEVERIA –VLADA-GOVERNMENT </text-property>
+                    </label>
+                    <label id="383">
+                        <property name="display">none</property>
+                        <text-property name="text">REPUBLIKA E KOSOVËS</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="384">
+                <property name="height">1.28125in</property>
+                <cell id="385">
+                    <property name="textAlign">center</property>
+                    <label id="387"/>
+                    <label id="101">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="marginBottom">10pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Performance Indicators</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <label id="586">
+            <text-property name="text">T*=Target    A*=Actual</text-property>
+        </label>
+        <label id="587"/>
+        <extended-item extensionName="Crosstab" extensionVersion="2.5.0" id="485">
+            <property name="cube">Data Cube</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="604">
+                    <property name="measure">target</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="605">
+                            <property name="aggregationOnRow">Group4/njesia</property>
+                            <property name="aggregationOnColumn">Group/period</property>
+                            <property name="content">
+                                <data id="606">
+                                    <property name="resultSetColumn">target_Group4/njesia_Group/period</property>
+                                </data>
+                            </property>
+                            <property name="width">0.28125in</property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="607">
+                            <property name="content">
+                                <label id="608">
+                                    <text-property name="text">T</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="609">
+                    <property name="measure">actual</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="610">
+                            <property name="aggregationOnRow">Group4/njesia</property>
+                            <property name="aggregationOnColumn">Group/period</property>
+                            <property name="content">
+                                <data id="611">
+                                    <property name="resultSetColumn">actual_Group4/njesia_Group/period</property>
+                                </data>
+                            </property>
+                            <property name="width">0.2916666666666667in</property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="612">
+                            <property name="content">
+                                <label id="613">
+                                    <text-property name="text">A</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="487">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="496">
+                            <property name="dimension">Group2</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="497">
+                                    <property name="level">Group2/Pillar</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="498">
+                                            <property name="content">
+                                                <data name="Pillar" id="499">
+                                                    <property name="fontSize">9pt</property>
+                                                    <property name="resultSetColumn">Pillar</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">0.53125in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="508">
+                            <property name="dimension">Group3</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View3" id="509">
+                                    <property name="level">Group3/Strategy code</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="510">
+                                            <property name="content">
+                                                <data name="Strategy code" id="511">
+                                                    <property name="fontSize">9pt</property>
+                                                    <property name="resultSetColumn">Strategy code</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">0.4166666666666667in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="504">
+                            <property name="dimension">Group4</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View4" id="505">
+                                    <property name="level">Group4/Project Name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="506">
+                                            <property name="content">
+                                                <data name="Project Name" id="507">
+                                                    <property name="fontSize">9pt</property>
+                                                    <property name="resultSetColumn">Project Name</property>
+                                                </data>
+                                            </property>
+                                            <property name="height">1.2291666666666667in</property>
+                                            <property name="width">0.5in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View5" id="512">
+                                    <property name="level">Group4/Sub Project Name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="513">
+                                            <property name="content">
+                                                <data name="Sub Project Name" id="514">
+                                                    <property name="fontSize">9pt</property>
+                                                    <property name="resultSetColumn">Sub Project Name</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">0.7916666666666666in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="560">
+                                    <property name="level">Group4/Indicator Name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="561">
+                                            <property name="content">
+                                                <data name="Indicator Name" id="562">
+                                                    <property name="fontSize">9pt</property>
+                                                    <property name="resultSetColumn">Indicator Name</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">0.6979166666666666in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View6" id="515">
+                                    <property name="level">Group4/sub indicator name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="516">
+                                            <property name="content">
+                                                <data name="sub indicator name" id="517">
+                                                    <property name="fontSize">9pt</property>
+                                                    <property name="resultSetColumn">sub indicator name</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">0.6770833333333334in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View7" id="518">
+                                    <property name="level">Group4/njesia</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="519">
+                                            <property name="content">
+                                                <data name="njesia" id="520">
+                                                    <property name="fontSize">9pt</property>
+                                                    <property name="resultSetColumn">njesia</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">0.4375in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" id="527">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="488">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="489">
+                                    <property name="level">Group/period</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="490">
+                                            <property name="content">
+                                                <data name="period" id="491">
+                                                    <property name="fontSize">9pt</property>
+                                                    <property name="resultSetColumn">period</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">1.6875in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="486">
+                    <property name="content">
+                        <grid id="563">
+                            <property name="backgroundColor">#C0C0C0</property>
+                            <property name="width">4.010416666666667in</property>
+                            <column id="564">
+                                <property name="width">0.53125in</property>
+                            </column>
+                            <column id="565">
+                                <property name="width">0.375in</property>
+                            </column>
+                            <column id="566">
+                                <property name="width">0.5in</property>
+                            </column>
+                            <column id="567">
+                                <property name="width">0.7916666666666666in</property>
+                            </column>
+                            <column id="568">
+                                <property name="width">0.6979166666666666in</property>
+                            </column>
+                            <column id="569">
+                                <property name="width">0.6770833333333334in</property>
+                            </column>
+                            <column id="570">
+                                <property name="width">0.4375in</property>
+                            </column>
+                            <row id="571">
+                                <cell id="572">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="579">
+                                        <property name="fontSize">9pt</property>
+                                        <text-property name="text">Pillar</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="573">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="580">
+                                        <property name="fontSize">9pt</property>
+                                        <text-property name="text">PSP Code</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="574">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="581">
+                                        <property name="fontSize">9pt</property>
+                                        <text-property name="text">Project</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="575">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="582">
+                                        <property name="fontSize">9pt</property>
+                                        <text-property name="text">Sub-Project</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="576">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="583">
+                                        <text-property name="text">Indicator</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="577">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="584">
+                                        <property name="fontSize">9pt</property>
+                                        <text-property name="text">Sub-Indicator</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="578">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="585">
+                                        <property name="fontSize">9pt</property>
+                                        <text-property name="text">Unit</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </property>
+                </extended-item>
+            </property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">period</property>
+                    <expression name="expression">dimension["Group"]["period"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Pillar</property>
+                    <expression name="expression">dimension["Group2"]["Pillar"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Project Name</property>
+                    <expression name="expression">dimension["Group4"]["Project Name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Strategy code</property>
+                    <expression name="expression">dimension["Group3"]["Strategy code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Sub Project Name</property>
+                    <expression name="expression">dimension["Group4"]["Sub Project Name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">sub indicator name</property>
+                    <expression name="expression">dimension["Group4"]["sub indicator name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">njesia</property>
+                    <expression name="expression">dimension["Group4"]["njesia"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">actual_Group4/njesia_Group/period</property>
+                    <expression name="expression">measure["actual"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group4/njesia</value>
+                        <value>Group/period</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Indicator Name</property>
+                    <expression name="expression">dimension["Group4"]["Indicator Name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">target_Group4/njesia_Group/period</property>
+                    <expression name="expression">measure["target"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group4/njesia</value>
+                        <value>Group/period</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">MIN</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <grid id="234">
+            <property name="marginTop">100pt</property>
+            <property name="textAlign">right</property>
+            <method name="onRender"><![CDATA[if (BirtComp.lessThan(pageNumber, totalPage))]]></method>
+            <column id="235"/>
+            <row id="238">
+                <cell id="239">
+                    <label id="242">
+                        <property name="marginRight">50pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text"> Generated by :</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="398">
+                <cell id="399">
+                    <data id="400">
+                        <property name="marginTop">10pt</property>
+                        <property name="marginRight">50pt</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">p_user</property>
+                                <expression name="expression" type="javascript">params["p_user"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">p_user</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="240">
+                <cell id="241">
+                    <label id="401">
+                        <property name="marginTop">20pt</property>
+                        <property name="marginRight">40pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">_____________________</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="236">
+                <cell id="237">
+                    <text id="3">
+                        <property name="marginTop">10pt</property>
+                        <property name="marginRight">40pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<VALUE-OF format="dd/MM/yyyy">new Date()</VALUE-OF>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   
+   <package name="kfis-dem" namespace="/" extends="kfis-default">
+		<result-types> 
+			<result-type name="reportStream" default="false" class="com.geoland.kfis.web.action.print.DynamicStreamResult"/>
+		</result-types>
+	
+       <global-results>
+			<result name="fiskos-page">module/dem/fiskos/import_page.jsp</result>
+			<result name="fiskos-form">module/dem/fiskos/import_form.jsp</result>
+			<result name="fiskos-grid">module/dem/fiskos/import_grid.jsp</result>
+        </global-results>
+
+		<action name="Fiskos.*" method="{1}" class="com.geoland.kfis.web.action.dem.fiskos.FiskosAction">
+			<result name="page">module/dem/fiskos/import_page.jsp</result>
+			<result name="form">module/dem/fiskos/import_form.jsp</result>
+			<result name="grid">module/dem/fiskos/import_grid.jsp</result>
+		</action>
+
+    	<action name="FiskosImport" class="com.geoland.kfis.web.action.dem.fiskos.ImportAction">
+    		<result name="input">module/dem/fiskos/import_form.jsp</result>
+    		<result name="success">module/dem/fiskos/import_form.jsp</result>    
+		</action>
+    	 
+    	 <action name="ImportShape.*" method="{1}" class="com.geoland.kfis.web.action.dem.importshape.stand.ImportStandAction">
+			<result name="page">module/dem/importshape/importshape_page.jsp</result>
+			<result name="form_content">module/dem/importshape/importshape_content_form.jsp</result>
+			<result name="form">module/dem/importshape/importshape_form.jsp</result>
+			<result name="grid">module/dem/importshape/importshape_grid.jsp</result>
+			<result name="import_fail">module/dem/importshape/importshape_form.jsp</result>
+		</action>
+
+    	<action name="ImportShapeSave" class="com.geoland.kfis.web.action.dem.importshape.stand.ImportStandSaveAction">
+    		<result name="input">module/dem/importshape/importshape_content_form.jsp</result>
+    		<result name="success">module/dem/importshape/importshape_content_form.jsp</result>    
+		</action>
+
+		<action name="ShapeMigrate" class="com.geoland.kfis.web.action.dem.importshape.stand.ShapeStandMigrateAction">
+    		<result name="input">module/dem/importshape/importshape_form.jsp</result>
+    		<result name="success">module/dem/importshape/importshape_form.jsp</result>    
+		</action>
+		
+		<action name="ImportPlot.*" method="{1}" class="com.geoland.kfis.web.action.dem.importshape.plot.ImportPlotAction">
+			<result name="page">module/dem/importshape/plot/import_plot_page.jsp</result>
+			<result name="form">module/dem/importshape/plot/import_plot_form.jsp</result>
+			<result name="grid">module/dem/importshape/plot/import_plot_grid.jsp</result>
+			<result name="import_fail">module/dem/importshape/plot/import_plot_form.jsp</result>
+		</action>
+
+    	<action name="ImportPlotSave" class="com.geoland.kfis.web.action.dem.importshape.plot.ImportPlotSaveAction">
+    		<result name="input">module/dem/importshape/plot/import_plot_form.jsp</result>
+    		<result name="success">module/dem/importshape/plot/import_plot_form.jsp</result>    
+		</action>
+		<action name="PlotMigrate" class="com.geoland.kfis.web.action.dem.importshape.plot.PlotMigrateAction">
+    		<result name="input">module/dem/importshape/plot/import_plot_form.jsp</result>
+    		<result name="success">module/dem/importshape/plot/import_plot_form.jsp</result>    
+		</action>
+		<action name="ExistingPlot" class="com.geoland.kfis.web.action.dem.importshape.plot.ExistingPlotsAction">
+    		<result name="input">module/dem/importshape/plot/import_plot_form.jsp</result>
+    		<result name="success">module/dem/importshape/plot/import_plot_form.jsp</result>    
+		</action>
+		
+		<action name="ImportBiodiv.*" method="{1}" class="com.geoland.kfis.web.action.dem.importshape.biodiv.ImportBiodivAction">
+			<result name="form">module/dem/importshape/biodiv/importshape_biodiv_form.jsp</result>
+			<result name="form_content">module/dem/importshape/biodiv/importshape_biodiv_content_form.jsp</result>
+			<result name="import_fail">module/dem/importshape/biodiv/importshape_biodiv_content_form.jsp</result>
+		</action>
+		
+	    <action name="ImportShapeBiodivSave" class="com.geoland.kfis.web.action.dem.importshape.biodiv.ImportBiodivSaveAction">
+    		<result name="input">module/dem/importshape/biodiv/importshape_biodiv_content_form.jsp</result>
+    		<result name="success">module/dem/importshape/biodiv/importshape_biodiv_content_form.jsp</result>    
+		</action>
+		<action name="ShapeBiodivMigrate" class="com.geoland.kfis.web.action.dem.importshape.biodiv.ShapeBiodivMigrateAction">
+    		<result name="input">module/dem/importshape/biodiv/importshape_biodiv_content_form.jsp</result>
+    		<result name="success">module/dem/importshape/biodiv/importshape_biodiv_content_form.jsp</result>  
+		</action>
+		 
+		<action name="Export.*" method="{1}" class="com.geoland.kfis.web.action.dem.export.ExportAction">
+			<result name="page">module/dem/export/exporttoshape_page.jsp</result>
+		</action>
+		
+		<action name="ExportStand.*" method="{1}" class="com.geoland.kfis.web.action.dem.export.stand.ExportStandAction">
+			<result name="page">module/dem/export/stand/export_page.jsp</result>
+			<result name="form">module/dem/export/stand/export_form.jsp</result>
+		</action>
+
+		<action name="ExportStandSave" class="com.geoland.kfis.web.action.dem.export.stand.ExportStandSaveAction">
+		   	<result name="input">module/dem/export/stand/export_form.jsp</result>
+		   	<result name="success">module/dem/export/stand/export_form.jsp</result>
+		</action>
+		
+		<action name="StandExport" class="com.geoland.kfis.web.action.dem.export.stand.ExportStandToShapeAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		
+		<action name="ExportPlot.*" method="{1}" class="com.geoland.kfis.web.action.dem.export.plot.ExportPlotAction">
+			<result name="page">module/dem/export/plot/export_page.jsp</result>
+			<result name="form">module/dem/export/plot/export_form.jsp</result>
+		</action>
+
+		<action name="ExportPlotSave" class="com.geoland.kfis.web.action.dem.export.plot.ExportPlotSaveAction">
+		   	<result name="input">module/dem/export/plot/export_form.jsp</result>
+		   	<result name="success">module/dem/export/plot/export_form.jsp</result>
+		</action>
+		
+		<action name="PlotExport" class="com.geoland.kfis.web.action.dem.export.plot.ExportPlotToShapeAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		
+		<action name="ExportBiodiv.*" method="{1}" class="com.geoland.kfis.web.action.dem.export.biodiv.ExportBiodiversityAction">
+			<result name="page">module/dem/export/biodiv/export_page.jsp</result>
+			<result name="form">module/dem/export/biodiv/export_form.jsp</result>
+		</action>
+
+		<action name="ExportBiodivSave" class="com.geoland.kfis.web.action.dem.export.biodiv.ExportBiodiversitySaveAction">
+		   	<result name="input">module/dem/export/biodiv/export_form.jsp</result>
+		   	<result name="success">module/dem/export/biodiv/export_form.jsp</result>
+		</action>
+		
+		<action name="BiodivExport" class="com.geoland.kfis.web.action.dem.export.biodiv.ExportBiodivToShapeAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		
+		<action name="ImportValidations" class="com.geoland.kfis.web.action.dem.importshape.validations.ShapeValidationsSaveAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		
+		<action name="ImportLine.*" method="{1}" class="com.geoland.kfis.web.action.dem.importshape.line.LineAction">
+			<result name="form">module/dem/importshape/line/line_form.jsp</result>
+            <result name="grid">module/dem/importshape/line/line_grid.jsp</result>
+            <result name="form_content">module/dem/importshape/line/line_form_content.jsp</result>
+            <result name="page">module/dem/importshape/line/line_page.jsp</result>
+		</action>
+		
+	    <action name="ImportLineSave" class="com.geoland.kfis.web.action.dem.importshape.line.LineSaveAction">
+    		<result name="input">module/dem/importshape/line/line_form.jsp</result>
+    		<result name="success">module/dem/importshape/line/line_form.jsp</result>    
+		</action> 
+		
+		<action name="RoadSaveAction" class="com.geoland.kfis.web.action.dem.importshape.line.RoadSaveAction">
+    		<result name="input">module/dem/importshape/line/line_form_content.jsp</result>
+    		<result name="success">module/dem/importshape/line/line_form_content.jsp</result>    
+		</action> 
+		
+		<action name="DeleteLineTemp" class="com.geoland.kfis.web.action.dem.importshape.line.LineDeleteAction"></action>
+		
+	   <action name="ExportLayer.*" method="{1}" class="com.geoland.kfis.web.action.dem.export.layers.ExportLayersAction">
+			<result name="page">module/dem/export/layers/export_page.jsp</result>
+			<result name="form">module/dem/export/layers/export_form.jsp</result>
+		</action>
+
+		<action name="ExportLayerSave" class="com.geoland.kfis.web.action.dem.export.layers.ExportLayersSaveAction">
+		   	<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		
+		
+		<action name="PrintKfisMap" class="com.geoland.kfis.web.action.print.PrintKfisMap">
+		   	<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		
+   </package>
+    
+</struts>

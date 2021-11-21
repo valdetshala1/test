@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 25, 2017 2:55:29 PM by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.geoland.kfis.model.FinancialInput" table="tfin_input" schema="public">
+        <meta attribute="extra-import" inherit="false">com.geoland.framework.persistence.base.*</meta>
+        <meta attribute="extra-import" inherit="false">org.hibernate.annotations.Type</meta>
+        <meta attribute="extends" inherit="false">AbstractPersistentObject</meta>
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="increment"></generator>
+        </id>
+        <many-to-one name="finInputStatus" class="com.geoland.kfis.model.FinInputStatus" fetch="select">
+            <column name="current_status" />
+        </many-to-one>
+        <many-to-one name="employee" class="com.geoland.kfis.model.Employee" fetch="select">
+            <column name="created_by" not-null="true" />
+        </many-to-one>
+        <many-to-one name="organisation" class="com.geoland.kfis.model.Organisation" fetch="select">
+            <column name="municipality_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="financialType" class="com.geoland.kfis.model.FinancialType" fetch="select">
+            <column name="input_type_id" not-null="true" />
+        </many-to-one>
+        <property name="year" type="java.lang.Long">
+            <column name="year" not-null="true" />
+        </property>
+        <property name="month" type="com.geoland.kfis.persistence.hibernate.usertypes.Month">
+            <meta attribute="scope-get" inherit="false">@Type(type = "com.geoland.kfis.persistence.hibernate.usertypes.MonthUserType") public</meta>
+            <column name="month" length="2" not-null="true" />
+        </property>
+        <property name="cumulativeValue" type="java.math.BigDecimal">
+            <column name="cumulative_value" precision="10" />
+        </property>
+        <property name="allocated" type="boolean">
+            <column name="allocated" not-null="true" />
+        </property>
+        <property name="allocatedDate" type="date">
+            <column name="allocated_date" length="13" />
+        </property>
+        <property name="createdTime" type="timestamp">
+            <column name="created_time" length="29" not-null="true" />
+        </property>
+        <set name="finInputStatuses" table="tfin_input_status" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="input_id" not-null="true" />
+            </key>
+            <one-to-many class="com.geoland.kfis.model.FinInputStatus" />
+        </set>
+    </class>
+</hibernate-mapping>

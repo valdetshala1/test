@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="kfis-support" namespace="/" extends="kfis-default">
+    	<result-types> 
+			<result-type name="reportStream" default="false" class="com.geoland.kfis.web.action.print.DynamicStreamResult"/>
+		</result-types>
+        <action name="Welcome" class="com.geoland.kfis.web.action.base.WelcomeAction">
+        	<result name="success">home_page.jsp</result>
+            <result name="input">home_page.jsp</result>
+            <interceptor-ref name="userlogin"/>    
+        </action>
+        <action name="Login" class="com.geoland.kfis.web.action.base.security.LoginAction">
+        	<result name="success">index.jsp</result>
+            <result name="input">login.jsp</result>
+ 			<result name="change_pwd">login_pwd.jsp</result>            
+        </action>        
+
+        <action name="Logout" class="com.geoland.kfis.web.action.base.security.LogoutAction">
+        	<result name="success" type="redirectAction">
+			   <param name="actionName">Welcome.do</param> 
+			</result>
+            <!--result name="input">login.jsp</result-->
+        </action>
+        
+		<action name="Language.*" method="{1}" class="com.geoland.kfis.web.action.base.LanguageAction">
+        	<result name="success">index.jsp</result>
+            <result name="input">index.jsp</result>				            
+		</action>		
+
+        <action name="PwdSave" class="com.geoland.kfis.web.action.base.security.UserPwdSaveAction">
+            <result name="input">login_pwd.jsp</result>
+	 		<result name="success" type="redirectAction">
+			   <param name="actionName">Login.do</param> 
+			</result>            
+            <!-- 
+            <result name="success">index.jsp</result>
+            -->
+        </action>  
+        
+        <action name="GenDocsSave" class="com.geoland.kfis.web.action.gendoc.GeneratedDocumentsSaveAction"></action>
+  
+        <action name="Base.*" method="{1}" class="com.geoland.kfis.web.action.base.security.UserBaseAction">
+        	<result name="show">login_pwd.jsp</result>
+        	<result name="login_page">login.jsp</result>
+        	<result name="change_password">change_password_form.jsp</result>
+            <!--result name="input">login_pwd.jsp</result>
+            <interceptor-ref name="session"/>
+            <interceptor-ref name="userlogin"/-->			            
+        </action>
+                
+        <action name="PwdChange" class="com.geoland.kfis.web.action.base.security.UserChangePasswordAction">
+        	<result name="input">change_password_form.jsp</result>
+        	<result name="success">change_password_form.jsp</result>
+        </action>
+         <action name="Dashboard.*"  method="{1}" class="com.geoland.kfis.web.action.dashboard.DashboardAction">
+        	<result name="dashboard">module/dashboard/dashboard.jsp</result>
+        	<result name="printviewer">report/reportviewer.jsp</result>
+        </action>
+        <action name="ViewReport" class="com.geoland.kfis.web.birt.BirtAction">
+        	<result name="success">report/reportviewer.jsp</result>
+        </action>   
+		
+		 <action name="Audit.*"  method="{1}" class="com.geoland.kfis.web.action.audit.AuditAction">
+        	<result name="auditData">module/audit/audit_info.jsp</result>
+        	<result name="auditDataGeom">module/audit/audit_info_geom.jsp</result>
+        </action>
+        
+        <action name="AlfrescoDocs.*"  method="{1}" class="com.geoland.kfis.web.alfresco.AlfrescoAction">
+        	<result name="docs_page">module/docs/docs_page.jsp</result>
+        </action>
+        <action name="AlfrescoConnValidate" class="com.geoland.kfis.web.alfresco.AlfrescoConnectionValidate">
+        </action>
+        <!-- START AlfrescoDocDownload-->
+		<action name="AlfrescoDocDownload" class="com.geoland.kfis.web.alfresco.AlfrescoDocDownload">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END AlfrescoDocDownload-->
+		
+		<!-- START UDocDownload-->
+		<action name="Udoc" class="com.geoland.kfis.web.alfresco.UDocDownload">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END UDocDownload-->
+		
+		
+		
+		<!-- START JasperReportGen-->
+		<action name="JasperReportGen" class="com.geoland.kfis.web.jasper.JasperReportGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END JasperReportGen-->
+        
+    </package>
+</struts>

@@ -1,0 +1,1936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="p_year" id="192">
+            <text-property name="promptText">Year</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_status" id="194">
+            <text-property name="promptText">Status</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_user" id="479">
+            <text-property name="promptText">User ID</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_rep_type" id="483">
+            <text-property name="promptText">Report type</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_qrcode_content_url" id="529">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_gl_server_profile" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/kfis?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_demo_server_profile" id="407">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.168.0.30:5432/kfis_demo?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_demo_server_profile</property>
+            <property name="OdaConnProfileStorePath">target/classes/profiles/kfis_demo_profile</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_localhost_profile" id="484">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/kfis?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_localhost_profile</property>
+            <property name="OdaConnProfileStorePath">target/classes/profiles/kfis_localhost_profile</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="8">
+            <list-property name="columnHints"/>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">p_year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">5</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Stand ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Comp ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">MGMT name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Domain Name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">mun_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Tech</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Fire</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Pulp</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">imTech</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">imFire</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">imPulp</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">Species Name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">kfis_localhost_profile</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Stand ID</property>
+                    <property name="nativeName">Stand ID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Comp ID</property>
+                    <property name="nativeName">Comp ID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">MGMT name</property>
+                    <property name="nativeName">MGMT name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Domain Name</property>
+                    <property name="nativeName">Domain Name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">mun_id</property>
+                    <property name="nativeName">mun_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Tech</property>
+                    <property name="nativeName">Tech</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">Fire</property>
+                    <property name="nativeName">Fire</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Pulp</property>
+                    <property name="nativeName">Pulp</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">imTech</property>
+                    <property name="nativeName">imTech</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">imFire</property>
+                    <property name="nativeName">imFire</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">imPulp</property>
+                    <property name="nativeName">imPulp</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">Species Name</property>
+                    <property name="nativeName">Species Name</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select stand.stand_id as "Stand ID",stand.comp_id as "Comp ID",stand.mu_name as "MGMT name",dom.name_al as "Domain Name",pl.mun_id,mun.name
+,sum(pl_tech_volume) as "Tech",sum(pl_fire_volume) "Fire",sum(pl_pulp_volume) as "Pulp", 
+sum(im_tech_volume) as "imTech",sum(im_fire_volume) "imFire",sum(im_pulp_volume) as "imPulp",
+spec.name_al as "Species Name"  
+from tfrm_stand_harvest_activity plant left join tfrm_activity act on act.id=plant.activity_id 
+left join tfrm_annual_planning pl on pl.id=act.annual_planning_id 
+left join tfrm_annual_planning_status apls on apls.id=pl.status_id
+left join tfrm_activity_domain dom on dom.id=act.activity_domain_id 
+left join tfrm_tree_species spec on plant.tree_species_id=spec.id 
+left join tfrm_activity_status stat on stat.id=plant.status_id left join tgis_cadastral_municipality mu on pl.mun_id=mu.id
+left join 
+(select st.id as standId,st.stand_nr as stand_id,comp.comp_nr as comp_id,mu.mu_name as mu_name,mu.region_id as region_id 
+from tgis_stand st 
+left join tgis_compartment comp on comp.id=st.compartment_id 
+left join tgis_management_unit mu on mu.id=comp.mu_id ) as stand on stand.standId=plant.stand_id and stand.region_id=mu.region_id
+right join (select m.id as id,m.name as name from tgis_region m) as mun on
+mu.region_id=mun.id 
+and pl.year=?::integer and apls.status='APR' and (stat.status='APR' or stat.status='TER')
+group by mun.name,spec.id,pl.mun_id,dom.name_al,stand.stand_id,stand.comp_id,stand.mu_name;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>5</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes/>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Stand ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Stand ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Stand ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Comp ID</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Comp ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Comp ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MGMT name</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>150</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>MGMT name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MGMT name</design:label>
+            <design:formattingHints>
+              <design:displaySize>150</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Domain Name</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Domain Name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Domain Name</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>mun_id</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>mun_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>mun_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>80</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>80</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tech</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>Tech</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tech</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Fire</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>Fire</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Fire</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Pulp</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>Pulp</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Pulp</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Species Name</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Species Name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Species Name</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="292">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="293">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="294">
+                            <property name="levels">
+                                <tabular-level name="name" id="295">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">name</property>
+                                </tabular-level>
+                                <tabular-level name="MGMT name" id="296">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">MGMT name</property>
+                                </tabular-level>
+                                <tabular-level name="Comp ID" id="297">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">Comp ID</property>
+                                </tabular-level>
+                                <tabular-level name="Stand ID" id="300">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">Stand ID</property>
+                                </tabular-level>
+                                <tabular-level name="Domain Name" id="301">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Domain Name</property>
+                                </tabular-level>
+                                <tabular-level name="Species Name" id="302">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Species Name</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="303">
+                    <property name="measures">
+                        <tabular-measure name="Tech" id="304">
+                            <expression name="measureExpression" type="javascript">dataSetRow["Tech"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                        <tabular-measure name="imTech" id="410">
+                            <expression name="measureExpression" type="javascript">dataSetRow["imTech"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field1" id="305">
+                    <property name="measures">
+                        <tabular-measure name="Fire" id="306">
+                            <expression name="measureExpression" type="javascript">dataSetRow["Fire"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                        <tabular-measure name="imFire" id="409">
+                            <expression name="measureExpression" type="javascript">dataSetRow["imFire"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field2" id="307">
+                    <property name="measures">
+                        <tabular-measure name="Pulp" id="308">
+                            <expression name="measureExpression" type="javascript">dataSetRow["Pulp"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                        <tabular-measure name="imPulp" id="411">
+                            <expression name="measureExpression" type="javascript">dataSetRow["imPulp"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="NewSimpleMasterPage" id="401">
+            <property name="orientation">landscape</property>
+            <property name="headerHeight">0.5in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="2863">
+            <property name="height">2.2in</property>
+            <column id="2864">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2865">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2866">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="2867">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.65in</property>
+                <cell id="2868"/>
+                <cell id="2869">
+                    <image id="2870">
+                        <property name="height">0.65625in</property>
+                        <property name="width">0.6770833333333334in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/rks_logo_trans.png</expression>
+                    </image>
+                </cell>
+                <cell id="2871">
+                    <image id="1906">
+                        <property name="overflow">auto</property>
+                        <property name="height">0.562in</property>
+                        <property name="width">0.5625in</property>
+                        <property name="source">url</property>
+                        <expression name="uri" type="javascript">params["p_qrcode_content_url"].value</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="2872">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="2873">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="2874">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">REPUBLIKA E KOSOVËS&#13;
+REPUBLIKA KOSOVA-REPUBLIC OF KOSOVO&#13;
+QEVERIA –VLADA-GOVERNMENT </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2875">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="2876">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="2877">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">MINISTRIA BUJQËSISË, PYLLTARISË DHE ZHVILLIMIT RURAL &#13;
+MINISTARSTVO POLJOPRIVREDE, SUMARSTVA I RURALNOG RAZVOJA&#13;
+MINISTRY OF AGRICULTURE, FORESTRY AND RURAL DEVELOPMENT </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2879">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.65in</property>
+                <cell id="2880"/>
+                <cell id="2881">
+                    <image id="2946">
+                        <property name="height">0.6736842105263158in</property>
+                        <property name="width">1.2526315789473683in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/apk.png</expression>
+                    </image>
+                </cell>
+                <cell id="2882"/>
+            </row>
+        </grid>
+        <grid id="186">
+            <property name="marginBottom">0pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <property name="height">0.5in</property>
+            <column id="187">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+            </column>
+            <row id="188">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.5in</property>
+                <cell id="189">
+                    <property name="textAlign">center</property>
+                    <data id="481">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="display">inline</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">p_rep_type</property>
+                                <expression name="expression" type="javascript">params["p_rep_type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">p_rep_type</property>
+                    </data>
+                    <label id="482">
+                        <property name="display">inline</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="190">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="display">inline</property>
+                        <text-property name="text"> për shfrytëzimin e  pyjeve  </text-property>
+                    </label>
+                    <label id="485">
+                        <property name="display">inline</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <text-data id="191">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="display">inline</property>
+                        <expression name="valueExpr">params["p_year"].value</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="309">
+            <property name="cube">Data Cube</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="331">
+                    <property name="measure">Tech</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="332">
+                            <property name="aggregationOnRow">Group/Species Name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="333">
+                                    <property name="resultSetColumn">Tech_Group/Species Name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="386">
+                            <property name="aggregationOnRow">Group/name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="387">
+                                    <property name="resultSetColumn">Tech_Group/name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="AggregationCell" id="394">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="395">
+                                    <property name="resultSetColumn">Tech</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="334">
+                            <property name="content">
+                                <label id="335">
+                                    <text-property name="text">Teknik</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="412">
+                    <property name="measure">imTech</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="413">
+                            <property name="aggregationOnRow">Group/Species Name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="418">
+                                    <property name="resultSetColumn">imTech_Group/Species Name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="414">
+                            <property name="aggregationOnRow">Group/name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="415">
+                                    <property name="resultSetColumn">imTech_Group/name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="AggregationCell" id="416">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="417">
+                                    <property name="resultSetColumn">imTech</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="419">
+                            <property name="content">
+                                <label id="420">
+                                    <text-property name="text">Teknik(IMP)</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="336">
+                    <property name="measure">Fire</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="337">
+                            <property name="aggregationOnRow">Group/Species Name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="338">
+                                    <property name="resultSetColumn">Fire_Group/Species Name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="388">
+                            <property name="aggregationOnRow">Group/name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="389">
+                                    <property name="resultSetColumn">Fire_Group/name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="AggregationCell" id="396">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="397">
+                                    <property name="resultSetColumn">Fire</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="339">
+                            <property name="content">
+                                <label id="340">
+                                    <text-property name="text">Zjarri</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="421">
+                    <property name="measure">imFire</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="422">
+                            <property name="aggregationOnRow">Group/Species Name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="427">
+                                    <property name="resultSetColumn">imFire_Group/Species Name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="423">
+                            <property name="aggregationOnRow">Group/name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="424">
+                                    <property name="resultSetColumn">imFire_Group/name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="AggregationCell" id="425">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="426">
+                                    <property name="resultSetColumn">imFire</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="428">
+                            <property name="content">
+                                <label id="429">
+                                    <text-property name="text">Zjarri(IMP)</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="341">
+                    <property name="measure">Pulp</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="342">
+                            <property name="aggregationOnRow">Group/Species Name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="343">
+                                    <property name="resultSetColumn">Pulp_Group/Species Name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="390">
+                            <property name="aggregationOnRow">Group/name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="391">
+                                    <property name="resultSetColumn">Pulp_Group/name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="AggregationCell" id="398">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="399">
+                                    <property name="resultSetColumn">Pulp</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="344">
+                            <property name="content">
+                                <label id="345">
+                                    <text-property name="text">Mbeturina</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="430">
+                    <property name="measure">imPulp</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="431">
+                            <property name="aggregationOnRow">Group/Species Name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="width">1.2in</property>
+                            <property name="content">
+                                <data id="436">
+                                    <property name="resultSetColumn">imPulp_Group/Species Name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="432">
+                            <property name="aggregationOnRow">Group/name</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="433">
+                                    <property name="resultSetColumn">imPulp_Group/name</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="AggregationCell" id="434">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="435">
+                                    <property name="resultSetColumn">imPulp</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="437">
+                            <property name="content">
+                                <label id="438">
+                                    <text-property name="text">Mbeturina(IMP)</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="311">
+                    <property name="grandTotal">
+                        <extended-item extensionName="CrosstabCell" id="393">
+                            <property name="content">
+                                <label id="400">
+                                    <text-property name="text">Total</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">left</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="paddingLeft">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="312">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="313">
+                                    <property name="level">Group/name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="314">
+                                            <property name="content">
+                                                <data name="name" id="315">
+                                                    <property name="resultSetColumn">name</property>
+                                                </data>
+                                            </property>
+                                            <property name="backgroundColor">#9A9A9A</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderTopColor">#000000</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderLeftColor">#000000</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderBottomColor">#000000</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                    <property name="aggregationHeader">
+                                        <extended-item extensionName="CrosstabCell" id="385">
+                                            <property name="content">
+                                                <data name="name_TOTAL" id="392">
+                                                    <property name="resultSetColumn">name_TOTAL</property>
+                                                </data>
+                                            </property>
+                                            <property name="backgroundColor">#D8D8D8</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderTopColor">#000000</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderLeftColor">#000000</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderBottomColor">#000000</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="316">
+                                    <property name="level">Group/MGMT name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="317">
+                                            <property name="content">
+                                                <data name="MGMT name" id="318">
+                                                    <property name="resultSetColumn">MGMT name</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderTopColor">#000000</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderLeftColor">#000000</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderBottomColor">#000000</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="319">
+                                    <property name="level">Group/Comp ID</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="320">
+                                            <property name="content">
+                                                <data name="Comp ID" id="321">
+                                                    <property name="resultSetColumn">Comp ID</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">right</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderTopColor">#000000</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderLeftColor">#000000</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderBottomColor">#000000</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View3" id="322">
+                                    <property name="level">Group/Stand ID</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="323">
+                                            <property name="content">
+                                                <data name="Stand ID" id="324">
+                                                    <property name="resultSetColumn">Stand ID</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">right</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderTopColor">#000000</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderLeftColor">#000000</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderBottomColor">#000000</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View4" id="325">
+                                    <property name="level">Group/Domain Name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="326">
+                                            <property name="content">
+                                                <data name="Domain Name" id="327">
+                                                    <property name="resultSetColumn">Domain Name</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderTopColor">#000000</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderLeftColor">#000000</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderBottomColor">#000000</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View5" id="328">
+                                    <property name="level">Group/Species Name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="329">
+                                            <property name="content">
+                                                <data name="Species Name" id="330">
+                                                    <property name="resultSetColumn">Species Name</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderTopColor">#000000</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderLeftColor">#000000</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderBottomColor">#000000</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="grandTotalLocation">after</property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="310">
+                    <property name="content">
+                        <label id="2966">
+                            <text-property name="text">Regjioni</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="2961">
+                    <property name="content">
+                        <label id="2967">
+                            <text-property name="text">Njesia menagjuese</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="2962">
+                    <property name="content">
+                        <label id="2968">
+                            <text-property name="text">Ngastra</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">right</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="2963">
+                    <property name="content">
+                        <label id="2969">
+                            <text-property name="text">Nengastra</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">right</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="2964">
+                    <property name="content">
+                        <label id="2970">
+                            <text-property name="text">Aktiviteti</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="2965">
+                    <property name="content">
+                        <label id="2971">
+                            <text-property name="text">Tipi</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+            </property>
+            <property name="pageBreakInside">avoid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="overflow">auto</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name</property>
+                    <expression name="expression">dimension["Group"]["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">MGMT name</property>
+                    <expression name="expression">dimension["Group"]["MGMT name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Comp ID</property>
+                    <expression name="expression" type="javascript">if(dimension["Group"]["Comp ID"]!=null &amp;&amp; dimension["Group"]["Comp ID"]!=""){&#13;
+dimension["Group"]["Comp ID"]&#13;
+}</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Stand ID</property>
+                    <expression name="expression">dimension["Group"]["Stand ID"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Domain Name</property>
+                    <expression name="expression">dimension["Group"]["Domain Name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Species Name</property>
+                    <expression name="expression">dimension["Group"]["Species Name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Tech_Group/Species Name</property>
+                    <expression name="expression">measure["Tech"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/Species Name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Fire_Group/Species Name</property>
+                    <expression name="expression">measure["Fire"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/Species Name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Pulp_Group/Species Name</property>
+                    <expression name="expression">measure["Pulp"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/Species Name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Tech_Group/name</property>
+                    <expression name="expression">measure["Tech"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Fire_Group/name</property>
+                    <expression name="expression">measure["Fire"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Pulp_Group/name</property>
+                    <expression name="expression">measure["Pulp"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">name_TOTAL</property>
+                    <expression name="expression">dimension["Group"]["name"]+" TOTAL"</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Tech</property>
+                    <expression name="expression">measure["Tech"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Fire</property>
+                    <expression name="expression">measure["Fire"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Pulp</property>
+                    <expression name="expression">measure["Pulp"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">imTech_Group/name</property>
+                    <expression name="expression">measure["imTech"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">imTech</property>
+                    <expression name="expression">measure["imTech"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">imTech_Group/Species Name</property>
+                    <expression name="expression">measure["imTech"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/Species Name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">imFire_Group/name</property>
+                    <expression name="expression">measure["imFire"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">imFire</property>
+                    <expression name="expression">measure["imFire"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">imFire_Group/Species Name</property>
+                    <expression name="expression">measure["imFire"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/Species Name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">imPulp_Group/name</property>
+                    <expression name="expression">measure["imPulp"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">imPulp</property>
+                    <expression name="expression">measure["imPulp"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">imPulp_Group/Species Name</property>
+                    <expression name="expression">measure["imPulp"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/Species Name</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <grid id="2947">
+            <property name="marginTop">50pt</property>
+            <property name="textAlign">right</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="pageBreakBefore">auto</property>
+            <property name="pageBreakInside">avoid</property>
+            <method name="onRender"><![CDATA[if (BirtComp.lessThan(pageNumber, totalPage))]]></method>
+            <column id="2948"/>
+            <row id="2949">
+                <cell id="2950">
+                    <label id="2951">
+                        <property name="textAlign">right</property>
+                        <text-property name="text">  Gjeneruar nga :</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2952">
+                <cell id="2953">
+                    <data id="2954">
+                        <property name="marginTop">10pt</property>
+                        <property name="overflow">auto</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">p_user</property>
+                                <expression name="expression" type="javascript">params["p_user"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">p_user</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="2955">
+                <cell id="2956">
+                    <label id="2957">
+                        <property name="marginTop">20pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">_____________________</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2958">
+                <cell id="2959">
+                    <text id="2960">
+                        <property name="marginTop">10pt</property>
+                        <property name="paddingLeft">3pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<VALUE-OF format="dd/MM/yyyy">new Date()</VALUE-OF>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

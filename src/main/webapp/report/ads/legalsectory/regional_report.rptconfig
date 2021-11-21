@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__p_reg_id_10_0</property>
+            <property name="value">201</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_start_date_11_1</property>
+            <property name="value">2015-04-01</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_end_date_12_2</property>
+            <property name="value">2015-05-01</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_reg_name_91_3</property>
+            <property name="value">R</property>
+        </structure>
+        <structure>
+            <property name="name">p_start_date_11_4</property>
+            <property name="value">2015-04-01</property>
+        </structure>
+        <structure>
+            <property name="name">p_start_date_11_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">p_reg_name_91_5</property>
+            <property name="value">R</property>
+        </structure>
+        <structure>
+            <property name="name">p_reg_name_91_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_end_date_12_6</property>
+            <property name="value">2015-05-01</property>
+        </structure>
+        <structure>
+            <property name="name">p_end_date_12_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">p_reg_id_10_7</property>
+            <property name="value">201</property>
+        </structure>
+        <structure>
+            <property name="name">p_reg_id_10_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

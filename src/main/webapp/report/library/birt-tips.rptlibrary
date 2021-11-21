@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.0.v20120611 Build &lt;4.2.0.v20120612-1721></property>
+    <property name="units">in</property>
+    <property name="theme">defaultTheme</property>
+    <themes>
+        <theme name="defaultTheme" id="4"/>
+    </themes>
+    <components>
+        <text name="birt-tips-header" id="148">
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<div id="$div"></div>
+<script src="birt-tips/prototype.js"></script>
+<script src="birt-tips/livepipe.js"></script>
+<script src="birt-tips/window.js"></script>
+<script src="birt-tips/prototype-actuate-viewer.js"></script>
+
+<script>
+birtTips = [];
+
+function addBirtTip(elem, href) {
+	birtTips.push({elem: elem, href: href});
+}
+
+function createBirtTips() {
+	var cont = $$("contentPanel")[0];
+	if (!cont)
+		cont = document.body;
+
+	birtTips.each(function(bt) {
+		_$(bt.href).move(cont);
+		_$(bt.elem).wrap("a", {href: "#" + _$(bt.href).id});
+		new Control.Window(_$(bt.elem).up(),{  
+			position: "mouse",   
+			closeOnClick: true,
+			beforeOpen: function() {
+				Control.Window.windows.each(function(w){
+					if (w.isOpen)
+						w.close();
+				});
+			}
+		});
+	});
+}
+</script>
+]]></text-property>
+        </text>
+        <text name="birt-tips-content" id="150">
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">birtTipLink</property>
+                    <property name="type">expression</property>
+                    <property name="isVisible">true</property>
+                    <expression name="default" type="javascript">"tip_link_"</expression>
+                </structure>
+                <structure>
+                    <property name="name">birtTipContainer</property>
+                    <property name="type">expression</property>
+                    <property name="isVisible">true</property>
+                    <expression name="default" type="javascript">"tip_container_"</expression>
+                </structure>
+            </list-property>
+            <method name="onCreate"><![CDATA[str = "";
+str += "<script>";
+str += "addBirtTip(\"";
+str += this.getNamedExpressionValue("birtTipLink");
+str += "\", \"";
+str += this.getNamedExpressionValue("birtTipContainer");
+str += "\");"; 
+str += "</script>";
+
+this.text = str;
+]]></method>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[[Replaced in Script]]]></text-property>
+        </text>
+        <text name="birt-tips-footer" id="151">
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<script>
+var _loadAttempts = 0;
+var _loadInterval = 50;
+function setupBirtTips() {
+	_loadAttempts++;
+	if (typeof _$ === "undefined") {
+		if (_loadAttempts > (2000 / _loadInterval)) {
+			alert("Could not load BIRT Tips.");
+			return;
+		}
+		setTimeout(setupBirtTips, _loadInterval);
+		return;
+	}
+	
+	createBirtTips();
+}
+
+setTimeout(setupBirtTips, _loadInterval);
+</script>]]></text-property>
+        </text>
+    </components>
+    <page-setup>
+        <simple-master-page name="NewSimpleMasterPage" id="3">
+            <property name="topMargin">1in</property>
+            <property name="leftMargin">1.25in</property>
+            <property name="bottomMargin">1in</property>
+            <property name="rightMargin">1.25in</property>
+        </simple-master-page>
+    </page-setup>
+</library>

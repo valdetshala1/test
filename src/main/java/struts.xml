@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.mapper.idParameterName" value="id" />
+	<constant name="struts.enable.SlashesInActionNames" value="true" />
+	<constant name="staruts.mapper.alwaysSelectFullNamespace" value="false" />
+	<constant name="struts.mapper.composite" value="struts,fallback" />
+	<constant name="struts.mapper.class" value="composite" />
+	<constant name="struts.action.extension" value="do" />
+
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.i18n.reload" value="false" />
+
+	<constant name="struts.multipart.maxSize" value="10000000" />
+	<constant name="struts.custom.i18n.resources" value="globalMessages" />
+	<constant name="struts.locale" value="al" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+	
+	<constant name="struts.ui.theme" value="kfis" />
+	<constant name="struts.ui.templateDir" value="template" />
+	
+	<include file="struts_kfis_default.xml"/>
+	<include file="struts_kfis.xml"/>
+	<include file="struts_kfis_json.xml"/>
+	
+	<include file="struts_kfis_hrm.xml"/>
+	<include file="struts_kfis_adm.xml"/>
+	<include file="struts_kfis_ads.xml"/>
+	<include file="struts_kfis_frm.xml"/>
+	<include file="struts_kfis_dem.xml"/>
+	<include file="struts_kfis_mer.xml"/>
+
+
+</struts>

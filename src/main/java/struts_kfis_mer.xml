@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="kfis-mer" namespace="/" extends="kfis-default">
+		<result-types> 
+			<result-type name="reportStream" default="false" class="com.geoland.kfis.web.action.print.DynamicStreamResult"/>
+		</result-types>
+		<!-- START Project -->
+		<action name="Project.*" method="{1}" class="com.geoland.kfis.web.action.mer.project.ProjectAction">
+			<result name="page">module/mer/project/project_page.jsp</result>
+			<result name="form">module/mer/project/project_form.jsp</result>
+			<result name="grid">module/mer/project/project_grid.jsp</result>
+		</action>
+
+		<action name="ProjectSave" class="com.geoland.kfis.web.action.mer.project.ProjectSaveAction">
+			<result name="input">module/mer/project/project_form.jsp</result>
+			<result name="success">module/mer/project/project_form.jsp</result>
+		</action>
+		<!-- END Project -->
+		<!-- START SubProject -->
+		<action name="SubProject.*" method="{1}" class="com.geoland.kfis.web.action.mer.project.subproject.SubProjectAction">
+			<result name="page">module/mer/project/subproject/subproject_page.jsp</result>
+			<result name="form">module/mer/project/subproject/subproject_form.jsp</result>
+			<result name="grid">module/mer/project/subproject/subproject_grid.jsp</result>
+		</action>
+
+		<action name="SubProjectSave" class="com.geoland.kfis.web.action.mer.project.subproject.SubProjectSaveAction">
+			<result name="input">module/mer/project/subproject/subproject_form.jsp</result>
+			<result name="success">module/mer/project/subproject/subproject_form.jsp</result>
+		</action>
+		<!-- END SubProject -->
+		
+		<!-- START PlanPeriod -->
+		<action name="PlanPeriod.*" method="{1}" class="com.geoland.kfis.web.action.mer.strategy.planperiod.PlanPeriodAction">
+			<result name="page">module/mer/strategy/planperiod/planperiod_page.jsp</result>
+			<result name="form">module/mer/strategy/planperiod/planperiod_form.jsp</result>
+			<result name="grid">module/mer/strategy/planperiod/planperiod_grid.jsp</result>
+		</action>
+
+		<action name="PlanPeriodSave" class="com.geoland.kfis.web.action.mer.strategy.planperiod.PlanPeriodSaveAction">
+			<result name="input">module/mer/strategy/planperiod/planperiod_form.jsp</result>
+			<result name="success">module/mer/strategy/planperiod/planperiod_form.jsp</result>
+		</action>
+		<!-- END PlanPeriod -->
+		
+		<!-- START Strategy -->
+		<action name="MerStrategy.*" method="{1}" class="com.geoland.kfis.web.action.mer.strategy.StrategyAction">
+			<result name="page">module/mer/strategy/strategy_page.jsp</result>
+			<result name="form">module/mer/strategy/strategy_form.jsp</result>
+			<result name="grid">module/mer/strategy/strategy_grid.jsp</result>
+			<result name="board">module/mer/strategy/strategy_board.jsp</result>
+			<result name="report_generator">module/mer/strategy/strategy_report_generator.jsp</result>
+		</action>
+
+		<action name="MerStrategySave" class="com.geoland.kfis.web.action.mer.strategy.StrategySaveAction">
+			<result name="input">module/mer/strategy/strategy_form.jsp</result>
+			<result name="success">module/mer/strategy/strategy_form.jsp</result>
+		</action>
+		
+		<action name="StrategyDocGenerator" class="com.geoland.kfis.web.action.mer.strategy.StrategyDocGeneratorAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END Strategy -->
+		<!-- START Execution -->
+		<action name="Execution.*" method="{1}" class="com.geoland.kfis.web.action.mer.execution.ExecutionAction">
+			<result name="page">module/mer/execution/execution_page.jsp</result>
+			<result name="form">module/mer/execution/execution_form.jsp</result>
+			<result name="grid">module/mer/execution/execution_grid.jsp</result>
+			<result name="strategyPage">module/mer/execution/execution_strategy_page.jsp</result>
+			<result name="board">module/mer/execution/strategy_board.jsp</result>
+			<result name="report_generator">module/mer/execution/execution_report_generator.jsp</result>
+		</action>
+		<action name="ExecutionSave" class="com.geoland.kfis.web.action.mer.execution.ExecutionSaveAction">
+			<result name="input">module/mer/execution/execution_form.jsp</result>
+			<result name="success">module/mer/execution/execution_form.jsp</result>
+		</action>
+		<!-- END Execution -->
+		<!-- START RespInstitution -->
+		<action name="RespInstitution.*" method="{1}" class="com.geoland.kfis.web.action.mer.strategy.respinstitution.RespInstitutionAction">
+			<result name="page">module/mer/strategy/respinstitution/institution_page.jsp</result>
+			<result name="form">module/mer/strategy/respinstitution/institution_form.jsp</result>
+			<result name="grid">module/mer/strategy/respinstitution/institution_grid.jsp</result>
+		</action>
+
+		<action name="RespInstitutionSave" class="com.geoland.kfis.web.action.mer.strategy.respinstitution.RespInstitutionSaveAction">
+			<result name="input">module/mer/strategy/respinstitution/institution_form.jsp</result>
+			<result name="success">module/mer/strategy/respinstitution/institution_form.jsp</result>
+		</action>
+		<!-- END RespInstitution -->
+		
+		
+		<!-- START Indicator -->
+		<action name="Indicator.*" method="{1}" class="com.geoland.kfis.web.action.mer.execution.indicator.IndicatorAction">
+			<result name="page">module/mer/execution/indicator/indicator_page.jsp</result>
+			<result name="form">module/mer/execution/indicator/indicator_form.jsp</result>
+			<result name="grid">module/mer/execution/indicator/indicator_grid.jsp</result>
+		</action>
+
+		<action name="IndicatorSave" class="com.geoland.kfis.web.action.mer.execution.indicator.IndicatorSaveAction">
+			<result name="input">module/mer/execution/indicator/indicator_form.jsp</result>
+			<result name="success">module/mer/execution/indicator/indicator_form.jsp</result>
+		</action>
+		<!-- END Indicator -->
+		<!-- START PerfIndicator -->
+		<action name="PerfIndicator.*" method="{1}" class="com.geoland.kfis.web.action.mer.execution.indicator.IndicatorAction">
+			<result name="page">module/mer/execution/indicator/perfindicator/perf_indicator_page.jsp</result>
+			<result name="form">module/mer/execution/indicator/perfindicator/perf_indicator_form.jsp</result>
+			<result name="grid">module/mer/execution/indicator/perfindicator/perf_indicator_grid.jsp</result>
+		</action>
+
+		<action name="PerfIndicatorSave" class="com.geoland.kfis.web.action.mer.execution.indicator.IndicatorSaveAction">
+			<result name="input">module/mer/execution/indicator/perfindicator/perf_indicator_form.jsp</result>
+			<result name="success">module/mer/execution/indicator/perfindicator/perf_indicator_form.jsp</result>
+		</action>
+		<!-- END PerfIndicator -->
+		<!-- START SubIndicator -->
+		<action name="SubIndicator.*" method="{1}" class="com.geoland.kfis.web.action.mer.execution.indicator.subindicator.SubIndicatorAction">
+			<result name="page">module/mer/execution/indicator/subindicator/subindicator_page.jsp</result>
+			<result name="form">module/mer/execution/indicator/subindicator/subindicator_form.jsp</result>
+			<result name="grid">module/mer/execution/indicator/subindicator/subindicator_grid.jsp</result>
+		</action>
+
+		<action name="SubIndicatorSave" class="com.geoland.kfis.web.action.mer.execution.indicator.subindicator.SubIndicatorSaveAction">
+			<result name="input">module/mer/execution/indicator/subindicator/subindicator_form.jsp</result>
+			<result name="success">module/mer/execution/indicator/subindicator/subindicator_form.jsp</result>
+		</action>
+		<!-- END SubIndicator -->
+		<!-- START StratIndicator -->
+		<action name="StratIndicator.*" method="{1}" class="com.geoland.kfis.web.action.mer.execution.indicator.IndicatorAction">
+			<result name="page">module/mer/execution/indicator/stratindicator/strat_indicator_page.jsp</result>
+			<result name="form">module/mer/execution/indicator/stratindicator/strat_indicator_form.jsp</result>
+			<result name="grid">module/mer/execution/indicator/stratindicator/strat_indicator_grid.jsp</result>
+		</action>
+		<action name="StratIndicatorSave" class="com.geoland.kfis.web.action.mer.execution.indicator.IndicatorSaveAction">
+			<result name="input">module/mer/execution/indicator/stratindicator/strat_indicator_form.jsp</result>
+			<result name="success">module/mer/execution/indicator/stratindicator/strat_indicator_form.jsp</result>
+		</action>
+		<!-- END StratIndicator -->
+		<!-- START StratEvaluation -->
+		<action name="StratEvaluation.*" method="{1}" class="com.geoland.kfis.web.action.mer.execution.evaluation.strategy.StratEvaluationAction">
+			<result name="page">module/mer/execution/indicator/stratindicator/evaluation/strategy_evaluation_page.jsp</result>
+			<result name="form">module/mer/execution/indicator/stratindicator/evaluation/strategy_evaluation_form.jsp</result>
+			<result name="grid">module/mer/execution/indicator/stratindicator/evaluation/strategy_evaluation_grid.jsp</result>
+		</action>
+
+		<action name="StratEvaluationSave" class="com.geoland.kfis.web.action.mer.execution.evaluation.strategy.StratEvaluationSaveAction">
+			<result name="input">module/mer/execution/indicator/stratindicator/evaluation/strategy_evaluation_form.jsp</result>
+			<result name="success">module/mer/execution/indicator/stratindicator/evaluation/strategy_evaluation_form.jsp</result>
+		</action>
+		<!-- END StratEvaluation -->
+		<!-- START RefSubProject -->
+		<action name="RefSubProject.*" method="{1}" class="com.geoland.kfis.web.action.mer.strategy.refsubproject.RefSubProjectAction">
+			<result name="page">module/mer/strategy/refsubproject/refsubproject_page.jsp</result>
+			<result name="form">module/mer/strategy/refsubproject/refsubproject_form.jsp</result>
+			<result name="grid">module/mer/strategy/refsubproject/refsubproject_grid.jsp</result>
+		</action>
+		<action name="RefSubProjectSave" class="com.geoland.kfis.web.action.mer.strategy.refsubproject.RefSubProjectSaveAction">
+			<result name="input">module/mer/strategy/refsubproject/refsubproject_form.jsp</result>
+			<result name="success">module/mer/strategy/refsubproject/refsubproject_form.jsp</result>
+		</action>
+		<!-- END RefSubProject -->
+		<!-- START PerfEvaluation -->
+		<action name="PerfEvaluation.*" method="{1}" class="com.geoland.kfis.web.action.mer.execution.evaluation.performance.PerfEvaluationAction">
+			<result name="page">module/mer/execution/indicator/perfindicator/evaluation/perf_evaluation_page.jsp</result>
+			<result name="form">module/mer/execution/indicator/perfindicator/evaluation/perf_evaluation_form.jsp</result>
+			<result name="grid">module/mer/execution/indicator/perfindicator/evaluation/perf_evaluation_grid.jsp</result>
+		</action>
+
+		<action name="PerfEvaluationSave" class="com.geoland.kfis.web.action.mer.execution.evaluation.performance.PerfEvaluationSaveAction">
+			<result name="input">module/mer/execution/indicator/perfindicator/evaluation/perf_evaluation_form.jsp</result>
+			<result name="success">module/mer/execution/indicator/perfindicator/evaluation/perf_evaluation_form.jsp</result>
+		</action>
+		<!-- END PerfEvaluation -->
+		<!-- START RefSubProject -->
+		<action name="FinDonor.*" method="{1}" class="com.geoland.kfis.web.action.mer.execution.financedonor.FinanceDonorAction">
+			<result name="page">module/mer/execution/financedonor/donor_page.jsp</result>
+			<result name="form">module/mer/execution/financedonor/donor_form.jsp</result>
+			<result name="grid">module/mer/execution/financedonor/donor_grid.jsp</result>
+		</action>
+		<action name="FinDonorSave" class="com.geoland.kfis.web.action.mer.execution.financedonor.FinanceDonorSaveAction">
+			<result name="input">module/mer/execution/financedonor/donor_form.jsp</result>
+			<result name="success">module/mer/execution/financedonor/donor_form.jsp</result>
+		</action>
+		<!-- END RefSubProject -->
+		<!-- START IndicatorTarget-->
+		<action name="IndicatorTarget.*" method="{1}" class="com.geoland.kfis.web.action.mer.execution.indicator.subindicator.indicatortarget.IndicatorTargetAction">
+			<result name="form">module/mer/execution/indicator/perfindicator/indicatortTarget/indicator_target_form.jsp</result>
+			<result name="grid">module/mer/execution/indicator/perfindicator/indicatortTarget/indicator_target_grid.jsp</result>
+			<result name="page">/module/mer/execution/indicator/perfindicator/indicatortTarget/indicator_target_page.jsp</result>
+		</action>
+		
+		<action name="IndicatorTargetSave" class="com.geoland.kfis.web.action.mer.execution.indicator.subindicator.indicatortarget.IndicatorTargetSaveAction">
+			<result name="input">module/mer/execution/indicator/perfindicator/indicatortTarget/indicator_target_form.jsp</result>
+			<result name="success">module/mer/execution/indicator/perfindicator/indicatortTarget/indicator_target_form.jsp</result>
+		</action>
+		<!-- END IndicatorTarget -->
+		
+		<!-- START AffRefProjects-->
+		<action name="AffRefProjects.*" method="{1}" class="com.geoland.kfis.web.action.affref.AffRefProjectsAction">
+			<result name="form">module/affref/affrefproject_form.jsp</result>
+			<result name="grid">module/affref/affrefproject_grid.jsp</result>
+			<result name="page">module/affref/affrefproject_page.jsp</result>
+		</action>
+		<action name="AffRefProjectsSave" class="com.geoland.kfis.web.action.affref.AffRefProjectsSaveAction">
+			<result name="input">module/affref/affrefproject_form.jsp</result>
+			<result name="success">module/affref/affrefproject_form.jsp</result>
+		</action>
+		<!-- END AffRefProjects -->
+	</package>
+</struts>

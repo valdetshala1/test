@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="kfis-adm" namespace="/" extends="kfis-default">
+	<!-- START Person -->
+		<action name="Person.*" method="{1}" class="com.geoland.kfis.web.action.adm.person.PersonAction">
+			<result name="page">module/adm/person/person_page.jsp</result>
+			<result name="form">module/adm/person/person_form.jsp</result>
+			<result name="list">module/adm/person/person_list.jsp</result>
+			<result name="grid">module/adm/person/person_grid.jsp</result>
+		</action>
+
+		<action name="AdminMonitor.*" method="{1}" class="com.geoland.kfis.web.action.adm.monitor.AdminMonitor">
+			<result name="page">module/adm/monitor/monitor_page.jsp</result>
+		</action>
+
+
+
+		<action name="PersonSave" class="com.geoland.kfis.web.action.adm.person.PersonSaveAction">
+			<result name="input">module/adm/person/person_form.jsp</result>
+			<result name="success">module/adm/person/person_form.jsp</result>
+		</action>		
+		<!-- END Person -->	
+		
+		<!-- START User -->
+		<action name="User.*" method="{1}" class="com.geoland.kfis.web.action.adm.user.UserAction">
+			<result name="page">module/adm/user/user_page.jsp</result>
+			<result name="form">module/adm/user/user_form.jsp</result>
+			<result name="grid">module/adm/user/user_grid.jsp</result>
+		</action>
+
+		<action name="UserSave" class="com.geoland.kfis.web.action.adm.user.UserSaveAction">
+			<result name="input">module/adm/user/user_form.jsp</result>
+			<result name="success">module/adm/user/user_form.jsp</result>
+		</action>		
+		<!-- END User -->
+		
+		<!-- START Permission -->
+		<action name="Permission.*" method="{1}" class="com.geoland.kfis.web.action.adm.rbac.permission.PermissionAction">
+			<result name="page">module/adm/rbac/permission/permission_page.jsp</result>
+			<result name="form">module/adm/rbac/permission/permission_form.jsp</result>
+			<result name="grid">module/adm/rbac/permission/permission_grid.jsp</result>
+			<result name="view">module/adm/rbac/permission/object_operation_view.jsp</result>
+		</action>
+
+		<action name="PermissionSave" class="com.geoland.kfis.web.action.adm.rbac.permission.PermissionSaveAction">
+			<result name="input">module/adm/rbac/permission/permission_form.jsp</result>
+			<result name="success">module/adm/rbac/permission/permission_form.jsp</result>
+		</action>		
+		<!-- END Permission -->
+		<!--START Operation -->
+		<action name="DetailPermission.*" method="{1}" class="com.geoland.kfis.web.action.adm.rbac.operation.OperationAction">
+			<result name="grid">module/adm/operationandobject/operation_grid.jsp</result>
+			<result name="page">module/adm/operationandobject/object_operation_page.jsp</result>
+		</action>
+		<!--END Operation -->
+		
+		<!-- START Role -->
+		<action name="Role.*" method="{1}" class="com.geoland.kfis.web.action.adm.rbac.role.RoleAction">
+			<result name="page">module/adm/rbac/role/role_page.jsp</result>
+			<result name="form">module/adm/rbac/role/role_form.jsp</result>
+			<result name="grid">module/adm/rbac/role/role_grid.jsp</result>
+		</action>
+
+		<action name="RoleSave" class="com.geoland.kfis.web.action.adm.rbac.role.RoleSaveAction">
+			<result name="input">module/adm/rbac/role/role_form.jsp</result>
+			<result name="success">module/adm/rbac/role/role_form.jsp</result>
+		</action>		
+		<!-- END Role -->	
+		
+		<!-- START Organisation -->
+		<action name="Organisation.*" method="{1}" class="com.geoland.kfis.web.action.adm.organisation.OrganisationAction">
+			<result name="page">module/adm/organisation/organisation_page.jsp</result>
+			<result name="form">module/adm/organisation/organisation_form.jsp</result>
+			<result name="grid">module/adm/organisation/organisation_grid.jsp</result>
+			<result name="treegrid">module/adm/organisation/organisation_treegrid.jsp</result>
+		</action>
+
+		<action name="OrganisationSave" class="com.geoland.kfis.web.action.adm.organisation.OrganisationSaveAction">
+			<result name="input">module/adm/organisation/organisation_form.jsp</result>
+			<result name="success">module/adm/organisation/organisation_form.jsp</result>
+		</action>		
+		<!-- END Role -->	
+		
+		<!-- START domain -->
+		<action name="Domain.*" method="{1}" class="com.geoland.kfis.web.action.adm.domain.DomainAction">
+			<result name="page">module/adm/domain/domain_page.jsp</result>
+			<result name="form">module/adm/domain/domain_form.jsp</result>
+			<result name="grid">module/adm/domain/domain_grid.jsp</result>
+			<result name="popup">module/adm/domain/domain_popup.jsp</result>
+			<result name="privilegepopup">module/adm/domain/privilege_popup.jsp</result>
+		</action>
+
+		<action name="DomainSave" class="com.geoland.kfis.web.action.adm.domain.DomainSaveAction">
+			<result name="input">module/adm/domain/domain_form.jsp</result>
+			<result name="success">module/adm/domain/domain_form.jsp</result>
+		</action>		
+		<!-- END domain -->		
+		
+		
+		<action name="RbacObject.*" method="{1}" class="com.geoland.kfis.web.action.adm.rbac.object.ObjectAction">
+			<result name="page">module/adm/rbac/object/object_page.jsp</result>
+			<result name="form">module/adm/rbac/object/object_form.jsp</result>
+			<result name="grid">module/adm/rbac/object/object_grid.jsp</result>
+		</action>		
+		
+		<action name="RbacObjectSave" class="com.geoland.kfis.web.action.adm.rbac.object.ObjectSaveAction">
+			<result name="input">module/adm/rbac/object/object_form.jsp</result>
+			<result name="success">module/adm/rbac/object/object_form.jsp</result>
+		</action>	
+		
+		<!-- START PersForestOwner -->
+		<action name="ForestOwner.*" method="{1}" class="com.geoland.kfis.web.action.adm.forestowner.ForestOwnerAction">
+			<result name="form">module/adm/forestowner/forestowner_form.jsp</result>
+		</action>
+
+		<action name="ForestOwnerSave" class="com.geoland.kfis.web.action.adm.forestowner.ForestOwnerSaveAction">
+			<result name="input">module/adm/forestowner/forestowner_form.jsp</result>
+			<result name="success">module/adm/forestowner/forestowner_form.jsp</result>
+		</action>		
+		<!-- END PersForestOwner -->		
+		
+		<!-- START BPartner  -->
+		<action name="BPartner.*" method="{1}" class="com.geoland.kfis.web.action.adm.bpartner.BPartnerAction">
+			<result name="form">module/adm/bpartner/bpartner_form.jsp</result>
+			<result name="grid">module/adm/bpartner/bpartner_grid.jsp</result>
+			<result name="page">module/adm/bpartner/bpartner_page.jsp</result>
+		</action>
+
+		<action name="BPartnerSave" class="com.geoland.kfis.web.action.adm.bpartner.BPartnerSaveAction">
+			<result name="input">module/adm/bpartner/bpartner_form.jsp</result>
+			<result name="success">module/adm/bpartner/bpartner_form.jsp</result>
+		</action>
+		<!-- END BPartner -->		
+		
+		<!-- START PrintMap  -->
+		<action name="PrintMap.*" method="{1}" class="com.geoland.kfis.web.action.printmap.PrintMapAction">
+			<result name="form">module/printmap/print_form.jsp</result>
+			<result name="print_a">module/printmap/print_form_a.jsp</result>
+		</action>
+
+		<action name="PrintMapValidate" class="com.geoland.kfis.web.action.printmap.PrintMapFormValidate">
+			<result name="input">module/printmap/print_form.jsp</result>
+			<result name="success">module/printmap/print_form.jsp</result>
+		</action>
+		<!-- END PrintMap -->	
+		
+    </package>
+</struts>

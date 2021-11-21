@@ -1,0 +1,360 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.geoland.kfis</groupId>
+  <artifactId>kfis</artifactId>
+  <packaging>war</packaging>
+  <version>3.0</version>
+  <name>kfis Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+	<properties>
+		<spring.version>3.2.3.RELEASE</spring.version>
+		<junit.version>4.11</junit.version>
+		<jdk.version>1.8</jdk.version>
+		
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>				
+		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>		
+		<maven.javadoc.skip>true</maven.javadoc.skip>
+	</properties>
+  
+  <dependencies>
+ 	
+    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>${junit.version}</version>
+	      <scope>compile</scope>
+    </dependency>
+    
+	<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.0</version>
+        <scope>provided</scope>
+    </dependency> 
+       
+	<dependency>
+		  <groupId>org.apache.tomcat</groupId>
+		  <artifactId>tomcat-api</artifactId>
+		  <version>7.0.42</version>
+		  <scope>provided</scope>
+	</dependency>
+	
+	<dependency>
+	   <groupId>javax</groupId>
+	   <artifactId>javaee-api</artifactId>
+	   <version>7.0</version>
+	   <scope>provided</scope>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.persistence</groupId>
+	    <artifactId>persistence-api</artifactId>
+	    <version>1.0.2</version>
+	</dependency> 
+	
+	<dependency>
+	  <groupId>org.apache.shiro</groupId>
+	  <artifactId>shiro-core</artifactId>
+	  <version>1.2.3</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.apache.shiro</groupId>
+	  <artifactId>shiro-web</artifactId>
+	  <version>1.2.3</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.apache.shiro</groupId>
+	  <artifactId>shiro-aspectj</artifactId>
+	  <version>1.2.3</version>
+	</dependency>
+	
+  </dependencies>
+  
+<reporting>
+ 	
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <minmemory>128m</minmemory>
+          <maxmemory>1g</maxmemory>
+        </configuration>
+      </plugin>
+    </plugins>
+</reporting>
+    
+<build>
+    <finalName>kfis</finalName>
+    <defaultGoal>clean, install</defaultGoal>
+    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+    <outputDirectory>${project.basedir}/target/classes</outputDirectory>
+    <testOutputDirectory>${project.basedir}/target/test-classes</testOutputDirectory>
+         
+    <resources>
+         <resource>
+             <directory>${project.basedir}/src/main/resources</directory>
+            <excludes>
+            	<exclude>**/*.pdf</exclude>
+            </excludes>
+         </resource>
+        <resource>
+            <directory>${project.basedir}/src/main/java</directory>
+            <includes>                      
+                <include>**/*.xml</include>
+                <include>**/*.properties</include>
+            </includes>
+            <excludes>
+            	<exclude>**/*.java</exclude>
+            	<exclude>**/*.pdf</exclude>
+            </excludes>
+        </resource>
+         
+        
+     </resources>
+        
+	<plugins>
+			<!--
+			mvn jetty run 
+			 -->
+			<plugin>
+		    <groupId>org.eclipse.jetty</groupId>
+		    <artifactId>jetty-maven-plugin</artifactId>
+		    <version>9.4.25.v20191220</version>
+
+			  <configuration>
+				   <webApp>
+				      <contextPath>/kfis</contextPath>
+				    </webApp>		            
+                    <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <scanTargetPatterns>
+                        <scanTargetPattern>
+                            <directory>src/main/webapp/WEB-INF</directory>
+                            <includes>
+                                <include>**/*.properties</include>
+                                <include>**/*.xml</include>
+                                <include>**/*.jsp</include>
+                            </includes>
+                        </scanTargetPattern>
+                    </scanTargetPatterns>
+			  </configuration>			  
+			</plugin>
+				
+			<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.3</version>
+					<configuration>
+						<charset>UTF-8</charset>
+						<docencoding>UTF-8</docencoding>
+				<!--         
+						<docfilessubdirs>true</docfilessubdirs>
+				<links>
+					<link>http://java.sun.com/j2se/1.7.0/docs/api/</link>
+				</links>	        			
+				<show>protected</show>
+				<source>1.7</source>
+					  
+				-->
+				<sourcepath>${basedir}/src/main/java/com/geoland/kfis</sourcepath>
+				  
+				<!-- <argLine>-Xmn8m -Xms32m -Xmx96m -XX:PermSize=32m -XX:MaxPermSize=128m</argLine>-->
+						
+						<linksource>true</linksource>
+						<minmemory>128m</minmemory>
+						<maxmemory>512m</maxmemory>
+						<!-- fix error can't find java.lang package -->
+					   <bootclasspath>${java.home}/lib/rt.jar</bootclasspath>                    	
+						<excludePackageNames>org.hibernate.*:org.apache.*:com.geoland.framework.*</excludePackageNames>                		      
+					</configuration>
+					  
+					<executions>
+					  <execution>
+						<id>attach-javadocs</id>
+						<goals>
+						  <goal>jar</goal>
+						</goals>
+					  </execution>
+					</executions>
+				  </plugin>
+          	
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+					</plugin>
+	
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>jspc-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>jspc</id>
+								<goals>
+									<goal>compile</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+						  <execution>
+							<phase>deploy</phase>
+							<configuration>
+							  <tasks>
+
+								<!--
+								  Place any Ant task here. You can add anything
+								  you can add between <target> and </target> in a
+								  build.xml.
+								-->
+
+							  </tasks>
+							</configuration>
+							<goals>
+							  <goal>run</goal>
+							</goals>
+						  </execution>
+						</executions>
+					 </plugin>
+	
+					  <plugin> 
+						<groupId>org.codehaus.mojo</groupId> 
+						<artifactId>jspc-maven-plugin</artifactId> 
+						<executions> 
+						  <execution> 
+							<id>jspc</id> 
+							<goals> 
+							  <goal>compile</goal> 
+							</goals> 
+						   
+							<configuration> 
+							  <inputWebXml>${basedir}/src/main/webapp/WEB-INF/web.xml</inputWebXml>
+							  <outputWebXml>${basedir}/target/jspweb.xml</outputWebXml>
+							  <verbose>false</verbose> 
+							  <project>${project}</project> 
+							  <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
+							  <webFragmentFile>${basedir}/target/web-fragment.xml</webFragmentFile>
+							  <workingDirectory>${basedir}/target/jsp-source</workingDirectory>
+							  
+								<webXml>${basedir}/target/jspweb.xml</webXml>
+								<injectString>&lt;!-- [INSERT FRAGMENT HERE] --&gt;</injectString>
+							  
+							</configuration>
+							  
+						  </execution> 
+						</executions> 
+					  </plugin>	
+	
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-war-plugin</artifactId>
+							<version>2.4</version>
+
+							<configuration>
+						
+								<packagingexcludes>**/*.jsp</packagingexcludes>
+						
+								<excludes>**/*.jsp</excludes>
+								<warSourceDirectory>src/main/webapp</warSourceDirectory>
+						
+								<webXml>${basedir}/target/jspweb.xml</webXml>
+								<injectString>&lt;!-- [INSERT FRAGMENT HERE] --&gt;</injectString>
+						
+							</configuration>
+						
+						</plugin>
+	
+            
+					   <plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-compiler-plugin</artifactId>
+							<version>3.0</version>
+							
+							<executions>
+								<execution>
+									<id>default-testCompile</id>
+									<phase>test-compile</phase>
+									<goals>
+										<goal>testCompile</goal>
+									</goals>
+									<configuration>
+										<skip>true</skip>
+									</configuration>
+								</execution>
+							</executions>
+							
+							
+							<configuration>
+									<source>${jdk.version}</source>
+									<target>${jdk.version}</target>
+							 
+							<compilerArguments>
+								   <extdirs>src\main\webapp\WEB-INF\lib</extdirs>
+							</compilerArguments>
+							 
+							</configuration>
+					   </plugin>
+						<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.2.0</version>
+					  </plugin>
+					   
+	</plugins>
+
+	<pluginManagement>
+		<plugins>
+            <plugin>
+              <artifactId>maven-resources-plugin</artifactId>
+              <version>2.7</version>
+            </plugin> 		
+			<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+			<plugin>
+				<groupId>org.eclipse.m2e</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+				<version>1.0.0</version>
+				<configuration>
+					<lifecycleMappingMetadata>
+						<pluginExecutions>
+							<pluginExecution>
+								<pluginExecutionFilter>
+									<groupId>org.codehaus.mojo</groupId>
+									<artifactId>
+										jspc-maven-plugin
+									</artifactId>
+									<versionRange>
+										[1.4.6,)
+									</versionRange>
+									<goals>
+										<goal>compile</goal>
+									</goals>
+								</pluginExecutionFilter>
+								<action>
+									<ignore></ignore>
+								</action>
+							</pluginExecution>
+						</pluginExecutions>
+					</lifecycleMappingMetadata>
+				</configuration>
+			</plugin>
+			
+			
+		</plugins>
+	</pluginManagement>
+  </build>  
+  
+</project>

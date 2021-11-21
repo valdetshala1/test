@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-03-01T11:48:16 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dhept_hunting_drport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="403e628a-12d3-492c-9c0c-147a96b7314f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="kfis_GIS.xml"/>
+	<parameter name="ks_logo" class="java.lang.String"/>
+	<parameter name="kfis_logo" class="java.lang.String"/>
+	<parameter name="p_qrcode_content_url" class="java.lang.String"/>
+	<parameter name="p_actual_user" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select habitat_location , m.first_name||' '|| m.last_name as manager_name,land_type.domtext as land_type,hunt_owner_type.domtext as owner_type, 
+ private_land_area, public_land_area , total_area , area from tdhpet_location l left join  tdhpet_location_land_type lt on l.id=lt.location_id
+left join (select * from ttextdomain where domname ilike 'LANDTYPE') as land_type on lt.land_type=land_type.domkey
+left join (select * from ttextdomain where domname ilike 'HUNTINGAREATYPE') as hunt_owner_type on hunt_owner_type.domkey=l.hunting_area_type
+left join tperson m on m.id=l.superintend_by 
+group by habitat_location, manager_name, land_type.domtext, hunt_owner_type.domtext, private_land_area,public_land_area, total_area, area]]>
+	</queryString>
+	<field name="habitat_location" class="java.lang.String"/>
+	<field name="manager_name" class="java.lang.String"/>
+	<field name="land_type" class="java.lang.String"/>
+	<field name="owner_type" class="java.lang.String"/>
+	<field name="private_land_area" class="java.lang.Double"/>
+	<field name="public_land_area" class="java.lang.Double"/>
+	<field name="total_area" class="java.lang.Double"/>
+	<field name="area" class="java.lang.Double"/>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{habitat_location}]]></groupExpression>
+		<groupHeader>
+			<band height="21">
+				<frame>
+					<reportElement x="0" y="0" width="555" height="18" uuid="50b84507-574b-4f20-a703-e83569a5e673">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement stretchType="RelativeToTallestObject" x="278" y="0" width="90" height="18" uuid="67382742-fabc-4ddd-a112-27336b2edefa">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box rightPadding="5">
+							<pen lineColor="#999999"/>
+							<leftPen lineWidth="1.0" lineColor="#999999"/>
+						</box>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font fontName="Times New Roman" size="14" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Private"]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement stretchType="RelativeToTallestObject" x="368" y="0" width="90" height="18" uuid="b3e11e11-5634-473c-b2da-5b9171215602">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box rightPadding="5">
+							<pen lineWidth="1.0" lineColor="#999999"/>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#999999"/>
+						</box>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font fontName="Times New Roman" size="14" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Shtetërore"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<line>
+					<reportElement x="0" y="20" width="555" height="1" uuid="6932c4dc-8963-4655-ad6f-d37c2026444d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Solid" lineColor="#999999"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="22">
+				<line>
+					<reportElement x="0" y="1" width="555" height="1" uuid="c9ac222e-4882-4e26-bf33-11b4d74518f0">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineColor="#999999"/>
+					</graphicElement>
+				</line>
+				<frame>
+					<reportElement mode="Opaque" x="0" y="3" width="555" height="17" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="59471469-7941-40f9-b6d2-fe2065c9893d">
+						<property name="" value=""/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="220" y="1" width="99" height="15" forecolor="#333333" backcolor="#9A9A9A" uuid="9ae3ad23-14ee-4a58-bbd7-a2be6fc4d407">
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						</reportElement>
+						<box leftPadding="3"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+							<font fontName="Times New Roman" size="12" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{total_area}+" [ha]"]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement stretchType="RelativeToTallestObject" x="0" y="1" width="220" height="15" forecolor="#333333" uuid="81771e9c-2183-4441-a748-c00aff4435dd">
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						</reportElement>
+						<box leftPadding="3"/>
+						<textElement verticalAlignment="Middle" rotation="None">
+							<font fontName="Times New Roman" size="12" isItalic="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Totali i siperfaqës se vendgjuetisë: "]]></textFieldExpression>
+					</textField>
+				</frame>
+				<line>
+					<reportElement x="0" y="21" width="555" height="1" uuid="2c4a3444-4c39-4688-bca1-556e39c1ad08">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineColor="#999999"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="220" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="160" uuid="ee8921f6-f6ae-46d7-bc75-e634e1e0a77d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="15" y="15" width="70" height="50" uuid="cd3116c0-ed0d-484b-8a62-30f009f5393e">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<imageExpression><![CDATA[$P{ks_logo}]]></imageExpression>
+				</image>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="458" y="15" width="90" height="60" uuid="262426f6-2409-428a-bf16-fc3b9d7dd6d5">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<imageExpression><![CDATA[$P{kfis_logo}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="100" y="0" width="350" height="45" uuid="2bf3012b-8a5e-4887-817e-0598e3b9ac2f">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="11"/>
+					</textElement>
+					<text><![CDATA[REPUBLIKA E KOSOVËS
+REPUBLIKA KOSOVA-REPUBLIC OF KOSOVO
+QEVERIA–VLADA-GOVERNMENT ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="100" y="45" width="350" height="50" uuid="4ac36fec-7021-4443-b8b4-ba718b99bcb7">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[MINISTRIA BUJQËSISË, PYLLTARISË DHE ZHVILLIMIT RURAL 
+MINISTARSTVO POLJOPRIVREDE, SUMARSTVA I RURALNOG RAZVOJA
+MINISTRY OF AGRICULTURE, FORESTRY AND RURAL DEVELOPMENT ]]></text>
+				</staticText>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="250" y="98" width="60" height="60" uuid="40f2336e-def9-46ad-a731-eaf2c1ac4370">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<imageExpression><![CDATA[$P{p_qrcode_content_url}]]></imageExpression>
+				</image>
+			</frame>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="180" width="555" height="20" forecolor="#333333" uuid="33763bf3-7a09-4cff-b2b6-d8902cabc5dc">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Të dhënat e përgjithshme dhe pronsitë për vendgjuetitë"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="18" uuid="496dcc95-b695-4970-8e1e-96b1a84dcd65">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="8" y="0" width="90" height="18" forecolor="#000000" uuid="2efbf0b8-3930-45e7-8fb3-856519e22ef5">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Vendgjuetia]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="98" y="0" width="90" height="18" forecolor="#000000" uuid="113af247-fe7c-4669-a612-6c34af4e6aad">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Menaxheri]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="188" y="0" width="90" height="18" forecolor="#000000" uuid="01bf9d79-20a7-4348-8545-3bcbaaf34f10">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Tipi i pronësisë]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="458" y="0" width="90" height="18" forecolor="#000000" uuid="c06aae18-f1d7-48c8-9b10-4474a8d03382">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Sipërfaqja [ha]]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="278" y="0" width="180" height="18" forecolor="#000000" uuid="41bb790e-fe15-480e-a219-55cba0fe229e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#999999"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#999999"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#999999"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Shgrytëzimi i tokës [ha]]]></text>
+				</staticText>
+			</frame>
+			<line>
+				<reportElement x="0" y="19" width="555" height="1" uuid="a063e872-bc5c-4bfd-9020-cd33a67ad42c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="15" uuid="40e59627-b570-4517-bf30-21adf54416b2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="8" y="0" width="90" height="15" uuid="40c9a0d6-31bf-48c2-a169-474e836af032">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box leftPadding="3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{habitat_location}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="98" y="0" width="90" height="15" uuid="9e653bd6-76a1-48ac-8aa2-def70af4a9e7">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{manager_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="188" y="0" width="90" height="15" uuid="3b76bc37-2377-473c-a2e8-1f45a90c870c">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{land_type}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="278" y="0" width="90" height="15" uuid="7f531968-d982-47c8-95bc-857e17745e8f">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box rightPadding="3">
+						<pen lineWidth="1.0" lineColor="#999999"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#999999"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{private_land_area}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="368" y="0" width="90" height="15" uuid="938753b6-3a64-49ed-8925-85dda26e1a57">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box rightPadding="3">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#999999"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{public_land_area}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="458" y="0" width="90" height="15" uuid="a7346f94-b24e-4789-940d-21c4af068fca">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box rightPadding="3"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{area}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="71">
+			<staticText>
+				<reportElement x="450" y="71" width="105" height="0" uuid="f1a3877f-1ded-4a78-8cc4-54373e583776">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="450" y="40" width="105" height="30" uuid="8ba44ebb-d82e-4d30-b034-5921009a9d1c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box bottomPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{p_actual_user}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="450" y="10" width="105" height="30" uuid="b7b37cd0-f2d5-487d-a821-c96b2122f640"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gjeneruar nga :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern=" dd /MM /yyyy" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="30" width="134" height="30" forecolor="#000000" uuid="8dce147c-8d7b-4cad-82a7-57719090beac">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

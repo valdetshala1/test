@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   
+   <package name="kfis-hrm" namespace="/" extends="kfis-default">
+
+	   <result-types>
+	   		<result-type name="myBytesResult" class="com.geoland.kfis.web.action.base.binary.MyBytesResult" />
+	        <result-type name="dsr" class="com.geoland.kfis.web.action.base.binary.DynamicStreamResult" />
+	        <result-type name="reportStream" default="false" class="com.geoland.kfis.web.action.print.DynamicStreamResult"/>
+	    </result-types>
+
+		<!-- START Employee -->
+		<action name="Employee.*" method="{1}" class="com.geoland.kfis.web.action.hrm.employee.EmployeeAction">
+			<result name="page">module/hrm/employee/employee_page.jsp</result>
+			<result name="form">module/hrm/employee/employee_form.jsp</result>
+			<result name="list">module/hrm/employee/employee_list.jsp</result>
+			<result name="grid">module/hrm/employee/employee_grid.jsp</result>
+			<result name="profile">module/hrm/employee/employee_profile.jsp</result>
+			<result name="certification">module/hrm/skill/employee_certification_grid.jsp</result>
+			<result name="training">module/hrm/skill/employee_training_grid.jsp</result>
+			<result name="education">module/hrm/skill/employee_education_grid.jsp</result>
+			<result name="document">module/hrm/employee/employee_document_grid.jsp</result>
+			<result name="soscontact">module/hrm/employee/employee_soscontact_grid.jsp</result>
+			<result name="language">module/hrm/employee/employee_language_grid.jsp</result>
+			<result name="decisions">module/hrm/employee/employee_decisions_grid.jsp</result>
+			<result name="employee_list_report">module/hrm/employee/employee_list_report.jsp</result>
+		</action>
+		
+		
+		<action name="Salary.*" method="{1}" class="com.geoland.kfis.web.action.hrm.salary.SalaryAction">
+			<result name="dashboard">module/hrm/salary/salary_dashboard.jsp</result>
+			<result name="page">module/hrm/salary/salary_page.jsp</result>
+			<result name="form">module/hrm/salary/salary_form.jsp</result>
+			<result name="grid">module/hrm/salary/salary_grid.jsp</result>
+			<result name="reportPopup">module/hrm/salary/salary_report_generator.jsp</result>
+		</action>
+		
+		<action name="SalarySave" class="com.geoland.kfis.web.action.hrm.salary.SalarySaveAction">
+			<result name="input">module/hrm/salary/salary_form.jsp</result>
+			<result name="success">module/hrm/salary/salary_form.jsp</result>
+		</action>
+
+		<action name="SalaryAdjustmentDelete" class="com.geoland.kfis.web.action.hrm.salary.SalaryAdjustmentDelete">
+			<result name="input">module/hrm/salary/salary_form.jsp</result>
+			<result name="success">module/hrm/salary/salary_form.jsp</result>
+		</action>		
+		
+
+		<action name="SalaryDeductionSave" class="com.geoland.kfis.web.action.hrm.salary.DeductionSaveAction">
+			<result name="input">module/hrm/salary/salary_form.jsp</result>
+			<result name="success">module/hrm/salary/salary_form.jsp</result>
+		</action>	
+		
+		<action name="TaxRate.*" method="{1}" class="com.geoland.kfis.web.action.hrm.taxrate.TaxRateAction">
+			<result name="page">module/hrm/taxrate/taxrate_page.jsp</result>
+			<result name="form">module/hrm/taxrate/taxrate_form.jsp</result>
+			<result name="grid">module/hrm/taxrate/taxrate_grid.jsp</result>
+		</action>
+									
+		<action name="TaxRateSave" class="com.geoland.kfis.web.action.hrm.taxrate.TaxRateSaveAction">
+			<result name="input">module/hrm/taxrate/taxrate_form.jsp</result>
+			<result name="success">module/hrm/taxrate/taxrate_form.jsp</result>
+		</action>	
+		
+		<action name="Payroll.*" method="{1}" class="com.geoland.kfis.web.action.hrm.payroll.PayrollAction">
+			<result name="page">module/hrm/payroll/payroll_page.jsp</result>
+			<result name="form">module/hrm/payroll/payroll_form.jsp</result>
+			<result name="grid">module/hrm/payroll/payroll_grid.jsp</result>
+			<result name="reportPopup">module/hrm/salary/salary_report_generator.jsp</result>
+		</action>
+									
+		<action name="PayrollSave" class="com.geoland.kfis.web.action.hrm.payroll.PayrollSaveAction">
+			<result name="input">module/hrm/payroll/payroll_form.jsp</result>
+			<result name="success">module/hrm/payroll/payroll_form.jsp</result>
+		</action>	
+
+		<action name="PayrollAdjustmentDelete" class="com.geoland.kfis.web.action.hrm.payroll.PayrollAdjustmentDelete">
+			<result name="input">module/hrm/payroll/payroll_form.jsp</result>
+			<result name="success">module/hrm/payroll/payroll_form.jsp</result>
+		</action>			
+					
+		<action name="PayrollStatusSave" class="com.geoland.kfis.web.action.hrm.payroll.PayrollStatusAction">
+			<result name="input">module/hrm/payroll/payroll_form.jsp</result>
+			<result name="success">module/hrm/payroll/payroll_form.jsp</result>
+		</action>
+							
+		
+		<action name="Payslip.*" method="{1}" class="com.geoland.kfis.web.action.hrm.payslip.PayslipAction">
+			<result name="page">module/hrm/payslip/payslip_page.jsp</result>
+			<result name="form">module/hrm/payslip/payslip_form.jsp</result>
+			<result name="grid">module/hrm/payslip/payslip_grid.jsp</result>
+		</action>
+				
+		<action name="PayslipSave" class="com.geoland.kfis.web.action.hrm.payslip.PayslipSave">
+			<result name="input">module/hrm/payslip/payslip_form.jsp</result>
+			<result name="success">module/hrm/payslip/payslip_form.jsp</result>
+		</action>					
+							
+
+	  	<action name="image" class="com.geoland.kfis.web.action.base.captcha.CaptchaAction">
+	        <result type="stream">
+	            <param name="contentType">image/jpeg</param>
+	            <param name="inputName">imageStream</param>
+	            <param name="contentDisposition">attachment;filename="captcha.jpeg"</param>
+	            <param name="bufferSize">1024</param>
+	        </result>
+	    </action> 
+	    		
+		<action name="ShowImage" class="com.geoland.kfis.web.action.base.binary.ShowImageAction">
+	        <result type="stream">
+	            <param name="contentType">image/jpeg</param>
+	            <param name="inputName">imageStream</param>
+	            <param name="contentDisposition">attachment;filename="captcha.jpeg"</param>
+	            <param name="bufferSize">2024</param>
+	        </result>			
+		</action>
+		
+		<action name="Stream" class="com.geoland.kfis.web.action.base.binary.Stream">
+			<result name="success"></result>
+		</action>		
+		
+	    
+	    <action name="myAction" class="com.geoland.kfis.web.action.base.binary.MyAction">
+	        <result name="myImageResult" type="myBytesResult">
+	            <param name="contentType">${myContentType}</param>
+	            <param name="contentDisposition">${myContentDisposition}</param>
+	            <param name="contentLength">${myContentLength}</param>
+	            <param name="bufferSize">${myBufferSize}</param>
+	        </result>
+	    </action>
+
+
+		<action name="EmployeeSave" class="com.geoland.kfis.web.action.hrm.employee.EmployeeSaveAction">
+			<result name="input">module/hrm/employee/employee_form.jsp</result>
+			<result name="success">module/hrm/employee/employee_form.jsp</result>
+		</action>		
+		<!-- END Employee -->
+		
+		<!-- START OfficialTravel -->
+		<action name="OfficialTravel.*" method="{1}" class="com.geoland.kfis.web.action.hrm.travel.OfficialTravelAction">
+			<result name="page">module/hrm/travel/officialtravel_page.jsp</result>
+			<result name="form">module/hrm/travel/officialtravel_form.jsp</result>
+			<result name="grid">module/hrm/travel/officialtravel_grid.jsp</result>
+			<result name="status_form">module/hrm/travel/officialtravel_status.jsp</result>
+			<result name="report_generator">module/hrm/travel/officialtravel_report_generator.jsp</result>
+		</action>
+
+		<action name="OfficialTravelSave" class="com.geoland.kfis.web.action.hrm.travel.OfficialTravelSaveAction">
+			<result name="input">module/hrm/travel/officialtravel_form.jsp</result>
+			<result name="success">module/hrm/travel/officialtravel_form.jsp</result>
+		</action>	
+		
+		<action name="OfficialTravelStatusSave" class="com.geoland.kfis.web.action.hrm.travel.OfficialTravelSaveAction">
+			<result name="input">module/hrm/travel/officialtravel_status.jsp</result>
+			<result name="success">module/hrm/travel/officialtravel_status.jsp</result>
+		</action>
+		
+		<action name="TravelDoc" class="com.geoland.kfis.web.action.hrm.travel.OfficialTravelDocumentGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>	
+		<!-- END OfficialTravel -->		
+		
+		<!-- START Leave -->
+		<action name="Leave.*" method="{1}" class="com.geoland.kfis.web.action.hrm.leave.LeaveAction">
+			<result name="page">module/hrm/leave/leave_page.jsp</result>
+			<result name="form">module/hrm/leave/leave_form.jsp</result>
+			<result name="grid">module/hrm/leave/leave_grid.jsp</result>
+			<result name="calendar_page">module/hrm/leave/calendar/calendar_page.jsp</result>
+			<result name="calendar_form">module/hrm/leave/calendar/calendar_form.jsp</result>
+			<result name="status_form">module/hrm/leave/leave_status.jsp</result>
+			<result name="report_generator">module/hrm/leave/leave_report_generator.jsp</result>
+		</action>
+
+		<action name="LeaveSave" class="com.geoland.kfis.web.action.hrm.leave.LeaveSaveAction">
+			<result name="input">module/hrm/leave/leave_form.jsp</result>
+			<result name="success">module/hrm/leave/leave_form.jsp</result>
+		</action>		
+		
+		<action name="LeaveStatusSave" class="com.geoland.kfis.web.action.hrm.leave.LeaveSaveAction">
+			<result name="input">module/hrm/leave/leave_status.jsp</result>
+			<result name="success">module/hrm/leave/leave_status.jsp</result>
+		</action>
+		
+		<action name="LeaveDoc" class="com.geoland.kfis.web.action.hrm.leave.LeaveDocumentGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END Leave -->	
+		
+		<!-- START LeaveType -->
+		<action name="LeaveType.*" method="{1}" class="com.geoland.kfis.web.action.hrm.leave.leavetype.LeaveTypeAction">
+			<result name="page">module/hrm/leave/leavetype/leavetype_page.jsp</result>
+			<result name="form">module/hrm/leave/leavetype/leavetype_form.jsp</result>
+			<result name="grid">module/hrm/leave/leavetype/leavetype_grid.jsp</result>
+		</action>
+
+		<action name="LeaveTypeSave" class="com.geoland.kfis.web.action.hrm.leave.leavetype.LeaveTypeSaveAction">
+			<result name="input">module/hrm/leave/leavetype/leavetype_form.jsp</result>
+			<result name="success">module/hrm/leave/leavetype/leavetype_form.jsp</result>
+		</action>		
+		<!-- END LeaveType -->		
+		<!-- START AttendanceRecord -->
+		<action name="AttendanceRecord.*" method="{1}" class="com.geoland.kfis.web.action.hrm.attendance.AttendanceRecordAction">
+			<result name="page">module/hrm/attendance/attendance_page.jsp</result>
+			<result name="form">module/hrm/attendance/attendance_form.jsp</result>
+			<result name="grid">module/hrm/attendance/attendance_grid.jsp</result>
+			<result name="popup">module/hrm/attendance/attendance_status_popup.jsp</result>
+			<result name="reportPopup">module/hrm/attendance/attendance_report_generator.jsp</result>
+		</action>
+
+		<action name="AttendanceRecordSave" class="com.geoland.kfis.web.action.hrm.attendance.AttendanceRecordSaveAction">
+			<result name="input">module/hrm/attendance/attendance_form.jsp</result>
+			<result name="success">module/hrm/attendance/attendance_form.jsp</result>
+		</action>		
+		<!-- END AttendanceRecord -->			
+		<!-- START LeaveEntitlement -->
+		<action name="LeaveEntitlement.*" method="{1}" class="com.geoland.kfis.web.action.hrm.leave.leaveentitlement.LeaveEntitlementAction">
+			<result name="page">module/hrm/leave/leaveentitlement/leaveentitlement_page.jsp</result>
+			<result name="form">module/hrm/leave/leaveentitlement/leaveentitlement_form.jsp</result>
+			<result name="grid">module/hrm/leave/leaveentitlement/leaveentitlement_grid.jsp</result>
+		</action>
+
+		<action name="LeaveEntitlementSave" class="com.geoland.kfis.web.action.hrm.leave.leaveentitlement.LeaveEntitlementSaveAction">
+			<result name="input">module/hrm/leave/leaveentitlement/leaveentitlement_form.jsp</result>
+			<result name="success">module/hrm/leave/leaveentitlement/leaveentitlement_form.jsp</result>
+		</action>		
+		<!-- END LeaveEntitlement -->
+		<!-- START EmployeeLanguage -->
+		<action name="EmployeeLanguage.*" method="{1}" class="com.geoland.kfis.web.action.hrm.employee.language.LanguageAction">
+			<result name="form">module/hrm/employee/employee_language_form.jsp</result>
+		</action>
+		<action name="EmployeeLanguageSave" class="com.geoland.kfis.web.action.hrm.employee.language.LanguageSaveAction">
+			<result name="input">module/hrm/employee/employee_language_form.jsp</result>
+			<result name="success">module/hrm/employee/employee_language_form.jsp</result>
+		</action>		
+		<!-- END EmployeeLanguage -->
+		<!-- START EmployeeSkill -->
+		<action name="EmployeeSkill.*" method="{1}" class="com.geoland.kfis.web.action.hrm.skill.EmployeeSkillAction">
+			<result name="certification">module/hrm/skill/employee_certification_form.jsp</result>
+			<result name="training">module/hrm/skill/employee_training_form.jsp</result>
+			<result name="education">module/hrm/skill/employee_education_form.jsp</result>
+		</action>
+		<action name="EmployeeSkillAttachment" class="com.geoland.kfis.web.action.hrm.skill.EmployeeSkillAttachmentAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- START EmployeeSkill -->
+		<!-- START EmployeeCertification -->
+		<action name="EmployeeCertificationSave" class="com.geoland.kfis.web.action.hrm.skill.EmployeeCertificationSaveAction">
+			<result name="input">module/hrm/skill/employee_certification_form.jsp</result>
+			<result name="success">module/hrm/skill/employee_certification_form.jsp</result>
+		</action>
+		<!-- END EmployeeCertification-->		
+		<!-- START EmployeeTraining -->
+		<action name="EmployeeTrainingSave" class="com.geoland.kfis.web.action.hrm.skill.EmployeeTrainingSaveAction">
+			<result name="input">module/hrm/skill/employee_training_form.jsp</result>
+			<result name="success">module/hrm/skill/employee_training_form.jsp</result>
+		</action>
+		<!-- END EmployeeTraining-->		
+		<!-- START EmployeeEducation -->
+		<action name="EmployeeEducationSave" class="com.geoland.kfis.web.action.hrm.skill.EmployeeEducationSaveAction">
+			<result name="input">module/hrm/skill/employee_education_form.jsp</result>
+			<result name="success">module/hrm/skill/employee_education_form.jsp</result>
+		</action>		
+		<!-- END EmployeeEducation -->
+		<!-- START EmployeeDocument -->
+		<action name="EmployeeDocument.*" method="{1}" class="com.geoland.kfis.web.action.hrm.employee.document.DocumentAction">
+			<result name="form">module/hrm/employee/employee_document_form.jsp</result>
+		</action>
+		<action name="EmployeeDocumentSave" class="com.geoland.kfis.web.action.hrm.employee.document.DocumentSaveAction">
+			<result name="input">module/hrm/employee/employee_document_form.jsp</result>
+			<result name="success">module/hrm/employee/employee_document_form.jsp</result>
+		</action>
+		<action name="DocumentGenerator" class="com.geoland.kfis.web.action.hrm.employee.document.DocumentAttachmentAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END EmployeeDocument -->
+		<!-- START EmployeeSosContact -->
+		<action name="EmployeeSosContact.*" method="{1}" class="com.geoland.kfis.web.action.hrm.employee.soscontact.SosContactAction">
+			<result name="form">module/hrm/employee/employee_soscontact_form.jsp</result>
+		</action>	
+		<action name="EmployeeSosContactSave" class="com.geoland.kfis.web.action.hrm.employee.soscontact.SosContactSaveAction">
+			<result name="input">module/hrm/employee/employee_soscontact_form.jsp</result>
+			<result name="success">module/hrm/employee/employee_soscontact_form.jsp</result>
+		</action>		
+		<!-- END EmployeeSosContact -->
+		
+		<!-- START Decision -->
+		<action name="Decision.*" method="{1}" class="com.geoland.kfis.web.action.hrm.decision.DecisionAction">
+			<result name="form">module/hrm/decision/decision_form.jsp</result>
+			<result name="page">module/hrm/decision/decision_page.jsp</result>
+			<result name="decisionStatus">module/hrm/decision/decision_status.jsp</result>
+		</action>	
+		
+		<action name="DecisionSave" class="com.geoland.kfis.web.action.hrm.decision.DecisionSaveAction">
+			<result name="input">module/hrm/decision/decision_form.jsp</result>
+			<result name="success">module/hrm/decision/decision_form.jsp</result>
+		</action>		
+		
+		<action name="DecisionStatusSave" class="com.geoland.kfis.web.action.hrm.decision.DecisionStatusAction">
+			<result name="input">module/hrm/decision/decision_status.jsp</result>
+			<result name="success">module/hrm/decision/decision_status.jsp</result>
+		</action>	
+		
+		<action name="DecisionDoc" class="com.geoland.kfis.web.action.hrm.decision.docgenerator.DecisionDocGenetarorAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END Decision -->
+		
+		<!-- START DecisionType -->
+		<action name="DecisionType.*" method="{1}" class="com.geoland.kfis.web.action.hrm.decision.decisiontype.DecisionTypeAction">
+			<result name="form">module/hrm/decision/decisiontype/decision_type_form.jsp</result>
+			<result name="page">module/hrm/decision/decisiontype/decision_type_page.jsp</result>
+		</action>	
+		<action name="DecisionTypeSave" class="com.geoland.kfis.web.action.hrm.decision.decisiontype.DecisionTypeSaveAction">
+			<result name="input">module/hrm/decision/decisiontype/decision_type_form.jsp</result>
+			<result name="success">module/hrm/decision/decisiontype/decision_type_form.jsp</result>
+		</action>		
+		<!-- END DecisionType -->
+		
+		<!-- START Hrm Annual Plan -->
+		<action name="HrmAnnPlan.*" method="{1}" class="com.geoland.kfis.web.action.hrm.annualplan.AnnualPlanAction">
+			<result name="form">module/hrm/annualplan/annual_plan_form.jsp</result>
+			<result name="grid">module/hrm/annualplan/annual_plan_grid.jsp</result>
+			<result name="page">module/hrm/annualplan/annual_plan_page.jsp</result>
+			<result name="status_popup">module/hrm/annualplan/annual_plan_status_popup.jsp</result>
+		</action>	
+		<action name="HrmAnnPlanSave" class="com.geoland.kfis.web.action.hrm.annualplan.AnnualPlanSaveAction">
+			<result name="input">module/hrm/annualplan/annual_plan_form.jsp</result>
+			<result name="success">module/hrm/annualplan/annual_plan_form.jsp</result>
+		</action>	
+		
+		<action name="HrmAnnPlanStatus" class="com.geoland.kfis.web.action.hrm.annualplan.AnnualPlanStatusAction">
+			<result name="input">module/hrm/annualplan/annual_plan_status_popup.jsp</result>
+			<result name="success">module/hrm/annualplan/annual_plan_status_popup.jsp</result>
+		</action>
+		
+		<action name="HrmAnnPlanDoc" class="com.geoland.kfis.web.action.hrm.annualplan.docgenerator.AnnualPlanDocGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>	
+		<!-- END Hrm Annual Plan -->
+    </package>
+</struts>

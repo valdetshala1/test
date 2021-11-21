@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">433</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">433</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">433</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">433</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">433</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">433</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">433</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">433</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">433</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="p_user" id="1926">
+            <text-property name="promptText">User ID</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source1" id="433">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/kfis</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="434">
+            <list-property name="columnHints"/>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">habitat_location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">manager_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">land_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">owner_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">private_land_area</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">public_land_area</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">total_area</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">area</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source1</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">habitat_location</property>
+                    <property name="nativeName">habitat_location</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">manager_name</property>
+                    <property name="nativeName">manager_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">land_type</property>
+                    <property name="nativeName">land_type</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">owner_type</property>
+                    <property name="nativeName">owner_type</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">private_land_area</property>
+                    <property name="nativeName">private_land_area</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">public_land_area</property>
+                    <property name="nativeName">public_land_area</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">total_area</property>
+                    <property name="nativeName">total_area</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">area</property>
+                    <property name="nativeName">area</property>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select habitat_location , m.first_name||' '|| m.last_name as manager_name,land_type.domtext as land_type,hunt_owner_type.domtext as owner_type, 
+ private_land_area, public_land_area , total_area , area from tdhpet_location l left join  tdhpet_location_land_type lt on l.id=lt.location_id
+left join (select * from ttextdomain where domname='LANDTYPE') as land_type on lt.land_type=land_type.domkey
+left join (select * from ttextdomain where domname='HUNTINGAREATYPE') as hunt_owner_type on hunt_owner_type.domkey=l.hunting_area_type
+left join tperson m on m.id=l.superintend_by ]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1887">
+            <property name="overflow">auto</property>
+            <property name="height">2.2in</property>
+            <column id="1888"/>
+            <column id="1889"/>
+            <column id="1890"/>
+            <row id="1891">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.65in</property>
+                <cell id="1892">
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="overflow">auto</property>
+                    <image id="1893">
+                        <property name="height">0.65625in</property>
+                        <property name="width">0.6770833333333334in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/rks_logo_trans.png</expression>
+                    </image>
+                </cell>
+                <cell id="1894">
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="overflow">auto</property>
+                    <label id="1895">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">REPUBLIKA E KOSOVËS&#13;
+REPUBLIKA KOSOVA-REPUBLIC OF KOSOVO&#13;
+QEVERIA –VLADA-GOVERNMENT </text-property>
+                    </label>
+                    <label id="1896">
+                        <property name="display">none</property>
+                        <text-property name="text">REPUBLIKA E KOSOVËS</text-property>
+                    </label>
+                </cell>
+                <cell id="1897">
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="overflow">auto</property>
+                    <image id="1898">
+                        <property name="height">0.6736842105263158in</property>
+                        <property name="width">1.2526315789473683in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/apk.png</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="1899">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="1900">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="overflow">auto</property>
+                    <label id="1901">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">MINISTRIA BUJQËSISË, PYLLTARISË DHE ZHVILLIMIT RURAL &#13;
+MINISTARSTVO POLJOPRIVREDE, SUMARSTVA I RURALNOG RAZVOJA&#13;
+MINISTRY OF AGRICULTURE, FORESTRY AND RURAL DEVELOPMENT </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="1902">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="1903">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="overflow">auto</property>
+                    <image id="1904">
+                        <property name="overflow">auto</property>
+                        <property name="height">0.562in</property>
+                        <property name="width">0.5625in</property>
+                        <property name="source">url</property>
+                        <expression name="uri" type="javascript">params["p_qrcode_content_url"].value</expression>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <grid id="186">
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <property name="height">0.5in</property>
+            <column id="187">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="188">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.5in</property>
+                <cell id="189">
+                    <property name="textAlign">center</property>
+                    <label id="190">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">Të dhënat e përgjithshme dhe pronsitë për vendgjuetitë</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <table id="438">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">habitat_location</property>
+                    <text-property name="displayName">habitat_location</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["habitat_location"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">manager_name</property>
+                    <text-property name="displayName">manager_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["manager_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">land_type</property>
+                    <text-property name="displayName">land_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["land_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">owner_type</property>
+                    <text-property name="displayName">owner_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["owner_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">private_land_area</property>
+                    <text-property name="displayName">private_land_area</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["private_land_area"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">public_land_area</property>
+                    <text-property name="displayName">public_land_area</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["public_land_area"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">total_area</property>
+                    <text-property name="displayName">total_area</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_area"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">area</property>
+                    <text-property name="displayName">area</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["area"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <column id="482">
+                <property name="width">1.625in</property>
+            </column>
+            <column id="483">
+                <property name="width">1.34375in</property>
+            </column>
+            <column id="484">
+                <property name="width">1in</property>
+            </column>
+            <column id="486">
+                <property name="width">0.9895833333333334in</property>
+            </column>
+            <column id="487">
+                <property name="width">0.9895833333333334in</property>
+            </column>
+            <column id="488">
+                <property name="width">0.9895833333333334in</property>
+            </column>
+            <header>
+                <row id="439">
+                    <cell id="440">
+                        <label id="441">
+                            <text-property name="text">Vendgjuetia</text-property>
+                        </label>
+                    </cell>
+                    <cell id="442">
+                        <label id="443">
+                            <text-property name="text">Menaxheri</text-property>
+                        </label>
+                    </cell>
+                    <cell id="444">
+                        <label id="445">
+                            <property name="paddingLeft">3pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="overflow">auto</property>
+                            <text-property name="text">Tipi i pronësisë</text-property>
+                        </label>
+                    </cell>
+                    <cell id="448">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="1928">
+                            <text-property name="text">Shgrytëzimi i tokës [ha]</text-property>
+                        </label>
+                    </cell>
+                    <cell id="452">
+                        <property name="paddingRight">3pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <label id="453">
+                            <text-property name="text">Sipërfaqja [ha]</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="1929">
+                <property name="groupName">habitat_location</property>
+                <expression name="keyExpr" type="javascript">row["habitat_location"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["habitat_location"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="1930">
+                        <property name="textAlign">right</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <cell id="1931"/>
+                        <cell id="1932"/>
+                        <cell id="1933"/>
+                        <cell id="1934">
+                            <property name="paddingRight">3pt</property>
+                            <label id="1946">
+                                <text-property name="text">Private</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1935">
+                            <property name="paddingRight">3pt</property>
+                            <label id="1947">
+                                <text-property name="text">Shtetërore</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1936"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="1937">
+                        <property name="paddingLeft">3pt</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <cell id="1938">
+                            <property name="colSpan">6</property>
+                            <property name="rowSpan">1</property>
+                            <label id="1925">
+                                <property name="display">inline</property>
+                                <text-property name="text">Totali i siperfaqës se vendgjuetisë: </text-property>
+                            </label>
+                            <data id="470">
+                                <property name="display">inline</property>
+                                <property name="resultSetColumn">total_area</property>
+                            </data>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="456">
+                    <property name="verticalAlign">middle</property>
+                    <property name="overflow">auto</property>
+                    <cell id="457">
+                        <data id="458">
+                            <property name="resultSetColumn">habitat_location</property>
+                        </data>
+                    </cell>
+                    <cell id="459">
+                        <data id="460">
+                            <property name="resultSetColumn">manager_name</property>
+                        </data>
+                    </cell>
+                    <cell id="461">
+                        <data id="462">
+                            <property name="resultSetColumn">land_type</property>
+                        </data>
+                    </cell>
+                    <cell id="465">
+                        <property name="paddingRight">3pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="overflow">auto</property>
+                        <data id="466">
+                            <property name="resultSetColumn">private_land_area</property>
+                        </data>
+                    </cell>
+                    <cell id="467">
+                        <property name="paddingRight">3pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="overflow">auto</property>
+                        <data id="468">
+                            <property name="resultSetColumn">public_land_area</property>
+                        </data>
+                    </cell>
+                    <cell id="469">
+                        <property name="paddingRight">3pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="overflow">auto</property>
+                        <data id="472">
+                            <property name="resultSetColumn">area</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <grid id="675">
+            <property name="marginTop">50pt</property>
+            <property name="textAlign">right</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="pageBreakBefore">auto</property>
+            <property name="pageBreakInside">avoid</property>
+            <method name="onRender"><![CDATA[if (BirtComp.lessThan(pageNumber, totalPage))]]></method>
+            <column id="624"/>
+            <row id="552">
+                <cell id="625">
+                    <label id="553">
+                        <property name="textAlign">right</property>
+                        <text-property name="text">  Gjeneruar nga :</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="676">
+                <cell id="677">
+                    <data id="678">
+                        <property name="marginTop">10pt</property>
+                        <property name="overflow">auto</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">p_user</property>
+                                <expression name="expression" type="javascript">params["p_user"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">p_user</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="679">
+                <cell id="680">
+                    <label id="681">
+                        <property name="marginTop">20pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">_____________________</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="682">
+                <cell id="683">
+                    <text id="684">
+                        <property name="marginTop">10pt</property>
+                        <property name="paddingLeft">3pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<VALUE-OF format="dd/MM/yyyy">new Date()</VALUE-OF>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

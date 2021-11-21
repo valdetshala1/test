@@ -1,0 +1,1672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.0.v20120611 Build &lt;4.2.0.v20120612-1721></property>
+    <property name="units">in</property>
+    <property name="theme">Blue</property>
+    <parameters>
+        <scalar-parameter name="p_year" id="81">
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">2014</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_gl_server_profile" id="34">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.168.0.30:5433/kfis?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_gl_server_profile</property>
+            <property name="OdaConnProfileStorePath">src/main/resources/profiles/kfis_gl_server_profile</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_locale_profile" id="35">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5433/kfis?ApplicationName=KFISApp;autoReconnect=true;useUnicode=true;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZW5kcmkxOSo=</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_locale_profile</property>
+            <property name="OdaConnProfileStorePath">src/main/resources/profiles/kfis_locale_profile</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="tperson" id="36">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">party_id</property>
+                    <text-property name="displayName">party_id</text-property>
+                    <text-property name="heading">party_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">first_name</property>
+                    <text-property name="displayName">first_name</text-property>
+                    <text-property name="heading">first_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">last_name</property>
+                    <text-property name="displayName">last_name</text-property>
+                    <text-property name="heading">last_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">birthdate</property>
+                    <text-property name="displayName">birthdate</text-property>
+                    <text-property name="heading">birthdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">personal_id</property>
+                    <text-property name="displayName">personal_id</text-property>
+                    <text-property name="heading">personal_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">gender</property>
+                    <text-property name="displayName">gender</text-property>
+                    <text-property name="heading">gender</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">degree</property>
+                    <text-property name="displayName">degree</text-property>
+                    <text-property name="heading">degree</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">notes</property>
+                    <text-property name="displayName">notes</text-property>
+                    <text-property name="heading">notes</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">photo</property>
+                    <text-property name="displayName">photo</text-property>
+                    <text-property name="heading">photo</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">party_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">first_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">last_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">birthdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">personal_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">gender</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">degree</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">notes</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">photo</property>
+                        <property name="dataType">blob</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">kfis_locale_profile</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">party_id</property>
+                    <property name="nativeName">party_id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">first_name</property>
+                    <property name="nativeName">first_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">last_name</property>
+                    <property name="nativeName">last_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">birthdate</property>
+                    <property name="nativeName">birthdate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">personal_id</property>
+                    <property name="nativeName">personal_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">gender</property>
+                    <property name="nativeName">gender</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">degree</property>
+                    <property name="nativeName">degree</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">notes</property>
+                    <property name="nativeName">notes</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">photo</property>
+                    <property name="nativeName">photo</property>
+                    <property name="dataType">blob</property>
+                    <property name="nativeDataType">-2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select  * 
+from tperson]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>party_id</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>party_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>party_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>first_name</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>first_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>first_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>last_name</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>last_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>last_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>birthdate</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>birthdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>birthdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>personal_id</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>personal_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>personal_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>gender</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>gender</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>gender</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>degree</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>degree</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>degree</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>notes</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>notes</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>notes</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>photo</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-2</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>photo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>photo</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="tfin_annu_budget_alloc" id="19">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">municipality_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">municipality_id</text-property>
+                    <text-property name="heading">municipality_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wood_sales</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">wood_sales</text-property>
+                    <text-property name="heading">wood_sales</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">other_income</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">other_income</text-property>
+                    <text-property name="heading">other_income</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">total</text-property>
+                    <text-property name="heading">total</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">allocation_36</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">allocation_36</text-property>
+                    <text-property name="heading">allocation_36</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">municipality_30_portion</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">municipality_30_portion</text-property>
+                    <text-property name="heading">municipality_30_portion</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">kfa_remainder</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">kfa_remainder</text-property>
+                    <text-property name="heading">kfa_remainder</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">month</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">month</text-property>
+                    <text-property name="heading">month</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">year</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">year</text-property>
+                    <text-property name="heading">year</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">created_by</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">created_by</text-property>
+                    <text-property name="heading">created_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">created_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">created_time</text-property>
+                    <text-property name="heading">created_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">parent_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">parent_id</text-property>
+                    <text-property name="heading">parent_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">orga_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">orga_name</text-property>
+                    <text-property name="heading">orga_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">orga_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">orga_type</text-property>
+                    <text-property name="heading">orga_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">code</text-property>
+                    <text-property name="heading">code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">operation_level</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">operation_level</text-property>
+                    <text-property name="heading">operation_level</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">orga_category</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">orga_category</text-property>
+                    <text-property name="heading">orga_category</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">start_date</text-property>
+                    <text-property name="heading">start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">end_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">end_date</text-property>
+                    <text-property name="heading">end_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_year</property>
+                    <property name="paramName">p_year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">municipality_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">wood_sales</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">other_income</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">total</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">allocation_36</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">municipality_30_portion</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">kfa_remainder</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">month</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">year</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">created_by</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">created_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">id_13</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">parent_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">orga_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">orga_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">operation_level</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">orga_category</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">kfis_gl_server_profile</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">municipality_id</property>
+                    <property name="nativeName">municipality_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">wood_sales</property>
+                    <property name="nativeName">wood_sales</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">other_income</property>
+                    <property name="nativeName">other_income</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">total</property>
+                    <property name="nativeName">total</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">allocation_36</property>
+                    <property name="nativeName">allocation_36</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">municipality_30_portion</property>
+                    <property name="nativeName">municipality_30_portion</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">kfa_remainder</property>
+                    <property name="nativeName">kfa_remainder</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">month</property>
+                    <property name="nativeName">month</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">year</property>
+                    <property name="nativeName">year</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">created_by</property>
+                    <property name="nativeName">created_by</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">created_time</property>
+                    <property name="nativeName">created_time</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">id_13</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">parent_id</property>
+                    <property name="nativeName">parent_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">orga_name</property>
+                    <property name="nativeName">orga_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">orga_type</property>
+                    <property name="nativeName">orga_type</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">code</property>
+                    <property name="nativeName">code</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">operation_level</property>
+                    <property name="nativeName">operation_level</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">orga_category</property>
+                    <property name="nativeName">orga_category</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">start_date</property>
+                    <property name="nativeName">start_date</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">end_date</property>
+                    <property name="nativeName">end_date</property>
+                    <property name="dataType">date</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from tfin_annu_budget_alloc as f left join torganisation as o on f.municipality_id = o.id
+ where f.year = ?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>municipality_id</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>municipality_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>municipality_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>wood_sales</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>wood_sales</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>wood_sales</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>other_income</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>other_income</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>other_income</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>total</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>total</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>total</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>allocation_36</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>allocation_36</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>allocation_36</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>municipality_30_portion</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>municipality_30_portion</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>municipality_30_portion</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>kfa_remainder</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>kfa_remainder</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>kfa_remainder</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>month</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>month</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>month</design:label>
+            <design:formattingHints>
+              <design:displaySize>2</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>year</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>year</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>year</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>created_by</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>created_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>created_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>created_time</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>created_time</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>created_time</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="tfin_annu_budget_alloc" id="21">
+            <property name="dimensions">
+                <tabular-dimension name="municipality" id="28">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="38">
+                            <property name="levels">
+                                <tabular-level name="municipality_id" id="39">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">municipality_id</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Month" id="40">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="41">
+                            <property name="levels">
+                                <tabular-level name="month" id="42">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">month</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="orga_name" id="61">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="62">
+                            <property name="levels">
+                                <tabular-level name="orga_name" id="63">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">orga_name</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="64">
+                    <property name="measures">
+                        <tabular-measure name="total" id="65">
+                            <expression name="measureExpression" type="javascript">dataSetRow["total"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">tfin_annu_budget_alloc</property>
+        </tabular-cube>
+    </cubes>
+    <themes>
+        <theme name="defaultTheme" id="4"/>
+        <theme name="Blue" id="2">
+            <styles>
+                <style name="table-group-header-1" id="30">
+                    <property name="backgroundColor">#0B285B</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">medium</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#FFFFE0</property>
+                    <property name="borderBottomColor">#FFF8DC</property>
+                    <property name="borderBottomStyle">double</property>
+                    <property name="borderLeftColor">#FFF8DC</property>
+                    <property name="borderRightColor">#FFF8DC</property>
+                    <property name="borderTopColor">#FFF8DC</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                </style>
+                <style name="table-group-header-2" id="31">
+                    <property name="backgroundColor">#13449B</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">small</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#FFFFE0</property>
+                    <property name="borderBottomColor">#FFF8DC</property>
+                    <property name="borderBottomStyle">double</property>
+                    <property name="borderLeftColor">#FFF8DC</property>
+                    <property name="borderRightColor">#FFF8DC</property>
+                    <property name="borderTopColor">#FFF8DC</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                </style>
+                <style name="table-group-header-3" id="32">
+                    <property name="backgroundColor">#1A5FDA</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">small</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#FFFFE0</property>
+                    <property name="borderBottomColor">#FFF8DC</property>
+                    <property name="borderBottomStyle">double</property>
+                    <property name="borderLeftColor">#FFF8DC</property>
+                    <property name="borderRightColor">#FFF8DC</property>
+                    <property name="borderTopColor">#FFF8DC</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                </style>
+                <style name="table-header" id="33">
+                    <property name="backgroundColor">#6495ED</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">x-small</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#FFFFE0</property>
+                    <property name="borderBottomColor">#483D8B</property>
+                    <property name="borderBottomStyle">double</property>
+                    <property name="borderLeftColor">#483D8B</property>
+                    <property name="borderRightColor">#483D8B</property>
+                    <property name="borderTopColor">#483D8B</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                </style>
+                <style name="table-detail" id="13">
+                    <property name="backgroundColor">#F0F8FF</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">x-small</property>
+                    <property name="color">#4682B4</property>
+                </style>
+                <style name="table-footer" id="14">
+                    <property name="backgroundColor">#6495ED</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">x-small</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#FFFFE0</property>
+                    <property name="borderBottomColor">#483D8B</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#483D8B</property>
+                    <property name="borderRightColor">#483D8B</property>
+                    <property name="borderTopColor">#483D8B</property>
+                    <property name="borderTopStyle">double</property>
+                </style>
+            </styles>
+        </theme>
+    </themes>
+    <components>
+        <grid name="CORP_HEADER" id="5">
+            <column id="6">
+                <property name="width">1.1458333333333333in</property>
+            </column>
+            <column id="7">
+                <property name="width">6.53125in</property>
+            </column>
+            <row id="8">
+                <cell id="9">
+                    <image name="NewImage" id="11">
+                        <property name="height">74px</property>
+                        <property name="width">70px</property>
+                        <property name="source">embed</property>
+                        <property name="imageName">stema_rks.png</property>
+                    </image>
+                </cell>
+                <cell id="10">
+                    <label name="NewLabel" id="12">
+                        <text-property name="text">Ministria e Bujqësisë, Pylltarisë dhe Zhvillimit Rural</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <image name="LOGO_KS" id="29">
+            <property name="height">74px</property>
+            <property name="width">70px</property>
+            <property name="source">embed</property>
+            <property name="imageName">stema_rks.png</property>
+        </image>
+        <extended-item extensionName="Crosstab" extensionVersion="2.5.0" name="tfin_annu_budget_alloc"
+ id="37">
+            <property name="cube">tfin_annu_budget_alloc</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" name="NewMeasure View" id="48">
+                    <property name="measure">total</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="49">
+                            <property name="aggregationOnRow">orga_name/orga_name</property>
+                            <property name="aggregationOnColumn">Month/month</property>
+                            <property name="content">
+                                <data name="NewData" id="50">
+                                    <property name="resultSetColumn">total_orga_name/orga_name_Month/month</property>
+                                </data>
+                            </property>
+                            <property name="width">1.4479166666666667in</property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="51">
+                            <property name="content">
+                                <label name="NewLabel1" id="52">
+                                    <text-property name="text">total</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" name="NewCrosstab View" id="66">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" name="NewDimension View" id="67">
+                            <property name="dimension">orga_name</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="68">
+                                    <property name="level">orga_name/orga_name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="69">
+                                            <property name="content">
+                                                <data name="orga_name" id="70">
+                                                    <property name="resultSetColumn">orga_name</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">1.96875in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" name="NewCrosstab View1" id="53">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" name="NewDimension View1" id="54">
+                            <property name="dimension">Month</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="55">
+                                    <property name="level">Month/month</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="56">
+                                            <property name="content">
+                                                <data name="month" id="57">
+                                                    <property name="resultSetColumn">month</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="71"/>
+            </property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">month</property>
+                    <expression name="expression">dimension["Month"]["month"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">orga_name</property>
+                    <expression name="expression">dimension["orga_name"]["orga_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">total_orga_name/orga_name_Month/month</property>
+                    <expression name="expression">measure["total"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>orga_name/orga_name</value>
+                        <value>Month/month</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </components>
+    <page-setup>
+        <simple-master-page name="kfis" id="3">
+            <property name="type">a4</property>
+            <page-header>
+                <grid name="NewGrid" id="72">
+                    <property name="marginBottom">20px</property>
+                    <column id="73">
+                        <property name="width">1.03125in</property>
+                    </column>
+                    <column id="74">
+                        <property name="width">6.8125in</property>
+                    </column>
+                    <row id="75">
+                        <cell id="76">
+                            <image name="NewImage1" id="78">
+                                <property name="height">74px</property>
+                                <property name="width">70px</property>
+                                <property name="source">embed</property>
+                                <property name="imageName">stema_rks.png</property>
+                            </image>
+                        </cell>
+                        <cell id="77">
+                            <label name="NewLabel2" id="79">
+                                <text-property name="text">Ministria e Bujqësisë, Pylltarisë dhe Zhvillimit Rural</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <data name="NewData1" id="80">
+                    <property name="backgroundColor">#E8EAEA</property>
+                    <property name="paddingTop">1pt</property>
+                    <property name="textAlign">right</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Column Binding</property>
+                            <text-property name="displayName">date</text-property>
+                            <expression name="expression" type="javascript">new Date()</expression>
+                            <property name="dataType">string</property>
+                            <property name="allowExport">true</property>
+                        </structure>
+                    </list-property>
+                    <property name="resultSetColumn">Column Binding</property>
+                </data>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <list-property name="images">
+        <structure>
+            <property name="name">stema_rks.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAEYAAABKCAYAAAFx6xJpAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAKT2lD
+                Q1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQ
+                SoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfA
+                CAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH
+                /w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBb
+                lCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7
+                AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKB
+                NA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl
+                7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7i
+                JIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k
+                4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAA
+                XkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv
+                1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRByAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRR
+                IkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQ
+                crQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXA
+                CTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPE
+                NyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJA
+                caT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgX
+                aPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZ
+                D5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2ep
+                O6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2q
+                qaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau
+                7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6fe
+                eb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYP
+                jGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFos
+                tqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuu
+                tm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPj
+                thPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofc
+                n8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw3
+                3jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5
+                QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz
+                30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7
+                F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgq
+                TXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+
+                xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2
+                pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWF
+                fevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaq
+                l+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7
+                vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRS
+                j9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtb
+                Ylu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh
+                0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L15
+                8Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89Hc
+                R/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfy
+                l5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz
+                /GMzLdsAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAJVZJREFUeNqE
+                jjFLw2AYhJ++/VKyqYiLujkoWVWE6hAFZwfr5FBoO+jmL/APOLm5lU5uIu4FTWmmKu0gdhDERQsKigRs
+                Y5LXQRJ08qbjOO6enKrynwzAzE5dP0aGryihYIQwSrCM8Bnl2V/pBwKwsTjH1LiNZQQFLCMMw5iHxhZB
+                pLYAnPuPvLwPAfDLbQDsQh6nesZzPAol/e3vXWYFv9ymOPsGwOTE689dEBoWTtw/sMebt6k9FYDrqgdA
+                sbEKwM1gjOX6Gr2aB3CQU1V2jyosybQeXs1nS2EslNzmHeBkTJ3kyepUWgB0ax4ltzm4aK07ANnSL/WA
+                beA+Db4BAAD//4ySzyuDYQDHP8/z2NQOK+TXe+CgMHJjmpmidhCRg3JZuMlf4Db/gT9AMeWA2sV5Wfby
+                5oSylh852GVFzRtNbfO+j8MbcXP/9v1++vQV/zKeT6/pcGocJTRjA20UnmzsSg2Ag4VLZla3hNy+7qI1
+                6CcY8GEVnrErNWp1B8fVzB6GAZCjxivl9ypvH3UcV2Atn+P3KZQUNCrXm/s2e7FyhqsFALmERXQvSnLi
+                zmtaP+nJACjxC1RqlNQs9pe8UJPxEHe1YGTXg88VmxneiQGQvHdKABIgMniTB9g0e9nIhvArl/35K47N
+                SeMn1N7yMjQdMYvp206qjiQeeqwfle3An2cC+Bo+u5emMh3AKdAHMBfLAgm+AAAA//9sk19IUwEUxn93
+                d83a7mXqQ2FEEDQrA1n2kCQZiqARDtJiGcJ66KHVsw9RsafC156EkIb2h4FlkAQ9RINCs+FI6MVtUQql
+                Ocrg2m65P/f0YLtM83s+5/Cd8zufjaWhtDd94fAX3++CynanReanm5mlarJmFfq2Io07Dfy7DARwKDD3
+                QysFx5v2nzn5av7hwD0QEcLXbov79Iho3aNimHkREXF2RkVEROseFRER2oflwcuPEp9dErUzKgN3E0LX
+                IwlHbhREZN12nbaG4lAQYHcwZsfgyvVBpi9+Rg+A5nFx+c4UADtcKkMTcyiofP2jWPaRAvXLKEAFFn7l
+                nYSb5rFknfhUaNKmXdaB2hxV3m+mfUiPq7ihoJy9zYr3vwUgNOEns+LheTDBzVQF20iqpD09O2M3tIy0
+                ULSULYfdmvSRWfHgdAhXE7oJdFSizUWXV/3vL72ePTLcigCt948z1pPkVOwY2ibHHfu+s+ZdMGt0IwQs
+                2o7KaYykSmpzfcZ40psE4Nz40Q1DfLU5Xpx/h3vPh2yNblQ/e9P2+L9n+ydrOu3z9qYhcCI+dkjqevoO
+                Zh1mQWXwU94Akl2xtvatVv7LaLmFRnVFYfjb+5yZmGSSxkbTFFG0RU2qGAgtDYKt8yC1lI4aQU2UeGOk
+                qKj4Eqqm0FKKFEQQhCr2IYyN0tJSB0RErUyOtwRzcRIxIyZ50JiqGHWumTm3PszFRBPretnstfaFvdb/
+                /2u/lQT8n4n6nzfT3rl4w++1Hb4pqoVTsYimFG4OlxB66kK3BLPeSVAz4xnlhUniGdQ3Xq5oORN6f/0a
+                90XEgH+r3RycyffaPFxOA8O0UBVJbNTAqaZTV1qcRziuM6e8iMF/I4waks9njXB42W0ODqR2SBAcavuA
+                nzYuwLIhcXYjs8tdJM42kIzrpHSLodPrMEyL4PGVpAwLI5rgUr8rm/xaadlg2/Bt3SKkgPyvmhkcjjJt
+                dQuu4jwK81WKPD5URVLs8eFUJff/rMOhiizyLWnaAiGgyONLl0yRiEw06A0w990Y2dRnx8qtf5HnULLz
+                lHyWcDBZfXRT0vx1N92ZpvKq2WnxfCG1ByVPdFO+EoTfVnSRzPgThoLP0/3aZULYAAPyVGjaoSxvDEug
+                NVzj+qarzCmJj9vw4dQYaz96iD6GY5GkCtAmK+b1HFm/cCgn1wWqOSmo9nwySMeWK2ni6Qo/dpbpQLsE
+                Ej9kGgFA5bGlb0Tnij8+BmBL1X0cUx/EgMcS4M5TF2amwxQ4TJa11Ex4QKHD5FEsD4B9i+8xjs0nn4Tn
+                n/R05RbHdIX6v6vTEqpaLDq2lHBKperEZ2lg2PDNlfeSwN6xknA3bgo7mnpJ7P7nBRQ6TKp/XYJris7y
+                U5/mYj3eVqZPfzji19znx+nKucjIjP7t/+QUTsCEzwp6AzSFzDDwZdY3FiDDTSHT27stQDSpIoXN47jz
+                JXYQ3PK2cqDPigC/+DX3rYkOATjxXcjcGWi4xtEvenPOitIoPd4ATX1mGDju19yNr33yxppfcx9lyeUL
+                lpXQgt7WsqQh2XWjdPRAnxkBVvk199UJRekNth/YBZwGdk+26D9OzDUoqjKM47/3nLO7sCwXWa8oppkB
+                jhnWZM4o4lpm5kRml6lQG528ZJfxg5easMwvmo45o9VMaqYZ1ijNEFlJxc0tBhw1RRGFQAkVUZHbwrq7
+                55y3DwurGJj2fDofzrzPc57L//mdtyeMAmBP3lR1oMOXMi6uafbkoY1PJg9oHTwgwkeYZiKExJQCKYO5
+                AlBE8EkREt0UtPgsVDfZ/aUX+xzOr3Vmnb7q2OszlAvhmokibkxhEBwgc/mOINP9smupHBnrwRtQESLY
+                Y2ebw/m+ciAHqvtR02zHkAJNkUEiEhJTShQhelAIMKQgYCgYUhATFmBcXDOzEuqZEN9EuGbgDajYNBPd
+                FKwsSPguMv7ki5nLd5ha14paW3wf35QPBsAwJaoS/HKv3yBv/RRcb+8Hu5UPX32It2aOQlEEpRVXcC3/
+                mZ3LUng+dRhI+OlQHXM/Osj169eRBa8hUrdRKmIpPt8nFKwQ4PFp1LyZR7yzaWYz5AJTla4XLIokIT6a
+                ZS88QMf+uWSkJxPjsDIyLpL4fg42vDEem0VhzdfHiJ65G9v0nTy3Jp9wq8qSLcVEpe3GPmMXCzcVI4Rg
+                RXoyj684QPbaaei6JHXMQNpy5uD5YQ4H1j4BZpBjAuYN5dQATMBhNaiobSZt/FBE6jaWPD+alnY/Le1+
+                khdndyuFVVOxaipXWmFecj17ygdjs4DNouILBFXys5wKAErXFSEEFB6/RNj0XUgBMQ4rqMHpa9WFVMEI
+                BeMNqMRHeVEUwYZ9J3BEh/HVr3/dVjX7R/gonfc7hinImFDFnlNx6IbChpIR3Rr0xqIAiyUYQMd1HUWo
+                ALTohhEL3pA41DTZzUSnJ8T2tzNTCl4adZG8V0owOiWtPaDyzMgGnkusp+r1fG7WzN4syqYDAjXMEwAu
+                hTKTVdm/aPXEapdXV4iwdF9G7QEVTZEkOj2smljFmP6tmFLQ1ovDRq+VsgVFADy8I+VfjNtlk+IbAUm0
+                o80PlIWCKfMYS1Uhjw9y+Gj13XBimIL5D9ax7NGa0Fr1G8od49mR+W5UIWn0WjlUH8MHB+9HEBz9pePO
+                UlTXR0JjB3AoVKbRw6vLjlyKNrfPON6tVKoi2XNyML+d6/u/edGQgkibzjv5iaE/BU2RDI/pIKvB3wFU
+                AUe7LZStf5uPJDk9JDg93Q5TFcm7BYnsqxiEptwdzCpCUnY5ikd2TCRMC5bLZyi45xSzr7KfjHa0tQNb
+                uhAtFEzfqJajs3+7Z2/WrCM9NvKmQ/cy7suJJG+fFEKHW83e2W9CwPqSEYzeOpmV+UnYOgOREnY+fQxD
+                wjGzoYWg2GX3uCXvGXI2fV7hEGfZgqLHpmSO55rX2qPD9O/H4p5TjCEFK/OTKKx1hpRLdCr6mcYIHFad
+                Fp+G6ATN3JdLCNNMNp7ztQBHgEXdMnmLL33IoPPTMirkuoL0Er599mgING+2qx1WFCGxWwxya/p1g08J
+                VF6L4Oa1ZdNMyhcV8nVlrLG5ztsM5AEzctwu7235ATAUxXx31RlyLzdEZp1aWOj8sXoAy/OSQmNqtxiM
+                /SIIadZeRrerLCcWFnG53cb7Z4w2IuvagNU5bte2Xm+serHC/gPOD/ygkrcaGgMZlYsLYg0peCxzPFc7
+                rIhe9NHj1/h4ajlPjbjMHxdiZMZp0wNeL7AXWHFrNu40GAA9x+3alJZSsPm90zwNrH54eF3SxgnnrRLB
+                N+VxrCpKYFRfD7vS/sRuMbjQFsYntbrncJVuwNUrwGbg8xy3y39Hd3n/ZTlul9HZ9dlpKQXh753mZWBJ
+                QNYPy0jV+5RcI7DxnM8PBMDTYLeRCXya43Y1340U/MOqmQdHWd5x/PMeu+8eOTbJJiYhEAnIIQgliuKJ
+                CVaqYylOsVOFqahUwKMtQ7HtdKxXK6MdbXWqrY6lIKLWqQqJitYKmMhdBeQWEkggxybk3M3uvvseT//Y
+                3ZA7oeMzs3/sTvbZ77P7/H7f45dvxQh/W2tQ7fre56X5E7NCd5QWtvzwqlFtV43PCDvTNAOHnJCcCdKM
+                l7NAkuLxkRAQNWUCYY0DgbSGbTVZn+yu970eCLkqHIpt9b3wPWWn2uPDx9wyrvnJu6edWTQ1O6g8PqGC
+                mBWXmk7FxrBlWiJOajvc1IdcnAs76TIUbCQ02SZdM7goRWd0WpRcr05hWoQxaZG8m8c2L5YkFrtUi/ao
+                g81VOafWHSx44puWlHWePqQszV3+5zeev+nIQoci0E0Zt8MiaspsP5vJe8fy2F3voz3qQJEEqmKjSgLT
+                iufDvdxzIjO2hIRpxx+KJBjrizC3qJkfTGxknK+LqKkgBLgdFlVtXv4RCHqAyIZVa1DHZXRdbAmJmjY3
+                f9pdxNYaPyC6uSTeVwxkKa6JDdOm/Pc3MfeRj3G7HUgS6DGL7S/cxrU//wDNqaApEg5ZoEgSDSGNtV8X
+                8PcDo4kYMnmpOj+dXsuCyQ2My+iCAOuBFcAZ2QI11Wly61uz2FmXgUu1uoFEDYtQV4z51xQSiVk4VJmO
+                TYu4+fJRmJ/ey8SCdDK8TqIfLeaqSdnomxeTne4C4NIxPr57+SjsRH0oksDrsAjqKs/vKeK53UXJs14H
+                XAogi2SokZCK6V4npiUQApbfNgnx2X1s+M1s/vPM94jETIqXbqQ9FGPFS7s4Wd9JR9hg9ooPaQ3qLPzD
+                Nlo6dTJTNfa+NI93HyvlkvzUeDMMm2x8Yg6hlggxw0Y5L027c0jVtKVYIrjgsftmMGN8JrVNXVQ3BHn6
+                rQM8s2Qmbk2h5BcfkJKq4dQUcu54k0mjfQghkCSJiGGR+6O3Eq9BbSDE0dp2DtfEH6oiUf3GAsbmpiK2
+                38+MZZuQpcb+TU835aiIKx5WvbgDUXk/baEYmfPXk+JxkjbvdSwbsv0eIrpFVX0QzaFwqjGIlOCEE3Wd
+                PV6DVK+D4uWbUGQJlzMuvGc+WM62526hPRTjRF0nszJFMhISCYOC2mUqoWTMk5ufRsGdb1N8iR9VjW/i
+                0uLVH9F7l6FhS/g0E02xaY06+hGkqvSuNocqM/PB8rgFlkFTrSTbnwcTjMktyeg4GDHi+e7+hu4TDbQi
+                psKeeypJcViEDIWZa66nb8/oR6ARA7XH5CDFYZFo/oKEb5JDMaWePkn2sIQmC3aczUS3ZNyqzYb5+3j4
+                itO4VWvEe2S4jaRWEkAMQO005GohGNRSDMghCIoywt2B3RR/kCn+IJP9QZZuntazUgbWOYDfHSNiKIBh
+                AVEAOSrESUli2K+529oqNlsW7mJMWn9ZMiO3kxVXVg+7hxASOV6dQFgjzvSEAORUb+c3IMhLiQ67iW7G
+                L2WmO8ZAZC8E3DWljmXFNUN+06YtcZEnxvE2l0iA6QRQp46t7hBCYVJWF6c7PP3epFsyMvDKrV8zM68D
+                r9Oky1AGvWO2kLhn+hk+O+3nRKt3UDBpmsHBdodFKhGgIymujA5d5eqCNj6uzu51yr/MPUTpxeeoC7pI
+                1+Ijh/AQQHoBmnaGd47ms6fehyWkXpdbJIqgIWaYWdAGnB/pfBlIi87Mb3eZttRt1CQJnqicgN8To6hP
+                kjz8nYAbC1soKWzBFBIZLoPxL5d0c162J9703d4OA2joZVXKqzMqClKjRE25j4l3jCiZGKpqFEkQTHin
+                5CopbMESEh5X1ASO9QJzKixekBD4XGYfewqPV0zAIf//0lSWBEs+mtbtKm0hsXBqHUfOpSYraV8vMJeN
+                O7HDsGXumlLXb7Pqdg8rP5s8qDUZbjWEXOwPpHc/DxsKU7M7WfNNSrKKjvZ1lB3/Op7Tuby4ZkAHubkq
+                B59mXDCQQJfGC3vG4pDPl/nU7CASoKYHosAZoKYvGLGpTl3tcVqk9Zn2JecE33ntBv76VeGIO7UqCwpS
+                o3xUldOryp6dc4STbV6cqmEAFYDZz2uPK6hd2xJ28LdbDnars14Nz5JZf7CA0jdn4RgAkCKdl6oO2ebH
+                G4u59vVr8LmMHmDi09lnD3ujQBAoH8z4B1buzN1SnNuBPMT9aO7SemV2siTo0FV+Uj6DGa/dQJpmMufN
+                q6lu8xCz5O6kyxYSa7+/n2BMJdvfqAOHEv/UMCAYMXrU6ZWNIY2P79w9aFymyIKGUFzntkacLHj3CuZs
+                uJrjLV6QBLe+fWW/FgHgcxlckdfBL/f6osTTzXVllSXmUJHI4d8ddL+T59WZP6FxYDCS4O7y6TgVm1f3
+                jeFs0NWdREhAbae730FCMZVti3byZWM6Of6AnggUP+zXBvoODy/KbHn0yT2jQk/feGxQJl8y/QyGLTO3
+                qJnhOlDMknl/wV5UWfB+e1swUc5/LKssCQ8HBuCEkV77yFdN6WLX4u0DDujfODSKZZsv474Ppw/JU6Yt
+                8dTs41yWE2TpTl9ElkQMeB/YOmCDHKSLr93Y3rquIaRxZOm2fh8YjKkcCKThGkLZ6ZbMU7OPc/vEBpZX
+                5urZGS3Jn+epRKoxIjAkLthvXzob/ndtp5v9SyqY7A8l1fywKxRT2XTHXm6f2MjDX+TFsnPqosBpYEVZ
+                Zcm5QaljiD3rgeWv1ndt+7QmU6yft4/VpUeHjOIFkOEyOPnAFiZnhVi2IzOSlXM2AtQCD/UcIl4oGIBq
+                4N6KaPMnv9qZr982vomTD2xhij/Yr3y7DIUXbz7Mp3ftojGkseqQEsrJatYTofP9A80SLxQMZZUlp4DF
+                Xn/t+pUH1KbqNg9r5x1g7z1fUOQLEzYUHplVRdUDWyktPMeju/LNl+vCQadqRIAvgEVllSW7RkQhI4zR
+                AvOu3/qQW9P/u7ZJ/1nTkdyLn7uy1fPP27/CodhIErx9LFt8bTeFHFm1NtAKbEiUcOeILdBI/7CsskQH
+                Xpl3/dbPc/yNv36mmtLm5jz/dVloB+1zYafaaMkykUTYvBrYUVZZckFCaLgR8FCHuAF4GLg88fwY8ApQ
+                lqjGC1obVq3hf8SceXSV9ZnHP793uUvuzZ7cJBASwhbCIkUUsYAFi7vi4NaZjvTotB7taOtu2zku055a
+                Z2p1xtZR1LpNZbBUBZmpDi6sikTKFnYwYhZys293f9f5433vNUCAEOiZ3zn3JDfLm3uf91m/3++TE1LJ
+                Qz3L1izAtgWSsINexSrN9hhleV69Mt+nVxb49RFFWVqowKcXZXuN3KDHyM5SzKBPsTyqbKFKdoa1s1zE
+                SzMlkoakxQ05FtOUSL+m9PYk1K7OuKe9K6G29KbUht6k2hDRlHDKkMKmLaJCOKyyImwkyT6t6TiNKQ40
+                ypBcZtmaBZ6gx6wuz05eUF0YmT2pKHpuTVF0THl2Mljg1/j5hLXIkoNumLbAtITTDgkynLskHJBDGkBX
+                fs3OH52mIM3duw/buV4aYMV2WnPZNaokbExbkNBluhMqzRFffH9X9uG9HcFt+7uCnzRHfLURTdkPpDyS
+                jSJZQ+qghW3beK9aqvgU85yawujV3yzvufS8EX3Tx+dHswr8OpKw0U0J3XJemCJAlS1XZCDRn1Joi3lp
+                jvg43JtFU7+PcNRHV8JDb1IhqiskDAndkDJvzv5aOTQIx2tn5hIJG1W28KsWAdUkz6tTlKVRFkxSnpOk
+                Ki9OeXaSkkCKXK+BIllYtkC3BKYlATaq5FzDtgXdSZVD3YHk1nBu3Wct+R/s6ch+N6HLO2+Y97F+rMcI
+                27a559HHNzw0q35ud8KD7cIMHtnCMCVaY172dGazNZzLjrYcGvr89KZUdFNCSruwZCPEyV1Y0y1mTwlx
+                sLmfnmhqUBFF2ptmTyph4562k15PNywURXI81XKMYdkCRbLI9xlU5CSYVtLPjLJephRHKA2mUCUr0wcL
+                oCBL4+kto+rD/qZ/dPNS69IHX9EyoZSyhJoyJbJUk1frRvHU5jEkDAlJOEY6liT1ytZR40pSM7lyZjn7
+                m/pobI+hyE44eD0SZQVZ9MU0RoWCrHnyCv79nT38culOSvL9RBM6HX1JcrJUinN9dPQluWTGSP7wk4v4
+                h6c+4c+bmyjO89EdSdEX0xAILNvGo0i8/k/zuPf5Wtp6kiiyQJUHQnwSB7oD7O8K8Md9ZZhu7rJsR/1y
+                9/mHuW16IylDImlbFcASl8r+LbApYxjbdjKCJGy64ioJQz5OtenzyCRSJkI4EluvR2bamAJSukl+0MuK
+                f/42Kz5t4Bdv7KAk30+4K86hI/3sa+xj8YKxvHDPNx312nWTyQ14eODFz+mP6fi9Mr0xjd6oxj3XT+Zf
+                vu+I0l65fw5PvFnHL5fuIKVblOb7eeTvv8HMicX4vTITR+UyfVwh3ZEkDa1RHn5tG1+GIxk6I54yuOmi
+                Kg4097GnoZcs1c70fGl61U1ZAggARUDOUfXatDHT8pq0/5qWTSJpQELnkjmVLH/kYmpufZvW9ijC40gU
+                124Pc8GkYl57cC6SJLh+7mjaepPc+3wttmXj88ikdJ2q0iArP23kviW13LxgLBdNLSWRMh2pow2qLBFN
+                6ITyfLy2+hA/fXkrd/1NDdXlORimjU+V6Ytp/PC3mxhXGqTu99cBUFUa5KEltby17kuCOT68Hpk5U0rI
+                9qsI4Pf3z2FvQw+Pvr6dolwfX4YjbNrbdxSoa54g1ymuxDI1cDrDtvGqEnddO5XHFk8n4HOKV/hPf0d9
+                S4S7n9/Mmu1hEDB7cgnL1x/mwZe2cMm5I/n+FePJyVKJJw1sIOhXeWJZHYosEELw3Kr9PPPO3qN0org/
+                97OXt6K6X//XN+syCw9igNdOHJ3PmMV/ItwZw+ORufz8ckpCQQdJt+C92iYKsn18+OvLCPgUzq8uZvGC
+                sdz8xAZkWYDszajUnBYhXesyj68NkzCkWPqrHtlxHcO0eXL5LqZW5TN7cgkrNzVw17WTuO+FWt6rbSbg
+                Uwj6VZ5btR9ZFkhC8PH2FlZvPYIsQBqAGhzL1qWfp8usTzEd2vGYnzv2uSwJ1u5woL9gwJFErHGfp5O5
+                LEnMqilmy/5O5t33HtlZKo/fOoMZEwqp+7IHbPc9puc6K4OcW2nuImOYqC732W7v4VfMTMnMCXj4wVOf
+                IgR4VImHXtyC36sQ9CsZLHogJ+FgQydvEgxLUBJIce2ENi4f2860UIRNR/L54ftTiOnKKRH+Ux2/V2bd
+                zjDr61oRAvrjOnc9uxmw8agSmmbjd4kcC0iY4P2aQzGPMkxEk9t1S0KWLHK9RsZ1Lcu5WBrR9buM03DZ
+                +Jgu8/O5B7n93IaM8qY3qVDg01g4vo0/7htBVFNQpK8roTIMfFU65uY4ziQyn+e6kjPTEiQt23INow8E
+                8hzD6FJTwpDwKRYFfu2M79qJTpZq8tjGCTT2+3lgVn1G9FmcpXHPzMP85MJ6R0YA+GSL57ZV8qtPxhMY
+                cLPO9EgCirI0wCZpKBjCsFxPSbmPAaFkiEO9SZU8r0GhX8OnWpiWGFR9OJxj2RBPeLhj5mFqiiLMLu9B
+                t6TjkK6UKZGmPxOGzKLqVr5V0c2L2ytYebD0tNi9E/EYPsWk0K9h24L+lIJQtHQIRQcOnI62VBiHGvv9
+                yaq8uC8U0Mjz6nTEPUhn4TbFdOcNPn/5LroSHnTLWWk4VTim2ckxeTEuquji3YMlJA0Z1Z11hnPTLFuQ
+                59UpDaQQwuariBevN2G5YdSTproyhpk1eVfD3q7KhnkVXdWFfo2qvDgtUR+KdHp3SACaJWFaAo9sMaEg
+                So7XIKCa1LXnMDI7edohkTBkLq7sYt/t69AsiUhK4Y3dI3lu6+ghM6kD2ffK3ARFWRoC2NPltQK+btPl
+                izvShOTA6Tq1vT34mWZK1V7ZYlpJPxsaC0/6R0zX+jfUhCnya6w4UEZL1MtLl+5kdnkPCV1Gs6TMpJyu
+                SMNlzRKGjOz2H+/sL8MyJRLu5YYaYoYlMS3Uj08x0S2JfRHZCBZiugZpdAmMowxjNyfEqoZ+/y3j82PM
+                Ke/m5R0VGbH5YEbJ9hi8cOUuzi3pI6LJXD+xNSPr7zlGC3G2jmkLslSTDd/blAmN3pTC3R9MoaHPz/iC
+                GPU9WXTFPcjHVDMbJ7/MrehGAEciPjQlqrth1OmiucZxEN65E3ev+7ChomF8fqxySijC1FA/W8O5R6mb
+                BnbHcV3mxrdnkDIlXr16B7NH9QxKnpztY7tMYmaGky1eunInknBy0vv1Ie79cNJxgJVmSkwpjjCtxImW
+                DxpzrPycsO6y1g3AkROhvpF1R4J/6E6qZCkmN04Mn5I0liWbXBcj8SnmWSupw0mqimSzvyvII+urUeXj
+                IRDDEtwwMUxQNehLqWzrNzUhbMNNujuB5hMZxqisOPTi2weL2wAuH9vO9NL+jPLiRAS1aQsWvXUeo5/9
+                Ntvbck47IZ6NE/CYrG8sYOHy89EGaTNSpsTU4gjXjG8D4O0vCq38/I6Uq4s57FI7iRPyBB5Vb199xPd0
+                Q5+fLNXkoVlfoMj2KUtreqHy4fUTCUe9w+pWh4WCSzb5Pp0drTnc+b9T8anmoHCpJGwevLCeoMfgSMRH
+                bX8qJUmWAXQBnwEHTkWgpKqrvvjPX28r22RYEjNH9HLXeV8R05Uhvcjmfh9Lto2mM+GhN6niU6y/mpEC
+                qsmSbZWMeuYS/nbluXhka9BQjmkKd0xvZE55N5YleKquQC/K79KAGLALZzm8dyjMUkde2Rd3PrNtRBvA
+                7dMbuKEmPKS1lyzVZOXBEi5bdgGXLLuAmhfmccWbM6ltyTtu22U4J60C29ORzc/WTeTaCa28/93NVOYk
+                jtr/HNhcXjO+lR+ddxiAZ3eWmv7C5oTb+je4xPXeoRJLJnCgSe6487Xdpa/fMqU18MS8fSR1iT/Xh075
+                BoVbtWQBqmTSlfBw2/98gwcu/II7Z3x1wjWftNf5FJOepMozn4/hvLJerhrXTkyX8asmr9eN4vFPxiNL
+                Fj7F4r8PlWDbThE4VswT02UWVHXymwX7kCWbpftCVrPaFvc45bnVNcrHbp4ZOmUc9Cc+qjO77n6hriyu
+                SDbPXLaHxVOODMlzjoMCVIM3do+kqd9/VGjJwoEABLC+sZCLl85i/PMXM+vVOaw4UMqPP5jCnaunoMoW
+                cV3mo8NFGaOkf18ZhEeKago31bSw5PJdeCSLV/eUWjvNzrhHMXS3w10NLF+1cX7HSemTkxBuBcAita/y
+                yccuaM4Hm3cPlnL/R5Pwq6dXnuO6zEUV3Sy5og7dlAh4TH63ZTT/tmkcHq+BMoB8OzZ56qYzcHpOwQml
+                e5wn5u/nppoWBPD4lpFmPLsp7jZyHcB7OPu4B09GuJ2qI+sG3tJzG+76wdqR9X1JlavGtfP5rZ8w1mWu
+                h+w1isnmI3lsanbU6LopmDWyh+yAdkKjpEPT47ISJzNKwpCpyEmw+ZZPub66laimcPuGMi2e3RRzZ6EW
+                4G3gd2mjnCl53QesLC1r7Hp4T/DuucH8S79T3S6vvPEvrGso5EerJ2PY4pSCvbguc9v0Ri4b00FfSqUr
+                ofJU7ViShnRaGt/BEEEh4D8u28WlVZ0IYbPii2J7bX8kXhQ6YriJ9kuctedlqzbObx9Soj8N7loBJgA3
+                h9tHfO/hc/pHVuQkkCV4a18Zj26YgI04Snc32KyTNCRkkU6YZ2YQyxY8Ovcg353cgmlBS9THL3bmpEqK
+                w5o79/QDW4BXgHWD7U8Nm7se+Frc0vZkWahl28ut3NxRN2rez2d05S6qDnNjTZiNTfn8dG0N4ah30OqV
+                Xrw4kxPXZYqzNH41fz/zKzsxLUFH3MOjfynUCkPNqZLimOVWmgbgXddTvlq1cf5p3QVlGK+tB0emtaU4
+                1LTw2SYWtbWPmH7PpFjenFHdrLt5E3Fd4enaKv5rz0iE4IxCJT0AmrbgOzUtPDCrnmyPgSzZHOwO8pvd
+                wVQo1KIVhpotN2xacSRky4CdqzbOTw7nb56pDEQBKoFrgGt6o9mTJsi5xXec0yoLQJEtwhEfz24dzYoD
+                ZRimwD9Ej0noMrJks3BCKz8+7yvKcxLopsM5vbir1Nqr9yXygpE05ZHCkVSvx1k73HaytcOhhNIZ62NW
+                bZzPwrlrFaAM5z/3XA1Mae8qLr20WM5eNK5DWDhbXilD4v36EK/VjWJ3RzaqZGUU0ilDQrcFNYUxbjmn
+                iavGteFTHOxZlmxW1RfZ77XZqVBhu+5WZsNt6xvcRu1dYN/pesjZyDEnM44BNC2cu/Y14C1gaqiw48od
+                FhftOEhFZ29Bfo03K7B4Yqd83cRWrhrXjkexiKRkPv6qCMsWLKjqJNerkzKcfwnRk1R4ZU+JtTsRTxXl
+                dxvQZocctC0JtOOscL8PfAq0nUj0eCahcNaOqy2LAJsWzl1b6zaI04vyui/poHvm0w2M0g0lu6+3KPCt
+                IrxXVnVLi6odIW8kpbD8QMhe0y5pOfntukdJ2fiarSIfpgsJdLhD3xpgI9A0lAXZYc9lZxpKQ6VzcJQE
+                E3FW/2YB413D+d0bJPiaEdTd/qkJZ+lgg/uxzf3eX+2c1VAaCsjmjvab3YcHKAZqgJnAOTgyjASO6PRz
+                YIcLUMf5fzj/NwA4K4cRwTHsWAAAAABJRU5ErkJggg==
+            </property>
+        </structure>
+    </list-property>
+</library>

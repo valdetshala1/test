@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-10-12T13:31:44 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="municipality_implement_report" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="24558001-dfb6-4f77-8ac9-608e1f240610">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="kfis_GIS.xml"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#D8D8D8">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#9A9A9A">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="c8a315f8-6452-4822-95ea-428d1b00f296">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="kfis_GIS.xml"/>
+		<parameter name="p_year" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{p_year}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="p_mun_id" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{p_mun_id}]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[select * from tgis_cadastral_municipality cad_mun left join
+
+(select cm.id as cad_mun_id,* from tfrm_private_activity as pa left join tfrm_activity as a 
+on pa.activity_id=a.id left join tfrm_annual_planning as apl on a.annual_planning_id=apl.id
+left join (select * from tfrm_annual_planning_status where status='APR')  as aps on apl.status_id=aps.id 
+left join tgis_cadastral_municipality cm on apl.mun_id=cm.id
+left join tfrm_activity_status as ast on pa.status_id=ast.id
+ where  apl.year= $P{p_year} ::integer and ast.status='APR'
+) as pvt_act 
+
+on cad_mun.id=pvt_act.cad_mun_id where cad_mun.id= $P{p_mun_id} ::integer]]>
+		</queryString>
+		<field name="id" class="java.lang.Long"/>
+		<field name="name" class="java.lang.String"/>
+		<field name="name_sr" class="java.lang.String"/>
+		<field name="name_en" class="java.lang.String"/>
+		<field name="nr" class="java.lang.Integer"/>
+		<field name="code" class="java.lang.String"/>
+		<field name="region_id" class="java.lang.Integer"/>
+		<field name="the_geom" class="java.lang.Object"/>
+		<field name="cad_mun_id" class="java.lang.Long"/>
+		<field name="COLUMN_10" class="java.lang.Long"/>
+		<field name="activity_id" class="java.lang.Long"/>
+		<field name="status_id" class="java.lang.Long"/>
+		<field name="activity_unit" class="java.lang.String"/>
+		<field name="mun_id" class="java.lang.Integer"/>
+		<field name="work_stage" class="java.lang.String"/>
+		<field name="pl_tech_volume" class="java.lang.Double"/>
+		<field name="pl_fire_volume" class="java.lang.Double"/>
+		<field name="pl_created_date" class="java.sql.Timestamp"/>
+		<field name="pl_created_by" class="java.lang.Integer"/>
+		<field name="im_tech_volume" class="java.lang.Double"/>
+		<field name="im_fire_volume" class="java.lang.Double"/>
+		<field name="im_created_date" class="java.sql.Timestamp"/>
+		<field name="im_created_by" class="java.lang.Integer"/>
+		<field name="start_cmpgn_date" class="java.sql.Date"/>
+		<field name="end_cmpgn_date" class="java.sql.Date"/>
+		<field name="COLUMN_26" class="java.lang.Long"/>
+		<field name="activity_no" class="java.lang.String"/>
+		<field name="activity_domain_id" class="java.lang.Integer"/>
+		<field name="annual_planning_id" class="java.lang.Long"/>
+		<field name="activity_field" class="java.lang.String"/>
+		<field name="operation_level" class="java.lang.Integer"/>
+		<field name="qr_code" class="java.lang.Object"/>
+		<field name="planed_geom" class="java.lang.Object"/>
+		<field name="implemented_geom" class="java.lang.Object"/>
+		<field name="created_by" class="java.lang.Long"/>
+		<field name="created_date" class="java.sql.Timestamp"/>
+		<field name="COLUMN_37" class="java.lang.Long"/>
+		<field name="COLUMN_38" class="java.lang.Integer"/>
+		<field name="year" class="java.lang.Integer"/>
+		<field name="COLUMN_40" class="java.lang.Integer"/>
+		<field name="COLUMN_41" class="java.sql.Timestamp"/>
+		<field name="COLUMN_42" class="java.lang.Long"/>
+		<field name="COLUMN_43" class="java.lang.Long"/>
+		<field name="remarks" class="java.lang.String"/>
+		<field name="COLUMN_45" class="java.lang.Long"/>
+		<field name="COLUMN_46" class="java.lang.Long"/>
+		<field name="status" class="java.lang.String"/>
+		<field name="COLUMN_48" class="java.lang.Long"/>
+		<field name="COLUMN_49" class="java.sql.Timestamp"/>
+		<field name="COLUMN_50" class="java.lang.String"/>
+		<field name="COLUMN_51" class="java.lang.Long"/>
+		<field name="COLUMN_52" class="java.lang.String"/>
+		<field name="COLUMN_53" class="java.lang.String"/>
+		<field name="COLUMN_54" class="java.lang.String"/>
+		<field name="COLUMN_55" class="java.lang.Integer"/>
+		<field name="COLUMN_56" class="java.lang.String"/>
+		<field name="COLUMN_57" class="java.lang.Integer"/>
+		<field name="COLUMN_58" class="java.lang.Object"/>
+		<field name="COLUMN_59" class="java.lang.Long"/>
+		<field name="COLUMN_60" class="java.lang.Long"/>
+		<field name="COLUMN_61" class="java.lang.String"/>
+		<field name="COLUMN_62" class="java.lang.Long"/>
+		<field name="COLUMN_63" class="java.sql.Timestamp"/>
+		<field name="COLUMN_64" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="fd9dfde6-cd59-4a79-b774-fd3fc8461b4c">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="kfis_GIS.xml"/>
+		<parameter name="p_mun_id" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{p_mun_id}]]></defaultValueExpression>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[select cm.name as cm_name from 
+tgis_cadastral_municipality as cm where cm.id= $P{p_mun_id} ::integer]]>
+		</queryString>
+		<field name="cm_name" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="kfis_logo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{kfis_logo}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ks_logo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{ks_logo}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_actual_user" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{p_actual_user}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_rep_type" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{p_rep_type}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_year" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{p_year}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_mun_id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{p_mun_id}]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select * from tgis_cadastral_municipality cad_mun left join
+
+(select cm.id as cad_mun_id,* from tfrm_private_activity as pa left join tfrm_activity as a 
+on pa.activity_id=a.id left join tfrm_annual_planning as apl on a.annual_planning_id=apl.id
+left join (select * from tfrm_annual_planning_status where status='APR')  as aps on apl.status_id=aps.id 
+left join tgis_cadastral_municipality cm on apl.mun_id=cm.id
+left join tfrm_activity_status as ast on pa.status_id=ast.id
+ where  apl.year= $P{p_year} ::integer and ast.status='APR'
+) as pvt_act 
+
+on cad_mun.id=pvt_act.cad_mun_id where cad_mun.id= $P{p_mun_id} ::integer]]>
+	</queryString>
+	<field name="id" class="java.lang.Long"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="name_sr" class="java.lang.String"/>
+	<field name="name_en" class="java.lang.String"/>
+	<field name="nr" class="java.lang.Integer"/>
+	<field name="code" class="java.lang.String"/>
+	<field name="region_id" class="java.lang.Integer"/>
+	<field name="the_geom" class="java.lang.Object"/>
+	<field name="cad_mun_id" class="java.lang.Long"/>
+	<field name="COLUMN_10" class="java.lang.Long"/>
+	<field name="activity_id" class="java.lang.Long"/>
+	<field name="status_id" class="java.lang.Long"/>
+	<field name="activity_unit" class="java.lang.String"/>
+	<field name="mun_id" class="java.lang.Integer"/>
+	<field name="work_stage" class="java.lang.String"/>
+	<field name="pl_tech_volume" class="java.lang.Double"/>
+	<field name="pl_fire_volume" class="java.lang.Double"/>
+	<field name="pl_created_date" class="java.sql.Timestamp"/>
+	<field name="pl_created_by" class="java.lang.Integer"/>
+	<field name="im_tech_volume" class="java.lang.Double"/>
+	<field name="im_fire_volume" class="java.lang.Double"/>
+	<field name="im_created_date" class="java.sql.Timestamp"/>
+	<field name="im_created_by" class="java.lang.Integer"/>
+	<field name="start_cmpgn_date" class="java.sql.Date"/>
+	<field name="end_cmpgn_date" class="java.sql.Date"/>
+	<field name="COLUMN_26" class="java.lang.Long"/>
+	<field name="activity_no" class="java.lang.String"/>
+	<field name="activity_domain_id" class="java.lang.Integer"/>
+	<field name="annual_planning_id" class="java.lang.Long"/>
+	<field name="activity_field" class="java.lang.String"/>
+	<field name="operation_level" class="java.lang.Integer"/>
+	<field name="qr_code" class="java.lang.Object"/>
+	<field name="planed_geom" class="java.lang.Object"/>
+	<field name="implemented_geom" class="java.lang.Object"/>
+	<field name="created_by" class="java.lang.Long"/>
+	<field name="created_date" class="java.sql.Timestamp"/>
+	<field name="COLUMN_37" class="java.lang.Long"/>
+	<field name="COLUMN_38" class="java.lang.Integer"/>
+	<field name="year" class="java.lang.Integer"/>
+	<field name="COLUMN_40" class="java.lang.Integer"/>
+	<field name="COLUMN_41" class="java.sql.Timestamp"/>
+	<field name="COLUMN_42" class="java.lang.Long"/>
+	<field name="COLUMN_43" class="java.lang.Long"/>
+	<field name="remarks" class="java.lang.String"/>
+	<field name="COLUMN_45" class="java.lang.Long"/>
+	<field name="COLUMN_46" class="java.lang.Long"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="COLUMN_48" class="java.lang.Long"/>
+	<field name="COLUMN_49" class="java.sql.Timestamp"/>
+	<field name="COLUMN_50" class="java.lang.String"/>
+	<field name="COLUMN_51" class="java.lang.Long"/>
+	<field name="COLUMN_52" class="java.lang.String"/>
+	<field name="COLUMN_53" class="java.lang.String"/>
+	<field name="COLUMN_54" class="java.lang.String"/>
+	<field name="COLUMN_55" class="java.lang.Integer"/>
+	<field name="COLUMN_56" class="java.lang.String"/>
+	<field name="COLUMN_57" class="java.lang.Integer"/>
+	<field name="COLUMN_58" class="java.lang.Object"/>
+	<field name="COLUMN_59" class="java.lang.Long"/>
+	<field name="COLUMN_60" class="java.lang.Long"/>
+	<field name="COLUMN_61" class="java.lang.String"/>
+	<field name="COLUMN_62" class="java.lang.Long"/>
+	<field name="COLUMN_63" class="java.sql.Timestamp"/>
+	<field name="COLUMN_64" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="364" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="366" y="0" width="70" height="50" uuid="9cfa2068-86e7-48bb-9c2c-4b6585ae965d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{ks_logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="50" width="802" height="50" uuid="7edd8765-d004-4cdd-921c-9ca3f2c1597a">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[REPUBLIKA E KOSOVËS
+REPUBLIKA KOSOVA-REPUBLIC OF KOSOVO
+QEVERIA –VLADA-GOVERNMENT ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="100" width="802" height="50" uuid="a242eb01-0022-4f7d-8310-6a529752a6bc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[MINISTRIA BUJQËSISË, PYLLTARISË DHE ZHVILLIMIT RURAL 
+MINISTARSTVO POLJOPRIVREDE, SUMARSTVA I RURALNOG RAZVOJA
+MINISTRY OF AGRICULTURE, FORESTRY AND RURAL DEVELOPMENT ]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="326" y="155" width="150" height="70" uuid="fc52c7d6-c5c5-4108-8bb1-95369c79c8e4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{kfis_logo}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="280" width="802" height="20" uuid="9e84474b-01d8-42da-b936-c69e9c713a23">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{p_rep_type}+" për pyjet private  për vitin  "+$P{p_year}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="100" y="314" width="600" height="50" uuid="4f95795f-38dd-486c-af6a-2fbe85cd5c44">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="86ee0b61-0c8a-4a1b-bb26-716e7c1cfc28">
+						<datasetParameter name="p_year">
+							<datasetParameterExpression><![CDATA[$P{p_year}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="p_mun_id">
+							<datasetParameterExpression><![CDATA[$P{p_mun_id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="120" uuid="57a6d66b-e664-4e26-b3a8-3d1504fd4605">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:columnHeader style="Table_CH" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="7c1a6e88-1c28-4766-9a9e-49a4ef3e7b87"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Komuna"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="add6b01e-983b-44cb-b1ab-8a1dc7de3209"/>
+								<box leftPadding="5"/>
+								<textElement verticalAlignment="Middle">
+									<font isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="120" uuid="26a8f406-7287-4d89-b269-580079c37a8d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="49d00816-9379-48a1-ba1a-e78e27d64248"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Dru teknik (m3)"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="cc316cfb-a899-42c8-bf25-cbda589d9108"/>
+								<box rightPadding="3"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{pl_tech_volume}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="120" uuid="b1064bb2-c5a6-4c13-a634-c3dc10395676">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="4ec95bc2-0fd6-43c4-a434-72d11b73e51c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Dru teknik (m3) (IMP)"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="f3e3f13d-abfc-4eb1-84e3-35220595ae57"/>
+								<box rightPadding="3"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{im_tech_volume}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="120" uuid="47137d3b-9571-4bd7-9a6b-c5072719fc2e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="005aafd6-014c-4756-baf5-247903df05f6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Dru zjarri (m3)"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="0fc0191f-0089-41fa-9172-6a889ff07df0"/>
+								<box rightPadding="3"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{pl_fire_volume}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="120" uuid="c9a2b2e0-2038-4ba3-ad42-498d8b70341f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="ca07dac5-f63a-457e-8e85-627240f9de6d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Dru zjarri (m3) (IMP)"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="120" height="20" uuid="0c7241c2-efd4-44cc-bd2c-264632a84cab"/>
+								<box rightPadding="3"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{im_fire_volume}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="260" width="802" height="20" uuid="63ed6c15-d241-4575-ae8d-4046f0f85267">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset2" uuid="921defd2-ea4c-4e22-8358-57a9ec1a4c6b">
+						<datasetParameter name="p_mun_id">
+							<datasetParameterExpression><![CDATA[$P{p_mun_id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="802">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="802" height="20" uuid="48f3cac1-4b9a-405f-8daf-ec1cd9b87479">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="11" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{cm_name}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</title>
+	<lastPageFooter>
+		<band height="61">
+			<staticText>
+				<reportElement x="680" y="0" width="105" height="30" uuid="f685ca19-97c6-45b3-9424-f3e0a7b76be9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gjeneruar nga :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="680" y="30" width="105" height="30" uuid="14fb50f0-cc14-4b27-9518-aabd48e741d7"/>
+				<box bottomPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{p_actual_user}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="680" y="61" width="105" height="0" uuid="ed336e58-25e7-49d0-9de2-55cea4d6aeb0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern=" dd /MM /yyyy" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="6" y="30" width="134" height="30" forecolor="#000000" uuid="68d17c8a-b89d-4405-81b2-0c87868e6543">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

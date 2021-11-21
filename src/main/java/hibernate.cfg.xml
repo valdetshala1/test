@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+<!-- 
+http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd
+http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd
+http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd
+ -->     
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+
+<!-- 	START	KFIS db local  -->
+		<property name="hibernate.connection.applicationName">KFISApp</property>
+		<property name="hibernate.connection.clientInfo">KFISApp</property>
+		<property name="hibernate.dialect">org.hibernate.spatial.dialect.postgis.PostgisDialect</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/kfis?clientInfo=kfis&amp;applicationName=KFISApp&amp;application_name=kfis&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF8</property>		 
+	
+	
+<!-- 	END	KFIS db local  -->
+
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">GaDrSumsBTnCWIffdyVMzL7+mNixSb29</property>
+
+
+		<!-- 
+        <property name="hibernate.dialect">com.geoland.kfis.persistence.base.PostgreSQLDialectUuid</property>
+        <property name="hibernate.jdbc.use_streams_for_binary">false</property>
+        <property name="hibernate.jdbc.batch_size">0</property>       
+        -->
+		<property name="hibernate.jdbc.use_streams_for_binary">true</property>
+		<property name="hibernate.jdbc.batch_size">0</property>		
+
+    	<property name="hibernate.connection.CharSet">utf8</property>
+        <property name="hibernate.connection.characterEncoding">utf8</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+  		<property name="hibernate.connection.autocommit">false</property>
+  		
+  		<property name="hibernate.interceptor">com.geoland.kfis.persistence.hibernate.AuditInterceptor</property>
+        		
+		<!-- Use the C3P0 connection pool. -->
+		<!-- 
+		<property name="c3p0.min_size">3</property>
+		<property name="c3p0.max_size">10</property>
+		<property name="c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.dataSourceName">KFIS</property>
+		 -->
+		<property name="hibernate.c3p0.minPoolSize">5</property>
+ 		<property name="hibernate.c3p0.maxPoolSize">20</property>
+ 		<property name="hibernate.c3p0.maxIdleTime">10</property>
+ 		
+ 		<!-- 
+ 		<property name="hibernate.c3p0.maxAdministrativeTaskTime">3</property>
+ 		<property name="hibernate.c3p0.numHelperThreads">8</property>
+		  -->
+		 
+ 		<!-- 
+		<property name="hibernate.c3p0.minPoolSize" value="5"/>
+		<property name="hibernate.c3p0.maxPoolSize" value="60"/>
+		<property name="hibernate.c3p0.maxIdleTime" value="10"/>
+		<property name="hibernate.c3p0.idleConnectionTestPeriod" value="5"/>
+		<property name="hibernate.c3p0.testConnectionOnCheckin" value="true"/> 		
+ 		 -->
+ 		
+		<!-- Use the Hibernate built-in pool for tests. -->
+		<!-- <property name="hibernate.connection.pool_size">3</property>-->
+		
+		<!--         
+		1 TRANSACTION_READ_UNCOMMITTED Allows dirty reads, non-repeatable reads, and phantom reads to occur. 
+		2 TRANSACTION_READ_COMMITTED Ensures only committed data can be read. 
+		3 TRANSACTION_REPEATABLE_READ Is close to being "serializable," however, "phantom" reads are possible. 
+		4 TRANSACTION_SERIALIZABLE Dirty reads, non-repeatable reads, and phantom reads are prevented. Serializable.
+		<property name="hibernate.connection.isolation">3</property> 
+		 -->		
+
+        <!-- Enable auto-commit mode (true) for special cases (integration testing) -->
+        <property name="connection.autocommit">false</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<property name="cache.use_query_cache">false</property>
+		<property name="cache.use_minimal_puts">false</property>
+		        
+		<!-- In eager fetching, only join three tables deep if joins are used -->
+		<property name="max_fetch_depth">3</property>
+
+		<!-- Print SQL to stdout, format it nicely -->
+		<property name="show_sql">false</property>
+		<property name="format_sql">false</property>
+		<property name="use_sql_comments">false</property>
+
+		<!-- Use thread-bound persistence context propagation, scoped to the transaction -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- start Domain Object Mappings -->
+ 
+        <mapping class="com.geoland.framework.persistence.model.User" />
+        <mapping class="com.geoland.kfis.model.ContractDoc" />
+         <mapping class="com.geoland.kfis.model.DhpetHuntGroundEval" />
+        <mapping class="com.geoland.kfis.model.Region" />
+        <mapping class="com.geoland.kfis.model.VehicleRegister" />
+        <mapping class="com.geoland.kfis.model.OfficalTravel" />
+        <mapping class="com.geoland.kfis.model.RequisitionAccount" />
+        <mapping class="com.geoland.framework.persistence.model.rbac.RbacUseRole" />
+        <mapping class="com.geoland.kfis.model.AnnualPlanningStatus" />
+        <mapping class="com.geoland.kfis.model.InspActionType" />
+        <mapping class="com.geoland.kfis.model.ManagementClass" />
+        <mapping class="com.geoland.kfis.model.PurchaseOrderItem" />
+        <mapping class="com.geoland.kfis.model.Alert" />
+        <mapping class="com.geoland.kfis.model.LawSuitStatus" />
+        <mapping class="com.geoland.kfis.model.AnnualBudgetAllocation" />
+        <mapping class="com.geoland.kfis.model.OrganisationMun" />
+        <mapping class="com.geoland.kfis.model.Address" />
+        <mapping class="com.geoland.kfis.model.Leave" />
+        <mapping class="com.geoland.kfis.model.Inspector" />
+        <mapping class="com.geoland.kfis.model.Assets" />
+        <mapping class="com.geoland.kfis.model.Activity" />
+        <mapping class="com.geoland.kfis.model.CadastralZone" />
+        <mapping class="com.geoland.kfis.model.ManagmentProtocolDoc" />
+        <mapping class="com.geoland.kfis.model.DocType" />
+        <mapping class="com.geoland.kfis.model.ActivityDomain" />
+        <mapping class="com.geoland.kfis.model.AlertRecipient" />
+        <mapping class="com.geoland.framework.persistence.model.rbac.RbacPermission" />
+        <mapping class="com.geoland.kfis.model.PrivateRequest" />
+        <mapping class="com.geoland.kfis.model.Inspection" />
+        <mapping class="com.geoland.kfis.model.VehicleServiceMaintenance" />
+        <mapping class="com.geoland.kfis.model.DocCategory" />
+        <mapping class="com.geoland.kfis.model.StandPlantingActivity" />
+        <mapping class="com.geoland.framework.persistence.model.rbac.RbacObject" />
+        <mapping class="com.geoland.kfis.model.PrcmtTenderRequest" />
+        <mapping class="com.geoland.kfis.model.SeedActivity" />
+        <mapping class="com.geoland.kfis.model.Road" />
+        <mapping class="com.geoland.kfis.model.BpartnerLocation" />
+        <mapping class="com.geoland.kfis.model.AdLanguage" />
+        <mapping class="com.geoland.kfis.model.Language" />
+        <mapping class="com.geoland.kfis.model.DpMngmtStatus" />
+        <mapping class="com.geoland.kfis.model.SeedlingInventoryPOS" />
+        <mapping class="com.geoland.kfis.model.PartyRelationship" />
+        <mapping class="com.geoland.kfis.model.AttendanceRecord" />
+        <mapping class="com.geoland.kfis.model.FuelConsum" />
+        <mapping class="com.geoland.kfis.model.RequisitionItem" />
+        <mapping class="com.geoland.kfis.model.AssetsDevaluation" />
+        <mapping class="com.geoland.kfis.model.ManagementUnitPeriod" />
+        <mapping class="com.geoland.kfis.model.LawSuitDamage" />
+        <mapping class="com.geoland.kfis.model.PurchaseOrderStatus" />
+        <mapping class="com.geoland.kfis.model.PaymentPeriod" />
+        <mapping class="com.geoland.kfis.model.Bpartner" />
+        <mapping class="com.geoland.kfis.model.Subregion" />
+        <mapping class="com.geoland.kfis.model.Currency" />
+        <mapping class="com.geoland.framework.persistence.model.rbac.RbacOperation" />
+        <mapping class="com.geoland.kfis.model.ProtectionActivity" />
+        <mapping class="com.geoland.kfis.model.DhpetWildAnimals" />
+        <mapping class="com.geoland.kfis.model.DhpetHuntedAnimals" />
+        <mapping class="com.geoland.kfis.model.DhpetWildAnimalsRequest" />
+        <mapping class="com.geoland.kfis.model.Contract" />
+        <mapping class="com.geoland.kfis.model.LeaveEntitlement" />
+        <mapping class="com.geoland.kfis.model.RoadActivity" />
+        <mapping class="com.geoland.kfis.model.UnitsMetric" />
+        <mapping class="com.geoland.kfis.model.LeaveType" />
+        <mapping class="com.geoland.kfis.model.EstimateVolume" />
+        <mapping class="com.geoland.kfis.model.TreeSpecies" />
+        <mapping class="com.geoland.kfis.model.PartyRole" />
+        <mapping class="com.geoland.kfis.model.PartyUser" />
+        <mapping class="com.geoland.kfis.model.Location" />
+        <mapping class="com.geoland.kfis.model.ActivityStatusDoc" />
+        <mapping class="com.geoland.kfis.model.AssetsStaffAssign" />
+        <mapping class="com.geoland.kfis.model.Domain" />
+        <mapping class="com.geoland.kfis.model.ActivityStatus" />
+        <mapping class="com.geoland.kfis.model.view.ActivityDomainView" />
+        <mapping class="com.geoland.kfis.model.FinancialOutput" />
+        <mapping class="com.geoland.kfis.model.PrcmtTenderComplaint" />
+        <mapping class="com.geoland.kfis.model.FiskosData" />
+        <mapping class="com.geoland.kfis.model.DhpetAnimalCapacity" />
+        <mapping class="com.geoland.kfis.model.Compartment" />
+        <mapping class="com.geoland.kfis.model.UomTrl" />
+        <mapping class="com.geoland.kfis.model.Vehicle" />
+        <mapping class="com.geoland.kfis.model.CadastralMunicipality" />
+        <mapping class="com.geoland.kfis.model.Person" />
+        <mapping class="com.geoland.kfis.model.PrivateRequestDoc" />
+        <mapping class="com.geoland.framework.persistence.model.UserPassword" />
+        <mapping class="com.geoland.kfis.model.Tax" />
+        <mapping class="com.geoland.kfis.model.RequisitionStatus" />
+        <mapping class="com.geoland.kfis.model.PrcmtDossierRequest" />
+        <mapping class="com.geoland.kfis.model.EmployeeSosContact" />
+        <mapping class="com.geoland.kfis.model.TextDomain" />
+        <mapping class="com.geoland.kfis.model.PrcmtDossierQuestion" />
+        <mapping class="com.geoland.kfis.model.ManagementUnit" />
+        <mapping class="com.geoland.kfis.model.Organisation" />
+        <mapping class="com.geoland.kfis.model.LawSuit" />
+        <mapping class="com.geoland.kfis.model.DpMngmtSettings" />
+        <mapping class="com.geoland.kfis.model.FinancialInput" />
+        <mapping class="com.geoland.kfis.model.EmployeeDocument" />
+        <mapping class="com.geoland.kfis.model.DpMngmt" />
+        <mapping class="com.geoland.kfis.model.StandSilvicultureActivity" />
+        <mapping class="com.geoland.kfis.model.StandSilvicultureImplDeclare" />
+        <mapping class="com.geoland.kfis.model.VehicleStaffAssign" />
+        <mapping class="com.geoland.kfis.model.Requisition" />
+        <mapping class="com.geoland.kfis.model.FinancialType" />
+        <mapping class="com.geoland.kfis.model.PrivateRequestImpl" />
+        <mapping class="com.geoland.kfis.model.DhpetActivityMang" />
+        <mapping class="com.geoland.kfis.model.PrcmtTenderStatusDoc" />
+        <mapping class="com.geoland.kfis.model.EmployeeSkill" />
+        <mapping class="com.geoland.kfis.model.StandHarvestActivity" />
+        <mapping class="com.geoland.kfis.model.StandHarvestImplDeclare" />
+        <mapping class="com.geoland.framework.persistence.model.UserLog" />
+        <mapping class="com.geoland.kfis.model.Nationality" />
+        <mapping class="com.geoland.kfis.model.BudgetMainntenance" />
+        <mapping class="com.geoland.kfis.model.PrcmtTenderBid" />
+        <mapping class="com.geoland.kfis.model.AlertRule" />
+        <mapping class="com.geoland.kfis.model.Employee" />
+        <mapping class="com.geoland.kfis.model.PrcmtTenderStatus" />
+        <mapping class="com.geoland.kfis.model.PrcmtTenderBidder" />
+        <mapping class="com.geoland.kfis.model.FrmDomain" />
+        <mapping class="com.geoland.kfis.model.EmployeeLanguage" />
+        <mapping class="com.geoland.kfis.model.Contractor" />
+        <mapping class="com.geoland.kfis.model.AnnualPlanning" />
+        <mapping class="com.geoland.framework.persistence.model.rbac.RbacSessionRole" />
+        <mapping class="com.geoland.kfis.model.FrmDomainName" />
+        <mapping class="com.geoland.kfis.model.Stand" />
+        <mapping class="com.geoland.kfis.model.PurchaseOrder" />
+        <mapping class="com.geoland.kfis.model.StandGrowth" />
+        <mapping class="com.geoland.kfis.model.Party" />
+        <mapping class="com.geoland.kfis.model.FiskosImport" />
+        <mapping class="com.geoland.kfis.model.AlertRuleTrl" />
+        <mapping class="com.geoland.framework.persistence.model.rbac.RbacRole" />
+        <mapping class="com.geoland.kfis.model.Uom" />
+        <mapping class="com.geoland.kfis.model.DpMngmtAttach" />
+        <mapping class="com.geoland.kfis.model.InspectionDoc" />
+        <mapping class="com.geoland.kfis.model.PrivateActivity" />
+        <mapping class="com.geoland.framework.persistence.model.UserLoginAttempt" />
+        <mapping class="com.geoland.kfis.model.DhpetLocation" />
+        <mapping class="com.geoland.kfis.model.DhpetAnimalLocation" />
+        <mapping class="com.geoland.kfis.model.SeedlingInventory" />
+        <mapping class="com.geoland.framework.persistence.model.rbac.RbacSession" />  
+        <mapping class="com.geoland.kfis.model.MerProject" />
+        <mapping class="com.geoland.kfis.model.MerSubProject" />
+        <mapping class="com.geoland.kfis.model.MerPlanPeriod" />
+        <mapping class="com.geoland.kfis.model.MerStrategy" />
+        <mapping class="com.geoland.kfis.model.MerRefSubProject" />
+        <mapping class="com.geoland.kfis.model.MerRespInstitution" />
+        <mapping class="com.geoland.kfis.model.MerStrategyDoc" />
+        <mapping class="com.geoland.kfis.model.MerStrategyExecution" />
+        <mapping class="com.geoland.kfis.model.MerFinanceDonor" />
+        <mapping class="com.geoland.kfis.model.MerIndicator" />
+        <mapping class="com.geoland.kfis.model.MerSubIndicator" />
+        <mapping class="com.geoland.kfis.model.MerPerfEvaluation" />
+        <mapping class="com.geoland.kfis.model.MerStratEvaluation" />
+        <mapping class="com.geoland.kfis.model.Publishing" />
+        <mapping class="com.geoland.kfis.model.FireReport" />
+        <mapping class="com.geoland.kfis.model.FireDetails" />
+        <mapping class="com.geoland.kfis.model.Decision" />
+        <mapping class="com.geoland.kfis.model.DecisionDoc" />
+        <mapping class="com.geoland.kfis.model.DecisionStatus" />
+        <mapping class="com.geoland.kfis.model.DecisionType" />
+        <mapping class="com.geoland.kfis.model.HrmAnnualPlan" />
+        <mapping class="com.geoland.kfis.model.HrmAnnualPlanDoc" />
+        <mapping class="com.geoland.kfis.model.HrmAnnualPlanStatus" />
+        <mapping class="com.geoland.kfis.model.HrmAnnPlanEmployee" />
+        <mapping class="com.geoland.kfis.model.FinInputStatus" />
+        <mapping class="com.geoland.kfis.model.DecisionEmployee" />
+        <mapping class="com.geoland.kfis.model.StandPlantingImplDeclare" />
+        <mapping class="com.geoland.kfis.model.RoadImplDeclare" />
+        <mapping class="com.geoland.kfis.model.ProtectionImplDeclare" />
+        <mapping class="com.geoland.kfis.model.ShapeStand" />
+        <mapping class="com.geoland.kfis.model.ShapeStandBiodiversity" />
+        <mapping class="com.geoland.kfis.model.ShapeStandTreatment" />
+        <mapping class="com.geoland.kfis.model.ShapeTreatmentName" />
+        <mapping class="com.geoland.kfis.model.ShapeBiodiversityName" />
+        <mapping class="com.geoland.kfis.model.view.ShapeFieldsControlView" />
+        <mapping class="com.geoland.kfis.model.ImportStatus" />
+        <mapping class="com.geoland.kfis.model.Plot" />
+        <mapping class="com.geoland.kfis.model.PlotTree" />
+        <mapping class="com.geoland.kfis.model.ShapePlots" />
+        <mapping class="com.geoland.kfis.model.ShapePlotTrees" />
+        <mapping class="com.geoland.kfis.model.Biodiversity" />
+        <mapping class="com.geoland.kfis.model.BiodiversityName" />
+        <mapping class="com.geoland.kfis.model.ShapeBiodiversity" />
+        <mapping class="com.geoland.kfis.model.StandHarvestMarked" />
+        
+        <mapping class="com.geoland.kfis.model.Request" />
+        <mapping class="com.geoland.kfis.model.RequestStatus" />
+        <mapping class="com.geoland.kfis.model.RequestDoc" />
+        <mapping class="com.geoland.kfis.model.RequestCoord" />
+        
+        <mapping class="com.geoland.kfis.model.CadParcelRequest" />
+        
+        <mapping class="com.geoland.kfis.model.DhpetAnimalLocationDetail"/>
+        <mapping class="com.geoland.kfis.model.DhpetAnnualPlan" />
+        <mapping class="com.geoland.kfis.model.DhpetHuntedAnimalDetail" />
+        <mapping class="com.geoland.kfis.model.DhpetLocationLandType" />
+        <mapping class="com.geoland.kfis.model.DhpetPeriodPlan" />
+        <mapping class="com.geoland.kfis.model.RequestType" />
+        <mapping class="com.geoland.kfis.model.StandHarvestImplTransport" />
+        
+        <mapping class="com.geoland.kfis.model.ParcelDetail" />
+        <mapping class="com.geoland.kfis.model.ParcelOwner" />
+        <mapping class="com.geoland.kfis.model.GisParcelGeom" />
+        
+        <mapping class="com.geoland.kfis.model.DhpetTouristPurpose" />
+        <mapping class="com.geoland.kfis.model.DhpetTouristRegister" />
+        <mapping class="com.geoland.kfis.model.DhpetTouristZoneGeoms" />
+        
+        <mapping class="com.geoland.kfis.model.MerIndicatorTarget" />
+        <mapping class="com.geoland.kfis.model.Devices" />
+        <mapping class="com.geoland.kfis.model.Positions" />
+        <mapping class="com.geoland.kfis.model.ProtocolPorts" />
+        
+        <mapping class="com.geoland.kfis.model.Confiscation" />
+        <mapping class="com.geoland.kfis.model.ConfiscationDetail" />
+        <mapping class="com.geoland.kfis.model.Trips" />
+        <mapping class="com.geoland.kfis.model.LineTemp" />
+        <mapping class="com.geoland.kfis.model.LayersGis" />
+        <mapping class="com.geoland.kfis.model.FirePolygon" />
+        <mapping class="com.geoland.kfis.model.FirePoint" />
+        <mapping class="com.geoland.kfis.model.AffRefProjects" />
+        <mapping class="com.geoland.kfis.model.KfisGenDocuments" />
+        
+        <mapping class="com.geoland.kfis.model.EconomicCode" />
+        
+        <mapping class="com.geoland.kfis.model.EmployeeSalary" />
+        <mapping class="com.geoland.kfis.model.EmployeeSalaryPayroll" />
+        <mapping class="com.geoland.kfis.model.EmployeeSalaryBonus" />
+        <mapping class="com.geoland.kfis.model.EmployeeSalaryAdds" />
+        <mapping class="com.geoland.kfis.model.EmployeeSalaryDeductions" />
+        <mapping class="com.geoland.kfis.model.EmployeeSalaryTaxRates" />
+        <mapping class="com.geoland.kfis.model.EmployeeSalaryAdjustment" />
+        <mapping class="com.geoland.kfis.model.EmployeeSalaryPayrollAdjustment" />
+        
+       
+		<!-- end Domain Object Mappings -->
+
+    </session-factory>
+</hibernate-configuration>

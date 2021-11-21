@@ -1,0 +1,2518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube.Tab 3.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube.Tab 3.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube.Tab 3.x">135</property>
+    <property name="Data Cube.Tab 3.y">80</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="p_qrcode_content_url" id="488">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="annu_plan_id" id="1956">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_user" id="2947">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/kfis</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Tab 1" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">name_al</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name_al</text-property>
+                    <text-property name="heading">name_al</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">gender</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">gender</text-property>
+                    <text-property name="heading">gender</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">death_cause</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">death_cause</text-property>
+                    <text-property name="heading">death_cause</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">animals_number</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">animals_number</text-property>
+                    <text-property name="heading">animals_number</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">annu_plan_id</property>
+                    <property name="paramName">annu_plan_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">name_al</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">gender</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">death_cause</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">animals_number</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">name_al</property>
+                    <property name="nativeName">name_al</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">gender</property>
+                    <property name="nativeName">gender</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">death_cause</property>
+                    <property name="nativeName">death_cause</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">animals_number</property>
+                    <property name="nativeName">animals_number</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select wa.name_al,gender,dt.domtext as  death_cause , hd.animals_number from tdhpet_hunted_animal_detail hd 
+left join ( select * from ttextdomain where domname='ANIMALDEATHCAUSE') dt on dt.domkey=hd.death_cause
+ left join tdhpet_hunted_animals ha on hd.hunted_animal_id=ha.id
+ left join tdhpet_wild_animals wa on wa.id=ha.animal_id  where 
+ annu_plan_id=?]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Tab 4" id="2953">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">name_al</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name_al</text-property>
+                    <text-property name="heading">name_al</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">gender</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">gender</text-property>
+                    <text-property name="heading">gender</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">age</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">age</text-property>
+                    <text-property name="heading">age</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">quantity</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">quantity</text-property>
+                    <text-property name="heading">quantity</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">annu_plan_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">name_al</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">gender</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">age</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">quantity</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">name_al</property>
+                    <property name="nativeName">name_al</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">gender</property>
+                    <property name="nativeName">gender</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">age</property>
+                    <property name="nativeName">age</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">quantity</property>
+                    <property name="nativeName">quantity</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[  select wa.name_al,gender,td.domtext as age ,ad.quantity from  tdhpet_animal_location_detail ad
+  left join ( select * from ttextdomain where domname='AGETYPE') td 
+  on ad.age_type=td.domkey
+  left join tdhpet_animal_location al on  al.id=ad.animal_location_id
+  left join tdhpet_wild_animals wa on wa.id=al.animal_id 
+  where  annu_plan_id=?
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name_al</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name_al</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name_al</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>gender</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>gender</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>gender</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>age</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>150</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>age</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>age</design:label>
+            <design:formattingHints>
+              <design:displaySize>150</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>quantity</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>quantity</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>quantity</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Tab 2" id="3000">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">animal_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">animal_name</text-property>
+                    <text-property name="heading">animal_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">request_for</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">request_for</text-property>
+                    <text-property name="heading">request_for</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">max_point</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">max_point</text-property>
+                    <text-property name="heading">max_point</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">defined_point</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">defined_point</text-property>
+                    <text-property name="heading">defined_point</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">annu_plan_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">animal_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">request_for</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">max_point</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">defined_point</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">animal_name</property>
+                    <property name="nativeName">animal_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">request_for</property>
+                    <property name="nativeName">request_for</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">max_point</property>
+                    <property name="nativeName">max_point</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">defined_point</property>
+                    <property name="nativeName">defined_point</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select wa.name_al as animal_name,td.domtext as request_for, war.max_point , geval.defined_point from tdhpet_hunt_ground_eval geval
+left join tdhpet_animal_location al on geval.animal_location_id=al.id
+left join tdhpet_wild_animals_request war on war.id=geval.animal_request_id
+left join (select * from ttextdomain where domname ilike 'ANIMALNEEDS') td on td.domkey=war.request_for
+left join  tdhpet_wild_animals wa on al.animal_id=wa.id where
+annu_plan_id=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name_al</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name_al</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name_al</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>gender</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>gender</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>gender</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>death_cause</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>150</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>death_cause</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>death_cause</design:label>
+            <design:formattingHints>
+              <design:displaySize>150</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>animals_number</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>animals_number</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>animals_number</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Tab 3" id="3048">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">animal_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">animal_name</text-property>
+                    <text-property name="heading">animal_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">use_of_land</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">use_of_land</text-property>
+                    <text-property name="heading">use_of_land</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">area</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">area</text-property>
+                    <text-property name="heading">area</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">percentage</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">percentage</text-property>
+                    <text-property name="heading">percentage</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">annu_plan_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">animal_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">use_of_land</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">area</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">percentage</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">animal_name</property>
+                    <property name="nativeName">animal_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">use_of_land</property>
+                    <property name="nativeName">use_of_land</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">area</property>
+                    <property name="nativeName">area</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">percentage</property>
+                    <property name="nativeName">percentage</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select wa.name_al as animal_name,td.domtext as use_of_land ,area , percentage from tdhpet_animal_capacity ac
+left join (select * from ttextdomain where domname ilike 'ANIMALLANDUSE') td on td.domkey=ac.use_of_land
+left join tdhpet_animal_location al on ac.animal_location_id=al.id
+left join tdhpet_wild_animals wa on al.animal_id=wa.id where
+annu_plan_id=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>animal_name</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>animal_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>animal_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>request_for</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>150</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>request_for</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>request_for</design:label>
+            <design:formattingHints>
+              <design:displaySize>150</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>max_point</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>max_point</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>max_point</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>defined_point</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>defined_point</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>defined_point</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="3085">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">year</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">year</text-property>
+                    <text-property name="heading">year</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">habitat_location</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">habitat_location</text-property>
+                    <text-property name="heading">habitat_location</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">annu_plan_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">year</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">habitat_location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">year</property>
+                    <property name="nativeName">year</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">habitat_location</property>
+                    <property name="nativeName">habitat_location</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select year,habitat_location from tdhpet_annual_plan ap
+left join tdhpet_period_plan pp on ap.period_plan_id=pp.id
+left join tdhpet_location l on pp.location_id=l.id
+where ap.id=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>year</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>year</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>year</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>habitat_location</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>habitat_location</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>habitat_location</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Tab 1" id="6">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="7">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="8">
+                            <property name="levels">
+                                <tabular-level name="name_al" id="9">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">name_al</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group1" id="10">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="11">
+                            <property name="levels">
+                                <tabular-level name="gender" id="12">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">gender</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group2" id="13">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="14">
+                            <property name="levels">
+                                <tabular-level name="death_cause" id="15">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">death_cause</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="16">
+                    <property name="measures">
+                        <tabular-measure name="animals_number" id="17">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["animals_number"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Tab 1</property>
+        </tabular-cube>
+        <tabular-cube name="Tab 4" id="2954">
+            <property name="dimensions">
+                <tabular-dimension name="Group3" id="2955">
+                    <property name="defaultHierarchy">NewTabularHierarchy3</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy3" id="2956">
+                            <property name="levels">
+                                <tabular-level name="name_al" id="2957">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">name_al</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group4" id="2958">
+                    <property name="defaultHierarchy">NewTabularHierarchy4</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy4" id="2959">
+                            <property name="levels">
+                                <tabular-level name="gender" id="2960">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">gender</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group5" id="2961">
+                    <property name="defaultHierarchy">NewTabularHierarchy5</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy5" id="2962">
+                            <property name="levels">
+                                <tabular-level name="age" id="2963">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">age</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field1" id="2964">
+                    <property name="measures">
+                        <tabular-measure name="quantity" id="2965">
+                            <expression name="measureExpression" type="javascript">dataSetRow["quantity"]</expression>
+                            <property name="dataType">integer</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Tab 4</property>
+        </tabular-cube>
+        <tabular-cube name="Tab 2" id="3006">
+            <property name="dimensions">
+                <tabular-dimension name="Group6" id="3007">
+                    <property name="defaultHierarchy">NewTabularHierarchy6</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy6" id="3008">
+                            <property name="levels">
+                                <tabular-level name="animal_name" id="3009">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">animal_name</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group7" id="3010">
+                    <property name="defaultHierarchy">NewTabularHierarchy7</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy7" id="3011">
+                            <property name="levels">
+                                <tabular-level name="request_for" id="3012">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">request_for</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field2" id="3015">
+                    <property name="measures">
+                        <tabular-measure name="max_point" id="3016">
+                            <expression name="measureExpression" type="javascript">dataSetRow["max_point"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field3" id="3017">
+                    <property name="measures">
+                        <tabular-measure name="defined_point" id="3018">
+                            <expression name="measureExpression" type="javascript">dataSetRow["defined_point"]</expression>
+                            <property name="dataType">integer</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Tab 2</property>
+        </tabular-cube>
+        <tabular-cube name="Tab 3" id="3050">
+            <property name="dimensions">
+                <tabular-dimension name="Group8" id="3051">
+                    <property name="defaultHierarchy">NewTabularHierarchy8</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy8" id="3052">
+                            <property name="levels">
+                                <tabular-level name="animal_name" id="3053">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">animal_name</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group9" id="3054">
+                    <property name="defaultHierarchy">NewTabularHierarchy9</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy9" id="3055">
+                            <property name="levels">
+                                <tabular-level name="use_of_land" id="3056">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">use_of_land</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field4" id="3057">
+                    <property name="measures">
+                        <tabular-measure name="area" id="3058">
+                            <expression name="measureExpression" type="javascript">dataSetRow["area"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field5" id="3059">
+                    <property name="measures">
+                        <tabular-measure name="percentage" id="3060">
+                            <expression name="measureExpression" type="javascript">dataSetRow["percentage"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Tab 3</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <grid id="2863">
+            <property name="height">2.1875in</property>
+            <column id="2864">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2865">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="2866">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="2867">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.65in</property>
+                <cell id="2868"/>
+                <cell id="2869">
+                    <image id="2870">
+                        <property name="height">0.65625in</property>
+                        <property name="width">0.6770833333333334in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/rks_logo_trans.png</expression>
+                    </image>
+                </cell>
+                <cell id="2871">
+                    <image id="1906">
+                        <property name="overflow">auto</property>
+                        <property name="height">0.562in</property>
+                        <property name="width">0.5625in</property>
+                        <property name="source">url</property>
+                        <expression name="uri" type="javascript">params["p_qrcode_content_url"].value</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="2872">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="2873">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="2874">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">REPUBLIKA E KOSOVËS&#13;
+REPUBLIKA KOSOVA-REPUBLIC OF KOSOVO&#13;
+QEVERIA –VLADA-GOVERNMENT </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2875">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.6in</property>
+                <cell id="2876">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="2877">
+                        <property name="fontFamily">"@Arial Unicode MS"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">MINISTRIA BUJQËSISË, PYLLTARISË DHE ZHVILLIMIT RURAL &#13;
+MINISTARSTVO POLJOPRIVREDE, SUMARSTVA I RURALNOG RAZVOJA&#13;
+MINISTRY OF AGRICULTURE, FORESTRY AND RURAL DEVELOPMENT </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2879">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.65in</property>
+                <cell id="2880"/>
+                <cell id="2881">
+                    <image id="2946">
+                        <property name="height">0.6736842105263158in</property>
+                        <property name="width">1.2526315789473683in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">file:///../../../img/apk.png</expression>
+                    </image>
+                </cell>
+                <cell id="2882"/>
+            </row>
+        </grid>
+        <grid id="2948">
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <property name="height">0.5in</property>
+            <column id="2949">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="2950">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.5in</property>
+                <cell id="2951">
+                    <property name="textAlign">center</property>
+                    <label id="2952">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">left</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">Raporti për</text-property>
+                    </label>
+                    <label id="3095">
+                        <property name="display">inline</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="3092">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">planin</text-property>
+                    </label>
+                    <label id="3098">
+                        <property name="display">inline</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="3093">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="display">inline</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">year</property>
+                                <text-property name="displayName">year</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["year"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">year</property>
+                    </data>
+                    <label id="3099">
+                        <property name="display">inline</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="3094">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">për vendgjuetinë:</text-property>
+                    </label>
+                    <label id="3096">
+                        <property name="display">inline</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="3097">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="display">inline</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">habitat_location</property>
+                                <text-property name="displayName">habitat_location</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["habitat_location"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">habitat_location</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="3086">
+            <property name="textAlign">left</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <property name="height">0.5in</property>
+            <column id="3087">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="3088">
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.5in</property>
+                <cell id="3089">
+                    <property name="textAlign">center</property>
+                    <label id="3090">
+                        <property name="fontSize">11pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">left</property>
+                        <property name="display">block</property>
+                        <text-property name="text">Raporti për detajet e kafshëve të egra</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="2966">
+            <property name="cube">Tab 4</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="2983">
+                    <property name="measure">quantity</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="2984">
+                            <property name="aggregationOnRow">Group5/age</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="2985">
+                                    <property name="resultSetColumn">quantity_Group5/age</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="2992">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="2993">
+                                    <property name="resultSetColumn">quantity</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="2986">
+                            <property name="content">
+                                <label id="2987">
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Sasia</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="2968">
+                    <property name="grandTotal">
+                        <extended-item extensionName="CrosstabCell" id="2991">
+                            <property name="content">
+                                <label id="2994">
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Totali</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#9A9A9A</property>
+                            <property name="textAlign">left</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingLeft">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="2969">
+                            <property name="dimension">Group3</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View3" id="2970">
+                                    <property name="level">Group3/name_al</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="2971">
+                                            <property name="content">
+                                                <data name="name_al1" id="2972">
+                                                    <property name="resultSetColumn">name_al</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="2973">
+                            <property name="dimension">Group4</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View4" id="2974">
+                                    <property name="level">Group4/gender</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="2975">
+                                            <property name="content">
+                                                <data name="gender1" id="2977">
+                                                    <property name="resultSetColumn">gender</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="2978">
+                            <property name="dimension">Group5</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View5" id="2979">
+                                    <property name="level">Group5/age</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="2980">
+                                            <property name="content">
+                                                <data name="age" id="2982">
+                                                    <property name="resultSetColumn">age</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="grandTotalLocation">after</property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="2967">
+                    <property name="content">
+                        <label id="2988">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Lloji i kafshes</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="2976">
+                    <property name="content">
+                        <label id="2989">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Gjinia</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="2981">
+                    <property name="content">
+                        <label id="2990">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Mosha</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingRight">1pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+            </property>
+            <property name="pageBreakInside">avoid</property>
+            <property name="overflow">auto</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name_al</property>
+                    <expression name="expression">dimension["Group3"]["name_al"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">gender</property>
+                    <expression name="expression">dimension["Group4"]["gender"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">age</property>
+                    <expression name="expression">dimension["Group5"]["age"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">quantity_Group5/age</property>
+                    <expression name="expression">measure["quantity"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group5/age</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">quantity</property>
+                    <expression name="expression">measure["quantity"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <grid id="2995">
+            <property name="marginTop">20pt</property>
+            <property name="textAlign">left</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <property name="height">0.5in</property>
+            <column id="2996">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="2997">
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.5in</property>
+                <cell id="2998">
+                    <property name="textAlign">center</property>
+                    <label id="2999">
+                        <property name="fontSize">11pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">left</property>
+                        <property name="display">block</property>
+                        <text-property name="text">Raport per plotësimin e kërkesave për kafshet e egra</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="3019">
+            <property name="cube">Tab 2</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="3031">
+                    <property name="measure">max_point</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="3032">
+                            <property name="aggregationOnRow">Group7/request_for</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="3033">
+                                    <property name="resultSetColumn">max_point_Group7/request_for</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="3034">
+                            <property name="content">
+                                <label id="3035">
+                                    <text-property name="text">Pika maksimale</text-property>
+                                </label>
+                            </property>
+                            <property name="fontWeight">bold</property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="3036">
+                    <property name="measure">defined_point</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="3037">
+                            <property name="aggregationOnRow">Group7/request_for</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="3038">
+                                    <property name="resultSetColumn">defined_point_Group7/request_for</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="3039">
+                            <property name="content">
+                                <label id="3040">
+                                    <text-property name="text">Pika e definuar</text-property>
+                                </label>
+                            </property>
+                            <property name="fontWeight">bold</property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="3021">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="3022">
+                            <property name="dimension">Group6</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View6" id="3023">
+                                    <property name="level">Group6/animal_name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="3024">
+                                            <property name="content">
+                                                <data name="animal_name" id="3025">
+                                                    <property name="resultSetColumn">animal_name</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="3026">
+                            <property name="dimension">Group7</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View7" id="3027">
+                                    <property name="level">Group7/request_for</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="3028">
+                                            <property name="content">
+                                                <data name="request_for" id="3030">
+                                                    <property name="resultSetColumn">request_for</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="3020">
+                    <property name="content">
+                        <label id="3041">
+                            <text-property name="text">Lloji i kafshes</text-property>
+                        </label>
+                    </property>
+                    <property name="fontWeight">bold</property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="3029">
+                    <property name="content">
+                        <label id="3042">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Kerkese per</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+            </property>
+            <property name="pageBreakInside">avoid</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">animal_name</property>
+                    <expression name="expression">dimension["Group6"]["animal_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">request_for</property>
+                    <expression name="expression">dimension["Group7"]["request_for"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">max_point_Group7/request_for</property>
+                    <expression name="expression">measure["max_point"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group7/request_for</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">defined_point_Group7/request_for</property>
+                    <expression name="expression">measure["defined_point"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group7/request_for</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <grid id="186">
+            <property name="marginTop">20pt</property>
+            <property name="textAlign">left</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <property name="height">0.5in</property>
+            <column id="187">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="188">
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.5in</property>
+                <cell id="189">
+                    <property name="textAlign">center</property>
+                    <label id="190">
+                        <property name="fontSize">11pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">left</property>
+                        <property name="display">block</property>
+                        <text-property name="text">Raport per kapacitetin e vendgjuetise</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="3061">
+            <property name="cube">Tab 3</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="3073">
+                    <property name="measure">area</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="3074">
+                            <property name="aggregationOnRow">Group9/use_of_land</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="3075">
+                                    <property name="resultSetColumn">area_Group9/use_of_land</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="3076">
+                            <property name="content">
+                                <label id="3077">
+                                    <text-property name="text">Siperfaqja</text-property>
+                                </label>
+                            </property>
+                            <property name="fontWeight">bold</property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="3078">
+                    <property name="measure">percentage</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="3079">
+                            <property name="aggregationOnRow">Group9/use_of_land</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="3080">
+                                    <property name="resultSetColumn">percentage_Group9/use_of_land</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="3081">
+                            <property name="content">
+                                <label id="3082">
+                                    <text-property name="text">Perqindja</text-property>
+                                </label>
+                            </property>
+                            <property name="fontWeight">bold</property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="3063">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="3064">
+                            <property name="dimension">Group8</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View8" id="3065">
+                                    <property name="level">Group8/animal_name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="3066">
+                                            <property name="content">
+                                                <data name="animal_name1" id="3067">
+                                                    <property name="resultSetColumn">animal_name</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="3068">
+                            <property name="dimension">Group9</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View9" id="3069">
+                                    <property name="level">Group9/use_of_land</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="3070">
+                                            <property name="content">
+                                                <data name="use_of_land" id="3072">
+                                                    <property name="resultSetColumn">use_of_land</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="3062">
+                    <property name="content">
+                        <label id="3083">
+                            <text-property name="text">Lloji i kafshes</text-property>
+                        </label>
+                    </property>
+                    <property name="fontWeight">bold</property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="3071">
+                    <property name="content">
+                        <label id="3084">
+                            <text-property name="text">Toka e përdorur</text-property>
+                        </label>
+                    </property>
+                    <property name="fontWeight">bold</property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+            </property>
+            <property name="pageBreakInside">avoid</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">animal_name</property>
+                    <expression name="expression">dimension["Group8"]["animal_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">use_of_land</property>
+                    <expression name="expression">dimension["Group9"]["use_of_land"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">area_Group9/use_of_land</property>
+                    <expression name="expression">measure["area"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group9/use_of_land</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">percentage_Group9/use_of_land</property>
+                    <expression name="expression">measure["percentage"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group9/use_of_land</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <grid id="3043">
+            <property name="marginTop">20pt</property>
+            <property name="textAlign">left</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <property name="height">0.5in</property>
+            <column id="3044">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="3045">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <property name="height">0.5in</property>
+                <cell id="3046">
+                    <property name="textAlign">center</property>
+                    <label id="3047">
+                        <property name="fontSize">11pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">left</property>
+                        <property name="display">block</property>
+                        <text-property name="text">Raporti i deklarimit te gjuajtjes së kafshëve të egra</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="1927">
+            <property name="cube">Tab 1</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="1944">
+                    <property name="measure">animals_number</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1945">
+                            <property name="aggregationOnRow">Group2/death_cause</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="1946">
+                                    <property name="resultSetColumn">animals_number_Group2/death_cause</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="1953">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                            <property name="content">
+                                <data id="1954">
+                                    <property name="resultSetColumn">animals_number</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1947">
+                            <property name="content">
+                                <label id="1948">
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Numri i kafsheve</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#7A7A7A</property>
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="1929">
+                    <property name="grandTotal">
+                        <extended-item extensionName="CrosstabCell" id="1952">
+                            <property name="content">
+                                <label id="1955">
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Totali</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#9A9A9A</property>
+                            <property name="textAlign">left</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="paddingLeft">3pt</property>
+                            <property name="overflow">auto</property>
+                        </extended-item>
+                    </property>
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1930">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="1931">
+                                    <property name="level">Group/name_al</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1932">
+                                            <property name="content">
+                                                <data name="name_al" id="1933">
+                                                    <property name="resultSetColumn">name_al</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="1934">
+                            <property name="dimension">Group1</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="1935">
+                                    <property name="level">Group1/gender</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1936">
+                                            <property name="content">
+                                                <data name="gender" id="1938">
+                                                    <property name="resultSetColumn">gender</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="1939">
+                            <property name="dimension">Group2</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="1940">
+                                    <property name="level">Group2/death_cause</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1941">
+                                            <property name="content">
+                                                <data name="death_cause" id="1943">
+                                                    <property name="resultSetColumn">death_cause</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">left</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="overflow">auto</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="grandTotalLocation">after</property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="1928">
+                    <property name="content">
+                        <label id="1949">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Lloji i kafshes</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1937">
+                    <property name="content">
+                        <label id="1950">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Gjinia</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1942">
+                    <property name="content">
+                        <label id="1951">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Shkaku i vdekjes</text-property>
+                        </label>
+                    </property>
+                    <property name="backgroundColor">#7A7A7A</property>
+                    <property name="textAlign">left</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="overflow">auto</property>
+                </extended-item>
+            </property>
+            <property name="pageBreakInside">avoid</property>
+            <property name="overflow">auto</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name_al</property>
+                    <expression name="expression">dimension["Group"]["name_al"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">gender</property>
+                    <expression name="expression">dimension["Group1"]["gender"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">death_cause</property>
+                    <expression name="expression">dimension["Group2"]["death_cause"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">animals_number_Group2/death_cause</property>
+                    <expression name="expression">measure["animals_number"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group2/death_cause</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">animals_number</property>
+                    <expression name="expression">measure["animals_number"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <grid id="675">
+            <property name="marginTop">50pt</property>
+            <property name="textAlign">right</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="pageBreakBefore">auto</property>
+            <property name="pageBreakInside">avoid</property>
+            <method name="onRender"><![CDATA[if (BirtComp.lessThan(pageNumber, totalPage))]]></method>
+            <column id="624"/>
+            <row id="552">
+                <cell id="625">
+                    <label id="553">
+                        <property name="textAlign">right</property>
+                        <text-property name="text">  Gjeneruar nga :</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="676">
+                <cell id="677">
+                    <data id="678">
+                        <property name="marginTop">10pt</property>
+                        <property name="paddingRight">3pt</property>
+                        <property name="overflow">auto</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">p_user</property>
+                                <expression name="expression" type="javascript">params["p_user"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">p_user</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="679">
+                <cell id="680">
+                    <label id="681">
+                        <property name="marginTop">20pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">_____________________</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="682">
+                <cell id="683">
+                    <text id="684">
+                        <property name="marginTop">10pt</property>
+                        <property name="paddingLeft">3pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<VALUE-OF format="dd/MM/yyyy">new Date()</VALUE-OF>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <label id="426">
+            <property name="display">inline</property>
+            <text-property name="text"> / </text-property>
+        </label>
+    </body>
+</report>

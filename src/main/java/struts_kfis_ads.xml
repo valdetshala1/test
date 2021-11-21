@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="kfis-ads" namespace="/" extends="kfis-default">
+		<result-types> 
+			<result-type name="reportStream" default="false" class="com.geoland.kfis.web.action.print.DynamicStreamResult"/>
+		</result-types>
+		<!-- START Vehicles -->
+		<action name="Vehicles.*" method="{1}" class="com.geoland.kfis.web.action.ads.logistic.vehicle.VehicleAction">
+			<result name="page">module/ads/logistic/vehicle/vehicles_page.jsp</result>
+			<result name="form">module/ads/logistic/vehicle/vehicles_form.jsp</result>
+			<result name="grid">module/ads/logistic/vehicle/vehicles_grid.jsp</result>
+			<result name="profile">module/ads/logistic/vehicle/vehicles_profile.jsp</result>
+			<result name="report_generator">module/ads/logistic/vehicle/report_generator.jsp</result>
+		</action>
+
+		<action name="VehiclesSave" class="com.geoland.kfis.web.action.ads.logistic.vehicle.VehicleSaveAction">
+			<result name="input">module/ads/logistic/vehicle/vehicles_form.jsp</result>
+			<result name="success">module/ads/logistic/vehicle/vehicles_form.jsp</result>
+		</action>
+		<!-- END Vehicles -->
+		<!-- START Positions -->
+		<!-- 
+		<action name="Positions.*" method="{1}" class="com.geoland.kfis.web.action.ads.logistic.vehicle.positions.PositionsAction">
+			<result name="page">module/ads/logistic/vehicle/tracing/tracing_page.jsp</result>
+			<result name="form">module/ads/logistic/vehicle/tracing/tracing_form.jsp</result>
+			<result name="grid">module/ads/logistic/vehicle/tracing/tracing_grid.jsp</result>
+		</action>
+
+		<action name="PositionsSave" class="com.geoland.kfis.web.action.ads.logistic.vehicle.positions.PositionsSaveAction">
+			<result name="input">module/ads/logistic/vehicle/tracing/tracing_form.jsp</result>
+			<result name="success">module/ads/logistic/vehicle/tracing/tracing_form.jsp</result>
+		</action>
+		-->
+		<!-- END Positions -->
+
+		<!-- START VehiclesRegister -->
+		<action name="VehiclesRegister.*" method="{1}" class="com.geoland.kfis.web.action.ads.logistic.vehicle.register.VehicleRegisterAction">
+			<result name="page">module/ads/logistic/vehicle/register/register_page.jsp</result>
+			<result name="form">module/ads/logistic/vehicle/register/register_form.jsp</result>
+			<result name="grid">module/ads/logistic/vehicle/register/register_grid.jsp</result>
+		</action>
+
+		<action name="VehiclesRegisterSave" class="com.geoland.kfis.web.action.ads.logistic.vehicle.register.VehicleRegisterSaveAction">
+			<result name="input">module/ads/logistic/vehicle/register/register_form.jsp</result>
+			<result name="success">module/ads/logistic/vehicle/register/register_form.jsp</result>
+		</action>
+		<!-- END VehiclesRegister -->
+		
+		<!-- START VehiclesServiceMaintenance -->
+		<action name="VehiclesServiceMaintenance.*" method="{1}" class="com.geoland.kfis.web.action.ads.logistic.vehicle.service.VehicleServiceMaintenanceAction">
+			<result name="page">module/ads/logistic/vehicle/service/servicemaintenance_page.jsp</result>
+			<result name="form">module/ads/logistic/vehicle/service/servicemaintenance_form.jsp</result>
+			<result name="grid">module/ads/logistic/vehicle/service/servicemaintenance_grid.jsp</result>
+		</action>
+
+		<action name="VehiclesServiceMaintenanceSave" class="com.geoland.kfis.web.action.ads.logistic.vehicle.service.VehicleServiceMaintenanceSaveAction">
+			<result name="input">module/ads/logistic/vehicle/service/servicemaintenance_form.jsp</result>
+			<result name="success">module/ads/logistic/vehicle/service/servicemaintenance_form.jsp</result>
+		</action>
+		<!-- END VehiclesServiceMaintenance -->
+		
+		<!-- START VehicleStaffAssign -->
+		<action name="VehicleStaffAssign.*" method="{1}" class="com.geoland.kfis.web.action.ads.logistic.vehicle.staffassign.VehicleStaffAssignAction">
+			<result name="page">module/ads/logistic/vehicle/staffassign/vehiclestaffassign_page.jsp</result>
+			<result name="form">module/ads/logistic/vehicle/staffassign/vehiclestaffassign_form.jsp</result>
+			<result name="grid">module/ads/logistic/vehicle/staffassign/vehiclestaffassign_grid.jsp</result>
+		</action>
+
+		<action name="VehicleStaffAssignSave" class="com.geoland.kfis.web.action.ads.logistic.vehicle.staffassign.VehicleStaffAssignSaveAction">
+			<result name="input">module/ads/logistic/vehicle/staffassign/vehiclestaffassign_form.jsp</result>
+			<result name="success">module/ads/logistic/vehicle/staffassign/vehiclestaffassign_form.jsp</result>
+		</action>
+		<!-- END VehicleStaffAssign -->
+		
+		<!-- START Assets -->
+		<action name="Asset.*" method="{1}" class="com.geoland.kfis.web.action.ads.asset.AssetsAction">
+			<result name="page">module/ads/assets/asset_page.jsp</result>
+			<result name="form">module/ads/assets/asset_form.jsp</result>
+			<result name="grid">module/ads/assets/asset_grid.jsp</result>
+			<result name="asset">module/ads/assets/assets.jsp</result>
+			<result name="report_generator">module/ads/assets/assets_report_generator.jsp</result>
+		</action>
+
+		<action name="AssetSave" class="com.geoland.kfis.web.action.ads.asset.AssetsSaveAction">
+			<result name="input">module/ads/assets/asset_form.jsp</result>
+			<result name="success">module/ads/assets/asset_form.jsp</result>
+		</action>
+		<!-- END Assets -->
+		
+		<!-- START AssetsStaffAssign -->
+		<action name="AssetsStaffAssign.*" method="{1}" class="com.geoland.kfis.web.action.ads.asset.staffassign.AssetsStaffAssignAction">
+			<result name="form">module/ads/assets/staffassign/assetsstaffassign_form.jsp</result>
+			<result name="grid">module/ads/assets/staffassign/assetsstaffassign_grid.jsp</result>
+			<result name="page">module/ads/assets/staffassign/assetsstaffassign_page.jsp</result>
+		</action>
+
+		<action name="AssetsStaffAssignSave" class="com.geoland.kfis.web.action.ads.asset.staffassign.AssetsStaffAssignSaveAction">
+			<result name="input">module/ads/assets/staffassign/assetsstaffassign_form.jsp</result>
+			<result name="success">module/ads/assets/staffassign/assetsstaffassign_form.jsp</result>
+		</action>
+		<!-- END AssetsStaffAssign -->
+		
+		<!-- START AssetsDevaluation -->
+		<action name="AssetsDevaluation.*" method="{1}" class="com.geoland.kfis.web.action.ads.asset.devaluation.AssetsDevaluationAction">
+			<result name="form">module/ads/assets/devaluation/assetdevaluation_form.jsp</result>
+		</action>
+
+		<action name="AssetsDevaluationSave" class="com.geoland.kfis.web.action.ads.asset.devaluation.AssetsDevaluationSaveAction">
+			<result name="input">module/ads/assets/devaluation/assetdevaluation_form.jsp</result>
+			<result name="success">module/ads/assets/devaluation/assetdevaluation_form.jsp</result>
+		</action>
+		<!-- END AssetsDevaluation -->
+		<!-- START LawSuit -->
+		<action name="LawSuit.*" method="{1}" class="com.geoland.kfis.web.action.ads.legalsector.lawsuit.LawSuitAction">
+			<result name="page">module/ads/legalsector/lawsuit/lawsuit_page.jsp</result>
+			<result name="form">module/ads/legalsector/lawsuit/lawsuit_form.jsp</result>
+			<result name="grid">module/ads/legalsector/lawsuit/lawsuit_grid.jsp</result>
+			<result name="report_generator">module/ads/legalsector/lawsuit/lawsuit_report_generator.jsp</result>
+		</action>
+
+		<action name="LawSuitSave" class="com.geoland.kfis.web.action.ads.legalsector.lawsuit.LawSuitSaveAction">
+			<result name="input">module/ads/legalsector/lawsuit/lawsuit_form.jsp</result>
+			<result name="success">module/ads/legalsector/lawsuit/lawsuit_form.jsp</result>
+		</action>
+		<!-- END LawSuit -->
+		<!-- START LawSuitStatus -->
+		<action name="LawSuitStatus.*" method="{1}" class="com.geoland.kfis.web.action.ads.legalsector.lawsuitstatus.LawSuitStatusAction">
+			<result name="page">module/ads/legalsector/lawsuitstatus/lawsuitstatus_page.jsp</result>
+			<result name="form">module/ads/legalsector/lawsuitstatus/lawsuitstatus_form.jsp</result>
+			<result name="grid">module/ads/legalsector/lawsuitstatus/lawsuitstatus_grid.jsp</result>
+		</action>
+
+		<action name="LawSuitStatusSave" class="com.geoland.kfis.web.action.ads.legalsector.lawsuitstatus.LawSuitStatusSaveAction">
+			<result name="input">module/ads/legalsector/lawsuitstatus/lawsuitstatus_form.jsp</result>
+			<result name="success">module/ads/legalsector/lawsuitstatus/lawsuitstatus_form.jsp</result>
+		</action>
+		<!-- END LawSuitStatus -->
+		<!-- START LawSuitDoc -->
+		<action name="LawSuitDoc" class="com.geoland.kfis.web.action.ads.legalsector.docgenerator.LawSuitDocGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END LawSuitDoc -->
+		<!-- START FuelConsum -->
+		<action name="FuelConsum.*" method="{1}" class="com.geoland.kfis.web.action.ads.logistic.vehicle.fuelconsum.FuelConsumAction">
+			<result name="page">module/ads/logistic/vehicle/fuelconsum/fuelconsum_page.jsp</result>
+			<result name="form">module/ads/logistic/vehicle/fuelconsum/fuelconsum_form.jsp</result>
+			<result name="grid">module/ads/logistic/vehicle/fuelconsum/fuelconsum_grid.jsp</result>
+		</action>
+
+		<action name="FuelConsumSave" class="com.geoland.kfis.web.action.ads.logistic.vehicle.fuelconsum.FuelConsumSaveAction">
+			<result name="input">module/ads/logistic/vehicle/fuelconsum/fuelconsum_form.jsp</result>
+			<result name="success">module/ads/logistic/vehicle/fuelconsum/fuelconsum_form.jsp</result>
+		</action>
+		<!-- END FuelConsum -->
+		<!-- START Device -->
+		<action name="Device.*" method="{1}" class="com.geoland.kfis.web.action.ads.logistic.vehicle.device.DeviceAction">
+			<result name="page">module/ads/logistic/vehicle/device/device_page.jsp</result>
+			<result name="form">module/ads/logistic/vehicle/device/device_form.jsp</result>
+			<result name="grid">module/ads/logistic/vehicle/device/device_grid.jsp</result>
+			<result name="tracking">module/ads/logistic/vehicle/tracking/tracking_page.jsp</result>
+			<result name="vehicles_trackin_map">module/ads/logistic/vehicle/vehicles_tracking_page.jsp</result>
+		</action>
+
+		<action name="DeviceSave" class="com.geoland.kfis.web.action.ads.logistic.vehicle.device.DeviceSaveAction">
+			<result name="input">module/ads/logistic/vehicle/device/device_form.jsp</result>
+			<result name="success">module/ads/logistic/vehicle/device/device_form.jsp</result>
+		</action>
+		<!-- END Device -->
+		
+		<!-- START Financial Input-->
+		<action name="FinInput.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.input.FinancialInputAction">
+			<result name="page">module/ads/finance/input/financial_input_page.jsp</result>
+			<result name="form">module/ads/finance/input/financial_input_form.jsp</result>
+			<result name="grid">module/ads/finance/input/financial_input_grid.jsp</result>
+			<result name="reportPopup">module/ads/finance/input/financial_report_generator.jsp</result>
+			<result name="status_popup">module/ads/finance/input/financial_input_status_popup.jsp</result>
+		</action>
+
+		<action name="FinInputSave" class="com.geoland.kfis.web.action.ads.finance.input.FinancialInputSaveAction">
+			<result name="input">module/ads/finance/input/financial_input_form.jsp</result>
+			<result name="success">module/ads/finance/input/financial_input_form.jsp</result>
+		</action>
+		
+		<action name="FinInputStatusSave" class="com.geoland.kfis.web.action.ads.finance.input.FinInputStatusAction">
+			<result name="input">module/ads/finance/input/financial_input_status_popup.jsp</result>
+			<result name="success">module/ads/finance/input/financial_input_status_popup.jsp</result>
+		</action>
+		
+		<action name="FinInputDoc" class="com.geoland.kfis.web.action.ads.finance.input.docgenerator.FinInputDocGenerator">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END Financial Input -->
+		<!-- START Financial Output -->
+		
+		<action name="FinOutput.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.output.FinancialOutputAction">
+			<result name="salarypage">module/ads/finance/output/salary/salary_page.jsp</result>
+			<result name="salaryform">module/ads/finance/output/salary/salary_form.jsp</result>
+			<result name="salarygrid">module/ads/finance/output/salary/salary_grid.jsp</result>
+			<result name="salaryReportPopup">module/ads/finance/output/salary/salary_report_generator.jsp</result>
+			<result name="costspage">module/ads/finance/output/costs/costs_page.jsp</result>
+			<result name="costsform">module/ads/finance/output/costs/costs_form.jsp</result>
+			<result name="costsgrid">module/ads/finance/output/costs/costs_grid.jsp</result>
+			<result name="costsReportPopup">module/ads/finance/output/costs/costs_report_generator.jsp</result>
+
+		</action>
+		<action name="FinOutputSalarySave" class="com.geoland.kfis.web.action.ads.finance.output.FinancialOutputSaveAction">
+			<result name="input">module/ads/finance/output/salary/salary_form.jsp</result>
+			<result name="success">module/ads/finance/output/salary/salary_form.jsp</result>
+		</action>
+		<action name="FinOutputCostsSave" class="com.geoland.kfis.web.action.ads.finance.output.FinancialOutputSaveAction">
+			<result name="input">module/ads/finance/output/costs/costs_form.jsp</result>
+			<result name="success">module/ads/finance/output/costs/costs_form.jsp</result>
+		</action>
+		<!-- END Financial Output -->
+		<!-- START Financial Type -->
+		<!-- 
+		<action name="FinType.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.type.FinancialTypeAction">
+			<result name="page">module/ads/finance/type/financial_type_page.jsp</result>
+			<result name="form">module/ads/finance/type/financial_type_form.jsp</result>
+			<result name="grid">module/ads/finance/type/financial_type_grid.jsp</result>
+			<result name="page_tree">module/ads/finance/type/economiccode/economiccode_page.jsp</result>
+			<result name="form_tree">module/ads/finance/type/economiccode/economiccode_form.jsp</result>
+			<result name="grid_tree">module/ads/finance/type/economiccode/economiccode_grid.jsp</result>			
+			<result name="treegrid">module/ads/finance/type/economiccode/economiccode_treegrid.jsp</result>
+		</action>
+
+		<action name="FinTypeSave" class="com.geoland.kfis.web.action.ads.finance.type.FinancialTypeSaveAction">
+			<result name="input">module/ads/finance/type/financial_type_form.jsp</result>
+			<result name="success">module/ads/finance/type/financial_type_form.jsp</result>
+		</action>
+		 -->
+		<!-- END Financial Type -->
+		
+		<!-- START EconomicCode -->
+		<action name="FinType.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.type.FinancialTypeAction">
+			<result name="page">module/ads/finance/type/economiccode/economiccode_page.jsp</result>
+			<result name="form">module/ads/finance/type/economiccode/economiccode_form.jsp</result>
+			<result name="grid">module/ads/finance/type/economiccode/economiccode_treegrid.jsp</result>			
+			<result name="treegrid">module/ads/finance/type/economiccode/economiccode_treegrid.jsp</result>
+		</action>
+
+		<action name="FinTypeSave" class="com.geoland.kfis.web.action.ads.finance.type.FinancialTypeSaveAction">
+			<result name="input">module/ads/finance/type/economiccode/economiccode_form.jsp</result>
+			<result name="success">module/ads/finance/type/economiccode/economiccode_form.jsp</result>
+		</action>
+		<!-- END EconomicCode -->		
+		
+		<!-- START Contractor -->
+		<action name="Contractor.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.contractor.ContractorAction">
+			<result name="page">module/ads/finance/contractor/contractor_page.jsp</result>
+			<result name="form">module/ads/finance/contractor/contractor_form.jsp</result>
+			<result name="grid">module/ads/finance/contractor/contractor_grid.jsp</result>
+		</action>
+
+		<action name="ContractorSave" class="com.geoland.kfis.web.action.ads.finance.contractor.ContractorSaveAction">
+			<result name="input">module/ads/finance/contractor/contractor_form.jsp</result>
+			<result name="success">module/ads/finance/contractor/contractor_form.jsp</result>
+		</action>
+		<!-- END Contractor -->
+		
+		<!-- START Contract -->
+		<action name="Contract.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.contract.ContractAction">
+			<result name="page">module/ads/finance/contract/contract_page.jsp</result>
+			<result name="form">module/ads/finance/contract/contract_form.jsp</result>
+			<result name="grid">module/ads/finance/contract/contract_grid.jsp</result>
+			<result name="tab">module/ads/finance/contract/contract_tab.jsp</result>
+			<result name="report_generator">module/ads/finance/contract/contract_report_generator.jsp</result>
+		</action>
+
+		<action name="ContractSave" class="com.geoland.kfis.web.action.ads.finance.contract.ContractSaveAction">
+			<result name="input">module/ads/finance/contract/contract_form.jsp</result>
+			<result name="success">module/ads/finance/contract/contract_form.jsp</result>
+		</action>
+		
+		<action name="GenerateContractDoc" class="com.geoland.kfis.web.action.ads.finance.contract.document.GenerateContractDocumentAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END Contractor -->
+		
+		<!-- START Budget Mainntenance -->
+		<action name="BudgetMainntenance.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.budget.BudgetMainntenanceAction">
+			<result name="page">module/ads/finance/budget/budget_mainntenance_page.jsp</result>
+			<result name="form">module/ads/finance/budget/budget_mainntenance_form.jsp</result>
+			<result name="grid">module/ads/finance/budget/budget_mainntenance_grid.jsp</result>
+			<result name="reportPopup">module/ads/finance/budget/budget_report_generator.jsp</result>
+		</action>
+
+		<action name="BudgetMainntenanceSave" class="com.geoland.kfis.web.action.ads.finance.budget.BudgetMainntenanceSaveAction">
+			<result name="input">module/ads/finance/budget/budget_mainntenance_form.jsp</result>
+			<result name="success">module/ads/finance/budget/budget_mainntenance_form.jsp</result>
+		</action>
+		<!-- END Budget Mainntenance -->
+		
+		<!-- START PaymentPeriod -->
+		<action name="Payment.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.contract.paymentperiod.PaymentPeriodAction">
+			<result name="form">module/ads/finance/contract/paymentperiod/paymentperiod_form.jsp</result>
+			<result name="grid">module/ads/finance/contract/paymentperiod/paymentperiod_grid.jsp</result>
+			<result name="page">module/ads/finance/contract/paymentperiod/paymentperiod_page.jsp</result>
+		</action>
+
+		<action name="PaymentSave" class="com.geoland.kfis.web.action.ads.finance.contract.paymentperiod.PaymentPeriodSaveAction">
+			<result name="input">module/ads/finance/contract/paymentperiod/paymentperiod_form.jsp</result>
+			<result name="success">module/ads/finance/contract/paymentperiod/paymentperiod_form.jsp</result>
+		</action>
+		<!-- END PaymentPeriod -->
+		<!-- START Budget Allocation  -->
+		<action name="BudgetAllocation.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.allocation.AnnuBudgetAllocationAction">
+			<result name="form">module/ads/finance/allocation/allocation_form.jsp</result>
+			<result name="grid">module/ads/finance/allocation/allocation_grid.jsp</result>
+			<result name="page">module/ads/finance/allocation/allocation_page.jsp</result>
+			<result name="reportPopup">module/ads/finance/allocation/allocation_report_form.jsp</result>
+		</action>
+
+		<action name="BudgetAllocationSave" class="com.geoland.kfis.web.action.ads.finance.allocation.AnnuBudgetAllocationSaveAction">
+			<result name="input">module/ads/finance/allocation/allocation_form.jsp</result>
+			<result name="success">module/ads/finance/allocation/allocation_form.jsp</result>
+		</action>
+		<!-- END Budget Allocation -->
+	
+	
+		<action name="AllocationPrint.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.print.PrintAction">     
+			<result name="success" type="reportStream"></result>
+			<result name="popup">print/popup.jsp</result>       
+			<result name="error">index.jsp</result> 	
+		</action> 
+		
+		<!-- START TenderRequest  -->
+		<action name="TenderRequest.*" method="{1}" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.TenderRequestAction">
+			<result name="form">module/ads/procurement/tenderrequest/tender_request_form.jsp</result>
+			<result name="grid">module/ads/procurement/tenderrequest/tender_request_grid.jsp</result>
+			<result name="page">module/ads/procurement/tenderrequest/tender_request_page.jsp</result>
+			<result name="analysePopup">module/ads/procurement/tenderrequest/tender_request_analyse_popup.jsp</result>
+			<result name="createTenderPopup">module/ads/procurement/tenderrequest/create_tender_popup.jsp</result>
+			<result name="notifyPPRC">module/ads/procurement/tenderrequest/pprc_notification_popup.jsp</result>
+			<result name="tab">module/ads/procurement/tenderrequest/tender_request_tab.jsp</result>
+			<result name="proceed">module/ads/procurement/tenderrequest/tender_proceed_form.jsp</result>
+			<result name="cancel_tender">module/ads/procurement/tenderrequest/cancel_tender_form.jsp</result>
+			<result name="republish">module/ads/procurement/tenderrequest/republish_tender_form.jsp</result>
+			<result name="report_generator">module/ads/procurement/tenderrequest/report_generator.jsp</result>
+		</action>
+
+		<action name="TenderRequestSave" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.TenderRequestSaveAction">
+			<result name="input">module/ads/procurement/tenderrequest/tender_request_form.jsp</result>
+			<result name="success">module/ads/procurement/tenderrequest/tender_request_form.jsp</result>
+		</action>
+		
+		<action name="TenderRequestAnalyseSave" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.TenderRequestAnalyseSaveAction">
+			<result name="input">module/ads/procurement/tenderrequest/tender_request_analyse_popup.jsp</result>
+			<result name="success">module/ads/procurement/tenderrequest/tender_request_analyse_popup.jsp</result>
+		</action>
+		
+		<action name="CreateTenderSave" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.CreateTenderSaveAction">
+			<result name="input">module/ads/procurement/tenderrequest/create_tender_popup.jsp</result>
+			<result name="success">module/ads/procurement/tenderrequest/create_tender_popup.jsp</result>
+		</action>
+		
+		<action name="PPRCNotificationSave" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.PPRCNotificationSaveAction">
+			<result name="input">module/ads/procurement/tenderrequest/pprc_notification_popup.jsp</result>
+			<result name="success">module/ads/procurement/tenderrequest/pprc_notification_popup.jsp</result>
+		</action>
+		
+		<action name="CancelTenderSave" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.CancelTenderSaveAction">
+			<result name="input">module/ads/procurement/tenderrequest/cancel_tender_form.jsp</result>
+			<result name="success">module/ads/procurement/tenderrequest/cancel_tender_form.jsp</result>
+		</action>
+		
+		<action name="RepublishTenderSave" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.RepublishTenderSaveAction">
+			<result name="input">module/ads/procurement/tenderrequest/republish_tender_form.jsp</result>
+			<result name="success">module/ads/procurement/tenderrequest/republish_tender_form.jsp</result>
+		</action>
+		
+		<action name="ProcDocument" class="com.geoland.kfis.web.action.ads.procurement.document.ProcurementDocumentAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<!-- END TenderRequest -->
+		
+		<!-- START Bidder  -->
+		<action name="Bidder.*" method="{1}" class="com.geoland.kfis.web.action.ads.procurement.bidder.TenderBidderAction">
+			<result name="form">module/ads/procurement/bidder/bidder_form.jsp</result>
+			<result name="grid">module/ads/procurement/bidder/bidder_grid.jsp</result>
+			<result name="page">module/ads/procurement/bidder/bidder_page.jsp</result>
+		</action>
+
+		<action name="BidderSave" class="com.geoland.kfis.web.action.ads.procurement.bidder.TenderBidderSaveAction">
+			<result name="input">module/ads/procurement/bidder/bidder_form.jsp</result>
+			<result name="success">module/ads/procurement/bidder/bidder_form.jsp</result>
+		</action>
+		<!-- END Bidder -->
+		
+		<!-- START Bid  -->
+		<action name="Bid.*" method="{1}" class="com.geoland.kfis.web.action.ads.procurement.bid.TenderBidAction">
+			<result name="form">module/ads/procurement/bid/bid_form.jsp</result>
+			<result name="grid">module/ads/procurement/bid/bid_grid.jsp</result>
+			<result name="page">module/ads/procurement/bid/bid_page.jsp</result>
+			<result name="evaluationPopup">module/ads/procurement/bid/bid_evaluation_popup.jsp</result>
+			<result name="complaintPopup">module/ads/procurement/bid/bid_complaint_popup.jsp</result>
+			<result name="report_generator">module/ads/procurement/bid/report_generator.jsp</result>
+		</action>
+
+		<action name="BidSave" class="com.geoland.kfis.web.action.ads.procurement.bid.TenderBidSaveAction">
+			<result name="input">module/ads/procurement/bid/bid_form.jsp</result>
+			<result name="success">module/ads/procurement/bid/bid_form.jsp</result>
+		</action>
+		
+		<action name="BidEvaluationSave" class="com.geoland.kfis.web.action.ads.procurement.bid.TenderBidEvaluationSaveAction">
+			<result name="input">module/ads/procurement/bid/bid_evaluation_popup.jsp</result>
+			<result name="success">module/ads/procurement/bid/bid_evaluation_popup.jsp</result>
+		</action>
+		
+		<action name="BidComplaintSave" class="com.geoland.kfis.web.action.ads.procurement.complaint.TenderComplaintSaveAction">
+			<result name="input">module/ads/procurement/bid/bid_complaint_popup.jsp</result>
+			<result name="success">module/ads/procurement/bid/bid_complaint_popup.jsp</result>
+		</action>
+		
+		<action name="BidAttach" class="com.geoland.kfis.web.action.ads.procurement.bid.TenderBidAttachmentAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		<action name="ComplaintAttach" class="com.geoland.kfis.web.action.ads.procurement.complaint.ComplaintAttachAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		
+		<!-- END Bid -->
+		
+		<!-- START Tender Contract  -->
+		<action name="TenderContract.*" method="{1}" class="com.geoland.kfis.web.action.ads.procurement.contract.TenderContractAction">
+			<result name="form">module/ads/procurement/tenderrequest/tender_contract_form.jsp</result>
+		</action>
+
+		<action name="TenderContractSave" class="com.geoland.kfis.web.action.ads.procurement.contract.TenderContractSaveAction">
+			<result name="input">module/ads/procurement/tenderrequest/tender_contract_form.jsp</result>
+			<result name="success">module/ads/procurement/tenderrequest/tender_contract_form.jsp</result>
+		</action>
+		<!-- END Tender Contract -->
+		
+		<!-- START Dossier Request  -->
+		<action name="DossierRequest.*" method="{1}" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.dossierrequest.DossierRequestAction">
+			<result name="form">module/ads/procurement/dossierrequest/dossierrequest_form.jsp</result>
+			<result name="grid">module/ads/procurement/dossierrequest/dossierrequest_grid.jsp</result>
+			<result name="page">module/ads/procurement/dossierrequest/dossierrequest_page.jsp</result>
+		</action>
+
+		<action name="DossierRequestSave" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.dossierrequest.DossierRequestSaveAction">
+			<result name="input">module/ads/procurement/dossierrequest/dossierrequest_form.jsp</result>
+			<result name="success">module/ads/procurement/dossierrequest/dossierrequest_form.jsp</result>
+		</action>
+		<!-- END Dossier Request -->
+		
+		<!-- START Dossier Question  -->
+		<action name="DossierQuestion.*" method="{1}" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.dossierquestion.DossierQuestionAction">
+			<result name="form">module/ads/procurement/dossierquestion/dossierquestion_form.jsp</result>
+			<result name="grid">module/ads/procurement/dossierquestion/dossierquestion_grid.jsp</result>
+			<result name="page">module/ads/procurement/dossierquestion/dossierquestion_page.jsp</result>
+		</action>
+
+		<action name="DossierQuestionSave" class="com.geoland.kfis.web.action.ads.procurement.tenderrequest.dossierquestion.DossierQuestionSaveAction">
+			<result name="input">module/ads/procurement/dossierquestion/dossierquestion_form.jsp</result>
+			<result name="success">module/ads/procurement/dossierquestion/dossierquestion_form.jsp</result>
+		</action>
+		<!-- END Dossier Question -->
+		
+		
+		<!-- START dpmngmt  -->
+		<action name="DpMngmt.*" method="{1}" class="com.geoland.kfis.web.action.ads.dp.DpAction">
+			<result name="form">module/ads/dp/dp_form.jsp</result>
+			<result name="grid">module/ads/dp/dp_grid.jsp</result>
+			<result name="page">module/ads/dp/dp_page.jsp</result>
+			<result name="doc_edit">module/ads/dp/dp_edit_doc.jsp</result>
+		</action>
+
+		<action name="DpMngmtSave" class="com.geoland.kfis.web.action.ads.dp.DpSaveAction">
+			<result name="input">module/ads/dp/dp_form.jsp</result>
+			<result name="success">module/ads/dp/dp_form.jsp</result>
+		</action>
+		<action name="DpDocEdit" class="com.geoland.kfis.web.action.ads.dp.DpDocEditAction">
+			<result name="input">module/ads/dp/dp_edit_doc.jsp</result>
+			<result name="success">module/ads/dp/dp_edit_doc.jsp</result>
+		</action>
+		<!-- END dpmngmt -->		
+		
+		<!-- START DocCategory  -->
+		<action name="DpCatMngmt.*" method="{1}" class="com.geoland.kfis.web.action.ads.dp.doccategory.DocCategoryAction">
+			<result name="form">module/ads/dp/doccategory/doccategory_form.jsp</result>
+			<result name="grid">module/ads/dp/doccategory/doccategory_grid.jsp</result>
+			<result name="page">module/ads/dp/doccategory/doccategory_page.jsp</result>
+		</action>
+
+		<action name="DocCategorySave" class="com.geoland.kfis.web.action.ads.dp.doccategory.DocCategorySaveAction">
+			<result name="input">module/ads/dp/doccategory/doccategory_form.jsp</result>
+			<result name="success">module/ads/dp/doccategory/doccategory_form.jsp</result>
+		</action>
+		<!-- END DocCategory -->
+		
+		<!-- START DocType  -->
+		<action name="DpTypeMngmt.*" method="{1}" class="com.geoland.kfis.web.action.ads.dp.doctype.DocTypeAction">
+			<result name="form">module/ads/dp/doctype/doctype_form.jsp</result>
+			<result name="grid">module/ads/dp/doctype/doctype_grid.jsp</result>
+			<result name="page">module/ads/dp/doctype/doctype_page.jsp</result>
+		</action>
+
+		<action name="DocTypeSave" class="com.geoland.kfis.web.action.ads.dp.doctype.DocTypeSaveAction">
+			<result name="input">module/ads/dp/doctype/doctype_form.jsp</result>
+			<result name="success">module/ads/dp/doctype/doctype_form.jsp</result>
+		</action>
+		<!-- END DocType -->
+		
+		<action name="DpDocGenerator" class="com.geoland.kfis.web.action.ads.dp.docgenerator.DocGeneratorAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>
+		
+		<!-- START Order Mngmt  -->
+		<action name="PReq.*" method="{1}" class="com.geoland.kfis.web.action.ads.order.requisition.RequisitionAction">
+			<result name="form">module/ads/order/requisition/requisition_form.jsp</result>
+			<result name="grid">module/ads/order/requisition/requisition_grid.jsp</result>
+			<result name="page">module/ads/order/requisition/requisition_page.jsp</result>
+			<result name="rep_generator">module/ads/order/requisition/requisition_report_generator.jsp</result>
+		</action>
+
+		<action name="PReqSave" class="com.geoland.kfis.web.action.ads.order.requisition.RequisitionSaveAction">
+			<result name="input">module/ads/order/requisition/requisition_form.jsp</result>
+			<result name="success">module/ads/order/requisition/requisition_form.jsp</result>
+		</action>	
+
+		<action name="PReqStatusSave" class="com.geoland.kfis.web.action.ads.order.requisition.RequisitionItemStatus">
+			<result name="input">module/ads/order/requisition/requisition_form.jsp</result>
+			<result name="success">module/ads/order/requisition/requisition_form.jsp</result>
+		</action>	
+		
+		<action name="RequisitionStatusSave" class="com.geoland.kfis.web.action.ads.order.requisition.RequisitionStatusAction">
+			<result name="input">module/ads/order/requisition/requisition_form.jsp</result>
+			<result name="success">module/ads/order/requisition/requisition_form.jsp</result>
+		</action>			
+
+		<action name="PRtoPOSave" class="com.geoland.kfis.web.action.ads.order.requisition.PRtoPOSaveAction">
+			<result name="input">module/ads/order/requisition/requisition_form.jsp</result>
+			<result name="success">module/ads/order/requisition/requisition_form.jsp</result>
+		</action>					
+		<action name="POfromPRSave" class="com.geoland.kfis.web.action.ads.order.requisition.PRtoPOSaveAction">
+			<result name="input">module/ads/order/order_form.jsp</result>
+			<result name="success">module/ads/order/order_form.jsp</result>
+		</action>
+						
+		<action name="POrder.*" method="{1}" class="com.geoland.kfis.web.action.ads.order.OrderAction">
+			<result name="form">module/ads/order/order_form.jsp</result>
+			<result name="grid">module/ads/order/order_grid.jsp</result>
+			<result name="page">module/ads/order/order_page.jsp</result>
+			<result name="status">module/ads/order/order_status.jsp</result>
+			<result name="item_receipt">module/ads/order/material_receipt_form.jsp</result>
+			<result name="reportGenerator">module/ads/order/order_report_generator.jsp</result>
+			
+		</action>
+
+		<action name="POrderSave" class="com.geoland.kfis.web.action.ads.order.OrderSaveAction">
+			<result name="input">module/ads/order/order_form.jsp</result>
+			<result name="success">module/ads/order/order_form.jsp</result>
+		</action>
+		<action name="POrderStatusSave" class="com.geoland.kfis.web.action.ads.order.OrderStatusAction">
+			<result name="input">module/ads/order/order_form.jsp</result>
+			<result name="success">module/ads/order/order_form.jsp</result>
+		</action>
+		<action name="ItemReceiptSave" class="com.geoland.kfis.web.action.ads.order.OrderItemReceiptSaveAction">
+			<result name="input">module/ads/order/material_receipt_form.jsp</result>
+			<result name="success">module/ads/order/material_receipt_form.jsp</result>
+		</action>
+		<!-- END Order Mngmt  -->
+		
+		<action name="Help.*" method="{1}" class="com.geoland.kfis.web.action.help.HelpAction">
+			<result name="page">module/help/help_page.jsp</result>
+		</action>
+		
+		<action name="HelpDoc" class="com.geoland.kfis.web.action.help.HelpDocAction">
+			<result name="success" type="reportStream"></result>
+		   	<result name="popup">print/popup.jsp</result>
+		   	<result name="error">index.jsp</result>
+		</action>	
+		
+		<!-- 
+
+
+      <action name="PReqItemSave" class="com.geoland.kfis.web.action.ads.order.requisition.RequisitionItemSaveAction">
+       	   <result name="input">module/ads/order/requisition/requisition_errors.jsp</result>
+      </action>
+ -->
+ 
+ 		<action name="Publish.*" method="{1}" class="com.geoland.kfis.web.action.pub.PublishAction">
+			<result name="page">module/pub/pub_page.jsp</result>
+			<result name="form">module/pub/pub_form.jsp</result>
+			<result name="grid">module/pub/pub_grid.jsp</result>
+			<result name="home_page">home_page.jsp</result>
+		</action>
+		
+		<action name="PublishSave" class="com.geoland.kfis.web.action.pub.PublishSaveAction">
+			<result name="input">module/pub/pub_form.jsp</result>
+			<result name="success">module/pub/pub_form.jsp</result>
+		</action>	
+		
+     	<action name="TracPosition" class="com.geoland.kfis.web.action.ads.logistic.tracing.TracPositionSaveAction"></action>
+	
+	</package>
+</struts>

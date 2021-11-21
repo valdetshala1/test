@@ -1,0 +1,1799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">18</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">18</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">18</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="p_private_id" id="19">
+            <text-property name="promptText">Request ID</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_gl_server_profile" id="17">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.168.0.30:5432/kfis?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_gl_server_profile</property>
+            <property name="OdaConnProfileStorePath">target/classes/profiles/kfis_gl_server_profile</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_demo_server_profile" id="373">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.168.0.30:5432/kfis_demo?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_demo_server_profile</property>
+            <property name="OdaConnProfileStorePath">target/classes/profiles/kfis_demo_profile</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="kfis_localhost_profile" id="431">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/kfis?clientInfo=kfis&amp;amp;applicationName=KFISApp&amp;amp;application_name=kfis&amp;amp;autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF8</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGllbGxp</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/kfis</property>
+            <property name="OdaConnProfileName">kfis_localhost_profile</property>
+            <property name="OdaConnProfileStorePath">kfis_localhost_profile</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="18">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints"/>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">p_private_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">reject_comment</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">cadparcelid</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">request_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">request_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">cad_cert_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">pl_tech_volume</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">pl_fire_volume</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">year</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">first_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">last_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">personal_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">place_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">country</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">place</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">total</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">kfis_localhost_profile</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">reject_comment</property>
+                    <property name="nativeName">reject_comment</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">cadparcelid</property>
+                    <property name="nativeName">cadparcelid</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">request_date</property>
+                    <property name="nativeName">request_date</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">request_no</property>
+                    <property name="nativeName">request_no</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">cad_cert_no</property>
+                    <property name="nativeName">cad_cert_no</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">pl_tech_volume</property>
+                    <property name="nativeName">pl_tech_volume</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">pl_fire_volume</property>
+                    <property name="nativeName">pl_fire_volume</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">year</property>
+                    <property name="nativeName">year</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">first_name</property>
+                    <property name="nativeName">first_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">last_name</property>
+                    <property name="nativeName">last_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">personal_id</property>
+                    <property name="nativeName">personal_id</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">place_name</property>
+                    <property name="nativeName">place_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">country</property>
+                    <property name="nativeName">country</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">place</property>
+                    <property name="nativeName">place</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">total</property>
+                    <property name="nativeName">total</property>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[ select astat.remarks as reject_comment,cadparcelid,pr.request_date::date,pr.request_no,pr.cad_cert_no,pr.pl_tech_volume,pr.pl_fire_volume,pl.year,mu.name,per.first_name,per.last_name,per.personal_id,pd.placename as place_name, 
+ad.country,ad.place,(pr.pl_tech_volume+pr.pl_fire_volume) as total 
+from tfrm_private_request pr left join tparcel_detail as pd on pd.id=pr.parcel_detail_id 
+left join tfrm_activity ac on ac.id=pr.activity_id
+left join tfrm_annual_planning pl on pl.id=ac.annual_planning_id
+left join (select * from tfrm_activity_status  where status ilike 'REJ') astat on astat.activity_id=ac.id
+left join tgis_cadastral_municipality mu on mu.id=pl.mun_id 
+left join tperson  as per on per.id=pr.requester_id
+left join tparty as pa on pa.id=per.id left join taddress as ad 
+on pa.address_id=ad.id
+where pr.id=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>activity_id</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>activity_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>activity_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>status_id</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>status_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>status_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>mun_id</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>mun_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>mun_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>request_no</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>request_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>request_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>request_date</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>request_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>request_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>person</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>person</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>person</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>person_address</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>person_address</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>person_address</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cad_zone_id</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cad_zone_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cad_zone_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>parcel_no</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>parcel_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>parcel_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>parcel_area</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>parcel_area</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>parcel_area</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>place_name</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>place_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>place_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cad_cert_no</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cad_cert_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cad_cert_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>copy_plan_no</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>copy_plan_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>copy_plan_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>remarks</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>remarks</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>remarks</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>work_stage</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>work_stage</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>work_stage</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pl_tech_volume</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>pl_tech_volume</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pl_tech_volume</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pl_fire_volume</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>pl_fire_volume</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pl_fire_volume</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pl_created_date</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>pl_created_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pl_created_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pl_created_by</design:name>
+              <design:position>20</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>pl_created_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pl_created_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>marking_tool</design:name>
+              <design:position>21</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>marking_tool</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>marking_tool</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>receiver_person</design:name>
+              <design:position>22</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>receiver_person</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>receiver_person</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>auth_person_id</design:name>
+              <design:position>23</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>auth_person_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>auth_person_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>marking_date</design:name>
+              <design:position>24</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>marking_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>marking_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ap_tech_volume</design:name>
+              <design:position>25</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ap_tech_volume</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ap_tech_volume</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ap_fire_volume</design:name>
+              <design:position>26</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ap_fire_volume</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ap_fire_volume</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ap_created_date</design:name>
+              <design:position>27</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ap_created_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ap_created_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ap_created_by</design:name>
+              <design:position>28</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ap_created_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ap_created_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>payment</design:name>
+              <design:position>29</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>payment</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>payment</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>payment_value</design:name>
+              <design:position>30</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>payment_value</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>payment_value</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>transport_doc</design:name>
+              <design:position>31</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>transport_doc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>transport_doc</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>32</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="headerHeight">2.65in</property>
+            <page-header>
+                <grid id="2863">
+                    <property name="height">2.2in</property>
+                    <column id="2864">
+                        <property name="overflow">auto</property>
+                    </column>
+                    <column id="2865">
+                        <property name="overflow">auto</property>
+                    </column>
+                    <column id="2866">
+                        <property name="overflow">auto</property>
+                    </column>
+                    <row id="2867">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <property name="height">0.65in</property>
+                        <cell id="2868"/>
+                        <cell id="2869">
+                            <image id="2870">
+                                <property name="height">0.65625in</property>
+                                <property name="width">0.6770833333333334in</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">file:///../../../img/rks_logo_trans.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="2871">
+                            <image id="2872">
+                                <property name="overflow">auto</property>
+                                <property name="height">0.562in</property>
+                                <property name="width">0.5625in</property>
+                                <property name="source">url</property>
+                                <expression name="uri" type="javascript">params["p_qrcode_content_url"].value</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="2873">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <property name="height">0.6in</property>
+                        <cell id="2874">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <label id="2875">
+                                <property name="fontFamily">"@Arial Unicode MS"</property>
+                                <property name="fontSize">8pt</property>
+                                <property name="display">block</property>
+                                <text-property name="text">REPUBLIKA E KOSOVËS&#13;
+REPUBLIKA KOSOVA-REPUBLIC OF KOSOVO&#13;
+QEVERIA –VLADA-GOVERNMENT </text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="2876">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <property name="height">0.6in</property>
+                        <cell id="2877">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <label id="2878">
+                                <property name="fontFamily">"@Arial Unicode MS"</property>
+                                <property name="fontSize">8pt</property>
+                                <property name="display">block</property>
+                                <text-property name="text">MINISTRIA BUJQËSISË, PYLLTARISË DHE ZHVILLIMIT RURAL &#13;
+MINISTARSTVO POLJOPRIVREDE, SUMARSTVA I RURALNOG RAZVOJA&#13;
+MINISTRY OF AGRICULTURE, FORESTRY AND RURAL DEVELOPMENT </text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="2879">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="overflow">auto</property>
+                        <property name="height">0.65in</property>
+                        <cell id="2880"/>
+                        <cell id="2881">
+                            <image id="2946">
+                                <property name="height">0.6736842105263158in</property>
+                                <property name="width">1.2526315789473683in</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">file:///../../../img/apk.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="2882"/>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="7">
+            <property name="overflow">auto</property>
+            <column id="8">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="12">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <cell id="13">
+                    <property name="paddingBottom">10pt</property>
+                    <property name="paddingRight">30pt</property>
+                    <property name="textAlign">right</property>
+                    <label id="14">
+                        <property name="marginTop">10pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">Nr. </text-property>
+                    </label>
+                    <data id="20">
+                        <property name="display">inline</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">request_no</property>
+                                <text-property name="displayName">request_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["request_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">request_no</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="21">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <cell id="22">
+                    <property name="paddingRight">30pt</property>
+                    <property name="textAlign">right</property>
+                    <label id="23">
+                        <property name="display">inline</property>
+                        <text-property name="text">Dt. </text-property>
+                    </label>
+                    <data id="24">
+                        <property name="display">inline</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">request_date</property>
+                                <text-property name="displayName">request_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["request_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">request_date</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="25">
+            <property name="marginTop">15pt</property>
+            <property name="marginRight">0pt</property>
+            <property name="overflow">auto</property>
+            <column id="26">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="27">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <cell id="28">
+                    <property name="paddingLeft">20pt</property>
+                    <property name="paddingRight">20pt</property>
+                    <label id="29">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">Në bazë të nenit 12 të Ligjit për Pyjet e kosovës nr.2003/3 dhe Planit Vjetor të Menagjimit me pyje private për vitin</text-property>
+                    </label>
+                    <label id="1872">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="30">
+                        <property name="textUnderline">underline</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">year</property>
+                                <text-property name="displayName">year</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["year"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">year</property>
+                    </data>
+                    <label id="1873">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="703">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">, DK e APK-së në</text-property>
+                    </label>
+                    <label id="1874">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="32">
+                        <property name="fontWeight">bold</property>
+                        <property name="textUnderline">underline</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">name</property>
+                                <text-property name="displayName">name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">name</property>
+                    </data>
+                    <label id="1875">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="33">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> lëshon:</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <grid id="34">
+            <property name="marginTop">30pt</property>
+            <property name="overflow">auto</property>
+            <column id="35">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="36">
+                <property name="overflow">auto</property>
+                <cell id="37">
+                    <label id="38">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">V E N D I M    P Ë R   R E F U Z I M</text-property>
+                    </label>
+                    <label id="39">
+                        <property name="marginTop">5pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">për prerjen e drunjëve(trungjeve) në pyllin privat</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <grid id="40">
+            <property name="marginTop">20pt</property>
+            <property name="overflow">auto</property>
+            <column id="41">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="42">
+                <property name="overflow">auto</property>
+                <cell id="43">
+                    <property name="paddingLeft">20pt</property>
+                    <property name="paddingRight">20pt</property>
+                    <label id="44">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">I refuzohet</text-property>
+                    </label>
+                    <label id="1876">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="125">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">first_name</property>
+                                <text-property name="displayName">first_name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["first_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">first_name</property>
+                    </data>
+                    <label id="127">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="126">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">last_name</property>
+                                <text-property name="displayName">last_name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["last_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">last_name</property>
+                    </data>
+                    <label id="1877">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="46">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">nga</text-property>
+                    </label>
+                    <label id="1883">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="128">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">place</property>
+                                <text-property name="displayName">place</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["place"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">place</property>
+                    </data>
+                    <label id="1882">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="48">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">Komuna</text-property>
+                    </label>
+                    <label id="1881">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="99">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">name</property>
+                                <text-property name="displayName">name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">name</property>
+                    </data>
+                    <label id="1880">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="49">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">prerja e trungjeve të damkosura</text-property>
+                    </label>
+                    <label id="1879">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="52">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">në vendin e quajtur "</text-property>
+                    </label>
+                    <label id="1878">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="53">
+                        <property name="textUnderline">underline</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">place_name</property>
+                                <text-property name="displayName">place_name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["place_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">place_name</property>
+                    </data>
+                    <label id="1884">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="54">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">", ngastra kadastrale nr. </text-property>
+                    </label>
+                    <label id="1892">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="55">
+                        <property name="textUnderline">underline</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cad_cert_no</property>
+                                <text-property name="displayName">cad_cert_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cad_cert_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cad_cert_no</property>
+                    </data>
+                    <label id="1891">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="56">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">, komuna kadastrale</text-property>
+                    </label>
+                    <label id="1890">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="376">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">name</property>
+                                <text-property name="displayName">name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">name</property>
+                    </data>
+                    <label id="58">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">, në sasi prej</text-property>
+                    </label>
+                    <label id="1889">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="59">
+                        <property name="textUnderline">underline</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">total</property>
+                                <text-property name="displayName">total</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["total"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">total</property>
+                    </data>
+                    <label id="1888">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <text id="122">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[m<SUP>3</SUP>]]></text-property>
+                    </text>
+                    <label id="1887">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="60">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">nga e cila</text-property>
+                    </label>
+                    <label id="1886">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="374">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pl_tech_volume</property>
+                                <text-property name="displayName">pl_tech_volume</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["pl_tech_volume"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pl_tech_volume</property>
+                    </data>
+                    <label id="1885">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <text id="123">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[m<SUP>3</SUP>]]></text-property>
+                    </text>
+                    <label id="1893">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="62">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">dru teknik dhe</text-property>
+                    </label>
+                    <label id="1895">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <data id="375">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pl_fire_volume</property>
+                                <text-property name="displayName">pl_fire_volume</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["pl_fire_volume"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pl_fire_volume</property>
+                    </data>
+                    <label id="1894">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <text id="124">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[m<SUP>3</SUP>]]></text-property>
+                    </text>
+                    <label id="1896">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text"> </text-property>
+                    </label>
+                    <label id="64">
+                        <property name="verticalAlign">middle</property>
+                        <property name="display">inline</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">dru zjarri.</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <grid id="73">
+            <property name="marginTop">10pt</property>
+            <property name="marginBottom">20pt</property>
+            <property name="verticalAlign">middle</property>
+            <property name="overflow">auto</property>
+            <column id="74">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="75">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <cell id="76">
+                    <property name="paddingLeft">20pt</property>
+                    <property name="paddingRight">20pt</property>
+                    <label id="77">
+                        <property name="fontWeight">normal</property>
+                        <text-property name="text">Këshilla juridike: Pala e pakënaqur ka të drejtë ankese në afat prej 15 ditësh nga dita e pranimit. Ankesa i drejtohet Agjencisë Pyjore të Kosovës në Prishtinë përmes Zyres/Njësisë se APK-së.</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <grid id="78">
+            <property name="marginLeft">10pt</property>
+            <property name="marginBottom">30pt</property>
+            <property name="marginRight">10pt</property>
+            <property name="overflow">auto</property>
+            <column id="79">
+                <property name="overflow">auto</property>
+            </column>
+            <column id="80">
+                <property name="overflow">auto</property>
+            </column>
+            <row id="81">
+                <property name="paddingBottom">5pt</property>
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <cell id="82">
+                    <label id="90">
+                        <property name="textUnderline">underline</property>
+                        <property name="marginBottom">5pt</property>
+                        <property name="paddingBottom">1pt</property>
+                        <property name="overflow">auto</property>
+                        <text-property name="text">I dorëzohet:</text-property>
+                    </label>
+                    <label id="91">
+                        <property name="marginBottom">5pt</property>
+                        <text-property name="text">Palës : ____________________________________</text-property>
+                    </label>
+                    <label id="92">
+                        <text-property name="text">Arkivit : ____________________________________</text-property>
+                    </label>
+                </cell>
+                <cell id="83"/>
+            </row>
+            <row id="84">
+                <property name="verticalAlign">middle</property>
+                <property name="overflow">auto</property>
+                <cell id="85">
+                    <property name="paddingTop">10pt</property>
+                    <label id="93">
+                        <property name="marginBottom">5pt</property>
+                        <text-property name="text">Shërbimi Tekniko-Profesional</text-property>
+                    </label>
+                    <label id="94">
+                        <text-property name="text">Personi përgjegjës për pyje private</text-property>
+                    </label>
+                </cell>
+                <cell id="86"/>
+            </row>
+        </grid>
+        <grid id="2947">
+            <property name="marginLeft">10pt</property>
+            <property name="marginRight">10pt</property>
+            <column id="2948"/>
+            <column id="2949"/>
+            <row id="2950">
+                <cell id="2951">
+                    <label id="95">
+                        <property name="marginTop">10pt</property>
+                        <property name="marginBottom">5pt</property>
+                        <text-property name="text">______________________________</text-property>
+                    </label>
+                    <label id="96">
+                        <property name="textAlign">left</property>
+                        <text-property name="text">    (Emri dhe mbiemri Nënshkrimi)</text-property>
+                    </label>
+                </cell>
+                <cell id="2952">
+                    <label id="97">
+                        <property name="marginTop">10pt</property>
+                        <property name="marginBottom">5pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">Drejtori i Drejtorisë Koordinuese</text-property>
+                    </label>
+                    <label id="98">
+                        <property name="textAlign">right</property>
+                        <text-property name="text">__________________________</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

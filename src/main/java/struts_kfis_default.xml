@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <package name="kfis-default" namespace="/" extends="struts-default">
+        
+        <interceptors>
+        	
+        	<interceptor name="authentication" class="com.geoland.kfis.web.action.base.security.AuthenticationInterceptor"/>	
+        	<interceptor name="session" class="com.geoland.kfis.web.action.base.security.SessionInterceptor" />
+        	<interceptor name="acegi" class="com.geoland.kfis.web.base.security.interceptor.AcegiInterceptor" />
+        	 
+            <interceptor-stack name="userlogin" >
+            
+            	<interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="authentication" />
+            
+            </interceptor-stack>
+            
+			<interceptor-stack name="homepage" >
+        	 	<interceptor-ref name="defaultStack"/>
+        	 </interceptor-stack>
+            <interceptor-stack name="securityStack">
+            
+	        <interceptor-ref name="authentication" />
+	        
+	        <interceptor-ref name="defaultStack">
+               <param name="params.excludeParams">(^|\%\{)((#?)(top(\.|\['|\[")|\[\d\]\.)?)(dojo|struts|session|request|response|application|servlet(Request|Response|Context)|parameters|context|_memberAccess)(\.|\[).*, ^(action|method):.*</param>
+            </interceptor-ref>
+            
+            <!--
+            (.*\.|^|.*|\[('|"))(c|C)lass(\.|('|")]|\[).*,^dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,^parameters\..*,^action:.*,^method:.*
+            (^|\%\{)((#?)(top(\.|\['|\[")|\[\d\]\.)?)(dojo|struts|session|request|response|application|servlet(Request|Response|Context)|parameters|context|_memberAccess)(\.|\[).*, ^(action|method):.* 
+            -->
+                        	
+            <interceptor-ref name="tokenSession">
+               	<param name="excludeMethods">*</param>
+            </interceptor-ref>
+             	
+            </interceptor-stack>
+            
+                        
+			<interceptor-stack name="fileUploadStack"> 
+			
+				<interceptor-ref name="fileUpload"> 
+					<param name="maximumSize">1000240</param> <!-- 1000240=10MB 10240 = 10KB -->
+					<param name="allowedTypes">image/jpeg,image/gif,image/png,image/jpg, application/ms-excel,application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.openxmlformats-officedocument.spreadsheetml</param> 
+				</interceptor-ref>
+   			
+   			</interceptor-stack>
+   			
+        </interceptors>
+	
+		<default-interceptor-ref name="userlogin"></default-interceptor-ref>
+ 
+       <global-results>
+			<result name="exception">/error/exception.jsp</result>
+			<result name="runtime_exception">/error/runtime_exception.jsp</result>
+			<result name="error">/error/error.jsp</result>            
+            
+            <result name="invalid.token">/module/base/error.jsp</result>
+			<result name="userlogin">login.jsp</result>
+			<result name="home_page">home_page.jsp</result>
+			<result name="exception">/module/base/error.jsp</result>
+			<result name="runTimeException">/module/base/error.jsp</result>
+			<result name="facadeException">/module/base/error.jsp</result>
+			<result name="actionException">/module/base/error.jsp</result>		           
+            <result name="authorization_required">/authorization.html</result>
+            
+            <result name="jndi_check">module/adm/jndi/jndi_check.jsp</result>
+            
+        </global-results>
+        
+        
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error"></exception-mapping>
+			<exception-mapping exception="java.lang.Error" result="error"></exception-mapping>
+			<exception-mapping exception="java.lang.Throwable" result="error"></exception-mapping>
+			<exception-mapping exception="java.lang.RuntimeException" result="runtime_exception"></exception-mapping>
+		</global-exception-mappings>        
+
+    </package>
+
+</struts>

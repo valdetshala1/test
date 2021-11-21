@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__p_status_427_0</property>
+            <property name="value">NEW</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_start_date_428_1</property>
+            <property name="value">2016.02.08</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_end_date_429_2</property>
+            <property name="value">2016.02.11</property>
+        </structure>
+        <structure>
+            <property name="name">p_status_427_3</property>
+            <property name="value">NEW</property>
+        </structure>
+        <structure>
+            <property name="name">p_status_427_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_start_date_428_4</property>
+            <property name="value">2016.02.08</property>
+        </structure>
+        <structure>
+            <property name="name">p_start_date_428_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_end_date_429_5</property>
+            <property name="value">2016.02.11</property>
+        </structure>
+        <structure>
+            <property name="name">p_end_date_429_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

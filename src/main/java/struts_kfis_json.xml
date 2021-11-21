@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package name="json"  namespace="/" extends="kfis-default, json-default">
+
+	  <action name="HrmGrid.*" method="{1}" class="com.geoland.kfis.web.action.hrm.ajax.HrmGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>  
+      </action>
+ 	  
+ 	  <action name="AdmGrid.*" method="{1}" class="com.geoland.kfis.web.action.adm.ajax.AdmGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>
+      
+      <action name="LegalSectorGrid.*" method="{1}" class="com.geoland.kfis.web.action.ads.legalsector.ajax.LegalSectorGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>
+ 	  
+ 	  <action name="AssetsGrid.*" method="{1}" class="com.geoland.kfis.web.action.ads.asset.ajax.AssetsGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>
+      
+      <action name="Input.*" method="{1}" class="com.geoland.kfis.web.action.ajax.InputAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action> 
+      
+      <action name="InputAdmin.*" method="{1}" class="com.geoland.kfis.web.action.ajax.InputAdminAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action> 
+            
+      <action name="LogisticGrid.*" method="{1}" class="com.geoland.kfis.web.action.ads.logistic.ajax.LogisticGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>  
+      
+      <action name="FrmGrid.*" method="{1}" class="com.geoland.kfis.web.action.frm.ajax.FrmGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>
+      
+      <action name="DhpetGrid.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.ajax.DhpetGridAction">
+      	   <result type="json" />
+      	   <interceptor-ref name="userlogin"/>
+      </action>
+      
+      <action name="FinGrid.*" method="{1}" class="com.geoland.kfis.web.action.ads.finance.ajax.FinanceGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>  
+      
+      <action name="ProGrid.*" method="{1}" class="com.geoland.kfis.web.action.ads.procurement.ajax.ProcurementGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>      
+
+      <action name="DemGrid.*" method="{1}" class="com.geoland.kfis.web.action.dem.ajax.DemGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>  
+           
+       <!-- start: tags for document protocol management -->    
+      <action name="DpGrid.*" method="{1}" class="com.geoland.kfis.web.action.ads.dp.ajax.GridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>         
+      
+      <action name="DpInput.*" method="{1}" class="com.geoland.kfis.web.action.ads.dp.ajax.InputAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action> 
+      <!-- end: tags for document protocol management -->
+       
+      <action name="ExOfficeGrid.*" method="{1}" class="com.geoland.kfis.web.action.ads.eoffice.ajax.EofficeGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>         
+      
+      <action name="OrderMgmtGrid.*" method="{1}" class="com.geoland.kfis.web.action.ads.order.ajax.GridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action> 
+            
+      <action name="OrderMgmtInput.*" method="{1}" class="com.geoland.kfis.web.action.ads.order.ajax.InputAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action> 
+      
+      <action name="MERGrid.*" method="{1}" class="com.geoland.kfis.web.action.mer.ajax.MERGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>
+      
+      <action name="HelpGrid.*" method="{1}" class="com.geoland.kfis.web.action.help.HelpGridAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>
+      <action name="PublishGrid.*" method="{1}" class="com.geoland.kfis.web.action.pub.PublishGridAction">
+       	   <result type="json" />
+      </action>
+      
+      <action name="MERInput.*" method="{1}" class="com.geoland.kfis.web.action.mer.ajax.MERInputAction">
+       	   <result type="json" />
+       	   <interceptor-ref name="userlogin"/>
+      </action>
+      
+      <action name="PReqItemSave" class="com.geoland.kfis.web.action.ads.order.requisition.RequisitionItemSaveAction">
+       	   <result type="json" />
+       	   <result name="input">/module/ads/order/requisition/requisition_errors.jsp</result>
+       	   <result name="success">/module/ads/order/requisition/requisition_errors.jsp</result>
+       	   <interceptor-ref name="userlogin"/>
+      </action>
+      
+      <action name="POrderItemSave" class="com.geoland.kfis.web.action.ads.order.OrderItemSaveAction">
+       	   <result type="json" />
+       	   <result name="input">/module/ads/order/order_errors.jsp</result>
+       	   <result name="success">/module/ads/order/order_errors.jsp</result>
+      </action>
+      
+       <action name="MUnitMapJson.*" method="{1}"
+			class="com.geoland.kfis.web.action.frm.map.MapAction">
+			<result type="json" />
+			<result name="infopoint">module/frm/stand/infopoint.jsp</result>
+			<result name="infopointHarvPl">module/frm/annualplan/harvest/harvest_info.jsp</result>
+			<result name="infopointSlvPl">module/frm/annualplan/silviculture/silviculture_info.jsp</result>
+           	<result name="infopointPlaAct">module/frm/annualplan/planting/planting_info.jsp</result>
+            <interceptor-ref name="userlogin"/>			
+		</action> 
+		
+		<action name="StandSplitSave" class="com.geoland.kfis.web.action.frm.stand.StandSplitSaveAction">
+				<result type="json" />
+            <interceptor-ref name="userlogin"/>				
+		</action>	
+			
+	  <action name="FalGrid.*" method="{1}" class="com.geoland.kfis.web.action.fal.ajax.FalGridAction">
+       	   <result type="json" />
+      </action>
+      <action name="Grid.*" method="{1}" class="com.geoland.kfis.web.action.base.grid.GridAction">
+       	   <result type="json" />
+      </action>
+      
+      <action name="AuditData.*" method="{1}" class="com.geoland.kfis.web.action.audit.AuditData">
+		<result type="json" />
+	  </action>	
+	  
+      <action name="TouristZoneGeomsGrid.*" method="{1}" class="com.geoland.kfis.web.action.frm.dhpet.touristzonegeoms.ajax.TouristZoneGeomsGridAction">
+		<result type="json" />
+	  </action>	
+	  
+	  <action name="SalaryJsonData.*" method="{1}" class="com.geoland.kfis.web.action.hrm.salary.SalaryJsonData">
+       	   <result type="json" />
+      </action>
+      	  
+   </package>
+</struts>
